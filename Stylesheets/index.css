@@ -2,6 +2,13 @@ body {
   background-color: #FBE8A6;
 }
 
+h1 {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #303C6C;
+  text-shadow: 1px 1px 2px #FBE8A6, 0 0 25 px #FBDDD0;
+}
+
 #assignment-table {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -31,4 +38,5 @@ body {
 #assignment-table td a {
   display: block;
   width: 100%;
+  text-decoration: none;
 }
