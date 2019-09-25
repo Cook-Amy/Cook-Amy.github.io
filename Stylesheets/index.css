@@ -19,6 +19,7 @@ h1 {
 #assignment-table td, #assignment-table th {
   border: 1px solid #ddd;
   padding: 8px;
+  font-size: large;
 }
 
 #assignment-table tr:nth-child(even){background-color: #B4DFE5;}
