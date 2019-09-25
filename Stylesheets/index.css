@@ -1,0 +1,28 @@
+body {
+  background-color: #FBE8A6;
+}
+
+#assignment-table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#assignment-table td, #assignment-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#assignment-table tr:nth-child(even){background-color: #B4DFE5;}
+
+#assignment-table tr:nth-child(odd){background-color: #D2FDFF;}
+
+#assignment-table tr:hover {background-color: #F4976C;}
+
+#assignment-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #303C6C;
+  color: white;
+}
