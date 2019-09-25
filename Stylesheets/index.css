@@ -27,3 +27,8 @@ body {
   background-color: #303C6C;
   color: white;
 }
+
+#assignment-table td a {
+  display: block;
+  width: 100%;
+}
