@@ -1,3 +1,4 @@
+/* Page Sytles */
 * {
   box-sizing: border-box;
 }
@@ -6,20 +7,18 @@ body {
   margin: 0;
 }
 
+/* Header Styles */
 .header {
   background-color: orange;
   padding: 20px;
   text-align: center;
 }
 
-h1 {
-  color: brown;
-}
+h1 { color: brown; }
 
-h2 {
-  color: darkgreen;
-}
+h2 { color: darkgreen; }
 
+/* Column Styles */
 .row:after {
   content: "";
   display: table;
@@ -31,12 +30,28 @@ h2 {
   padding: 10px;
 }
 
+/* Side Column Styles */
 .column.side {
   width: 20%;
   background-color: darkorange;
 }
 
+button {
+  background-color: brown;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/* Main Column Styles */
 .column.main {
   width: 80%;
   background-color: darkolivegreen;
 }
+
