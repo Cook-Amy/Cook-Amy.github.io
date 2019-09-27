@@ -32,7 +32,7 @@ h2 { color: darkgreen; }
   text-align: center;
 }
 
-/* Side Column Styles */
+/* Left Column Styles */
 .column.side {
   width: 20%;
   background-color: orange;
@@ -66,7 +66,7 @@ input {
 
 /* Main Column Styles */
 .column.main {
-  width: 80%;
+  width: 70%;
   background-color: darkolivegreen;
 }
 
@@ -111,3 +111,8 @@ input {
   display: none;
 }
 
+/* Right Column Styles */
+.column.right {
+  width: 10%;
+  background-color: orange;
+}
