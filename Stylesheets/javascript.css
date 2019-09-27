@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.header {
+  background-color: orange;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: brown;
+}
+
+h2 {
+  color: darkgreen;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.column.side {
+  width: 20%;
+  background-color: darkorange;
+}
+
+.column.main {
+  width: 80%;
+  background-color: darkolivegreen;
+}
