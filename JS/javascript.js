@@ -5,22 +5,22 @@ function pumpkinChoices() {
 }
 
 function eyeChoices() {
-  document.getElementById("picture1").src = "/Pics/eyes1.png";
-  document.getElementById("picture2").src = "/Pics/eyes2.png";
-  document.getElementById("picture3").src = "/Pics/eyes3.png";
+  document.getElementById("picture1").src = "/Pics/eyes4.png";
+  document.getElementById("picture2").src = "/Pics/eyes5.png";
+  document.getElementById("picture3").src = "/Pics/eyes6.png";
  
 }
 
 function noseChoices() {
-  document.getElementById("picture1").src = "/Pics/nose1.png";
-  document.getElementById("picture2").src = "/Pics/nose2.png";
-  document.getElementById("picture3").src = "/Pics/nose3.png";
+  document.getElementById("picture1").src = "/Pics/nose4.png";
+  document.getElementById("picture2").src = "/Pics/nose5.png";
+  document.getElementById("picture3").src = "/Pics/nose6.png";
 }
 
 function mouthChoices() {
-  document.getElementById("picture1").src = "/Pics/mouth1.png";
-  document.getElementById("picture2").src = "/Pics/mouth2.png";
-  document.getElementById("picture3").src = "/Pics/mouth3.png";
+  document.getElementById("picture1").src = "/Pics/mouth4.png";
+  document.getElementById("picture2").src = "/Pics/mouth5.png";
+  document.getElementById("picture3").src = "/Pics/mouth6.png";
 }
 
 function randomSelection() {

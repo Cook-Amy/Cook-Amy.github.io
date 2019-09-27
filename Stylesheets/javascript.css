@@ -49,7 +49,7 @@ button {
   font-size: 18px;
   margin: 4px 2px;
   cursor: pointer;
-  width: 100px;
+  width: 180px;
 }
 
 input {
@@ -63,7 +63,7 @@ input {
   font-size: 18px;
   margin: 4px 2px;
   cursor: pointer;
-  width: 100px;
+  width: 180px;
 }
 
 /* Main Column Styles */
@@ -98,19 +98,19 @@ input {
 
 #resultEyes {
   position: absolute;
-  top: 24%;
+  top: 20%;
   left: 40%;
 }
 
 #resultNose {
   position: absolute;
-  top: 50%;
+  top: 44%;
   left: 45%;
 }
 
 #resultMouth {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 35%;
 }
 
