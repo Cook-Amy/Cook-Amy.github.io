@@ -5,9 +5,14 @@ function pumpkinChoices() {
 }
 
 function eyeChoices() {
-  document.getElementById("picture1").src = "/Pics/eyes1.jpg";
-  document.getElementById("picture2").src = "/Pics/eyes2.jpg";
-  document.getElementById("picture3").src = "/Pics/eyes3.jpg";
+  // document.getElementById("picture1").src = "/Pics/eyes1.jpg";
+  // document.getElementById("picture2").src = "/Pics/eyes2.jpg";
+  // document.getElementById("picture3").src = "/Pics/eyes3.jpg";
+
+  document.getElementById("picture1").src = "/Pics/eyesTest.bmp";
+  document.getElementById("picture2").src = "/Pics/eyesTest.gif";
+  document.getElementById("picture3").src = "/Pics/eyesTest.png";
+ 
 }
 
 function noseChoices() {
