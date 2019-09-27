@@ -12,9 +12,9 @@ function eyeChoices() {
 }
 
 function noseChoices() {
-  document.getElementById("picture1").src = "/Pics/nose1.jpg";
-  document.getElementById("picture2").src = "/Pics/nose2.jpg";
-  document.getElementById("picture3").src = "/Pics/nose3.jpg";
+  document.getElementById("picture1").src = "/Pics/nose1.png";
+  document.getElementById("picture2").src = "/Pics/nose2.png";
+  document.getElementById("picture3").src = "/Pics/nose3.png";
 }
 
 function mouthChoices() {
