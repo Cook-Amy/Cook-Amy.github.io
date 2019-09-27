@@ -5,6 +5,7 @@
 
 body {
   margin: 0;
+  background-color: orange;
 }
 
 /* Header Styles */
@@ -33,7 +34,7 @@ h2 { color: darkgreen; }
 /* Side Column Styles */
 .column.side {
   width: 20%;
-  background-color: darkorange;
+  background-color: orange;
   text-align: center;
 }
 
