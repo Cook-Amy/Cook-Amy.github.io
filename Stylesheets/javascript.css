@@ -84,6 +84,22 @@ input {
   padding-top: 10px;
 }
 
+#resultPumpkin {
+  position: relative;
+}
+
+#resultEyes {
+  position: absolute;
+}
+
+#resultNose {
+  position: absolute;
+}
+
+#resultMouth {
+  position: absolute;
+}
+
 .hidden {
   display: none;
 }

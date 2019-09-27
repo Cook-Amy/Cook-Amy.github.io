@@ -25,3 +25,7 @@ function mouthChoices() {
 function randomSelection() {
   document.getElementById("result").src = "/Pics/square.png";
 }
+
+function addSelection() {
+  
+}
