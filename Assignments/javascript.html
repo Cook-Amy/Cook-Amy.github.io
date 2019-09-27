@@ -16,7 +16,7 @@
 
   <div class="row main">
     <div class="column side">
-      <div><input type="button" id="pumpkin-shape" onclick="" value="Pumpkin"></div>
+      <div><input type="button" id="pumpkin-shape" onclick="pumpkinShape()" value="Pumpkin"></div>
       <div><input type="button" id="eyes" onclick="" value="Eyes"></div>
       <div><input type="button" id="nose" onclick="" value="Nose"></div>
       <div><input type="button" id="mouth" onclick="" value="Mouth"></div>
@@ -24,9 +24,15 @@
     </div>
     <div class="column main">
       <div class="row choices" id="choices">
-        <div class="column choice" id="choice1"></div>
-        <div class="column choice" id="choice2">Choice 2</div>
-        <div class="column choice" id="choice3">Choice 3</div>
+        <div class="column choice" id="choice1">
+            <img id="choice1" src="" />
+        </div>
+        <div class="column choice" id="choice2">
+          <img id="choice2" src="" />
+        </div>
+        <div class="column choice" id="choice3">
+          <img id="choice3" src="" />
+        </div>
       </div>
       <div id="result"></div>
 
