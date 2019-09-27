@@ -5,13 +5,9 @@ function pumpkinChoices() {
 }
 
 function eyeChoices() {
-  // document.getElementById("picture1").src = "/Pics/eyes1.jpg";
-  // document.getElementById("picture2").src = "/Pics/eyes2.jpg";
-  // document.getElementById("picture3").src = "/Pics/eyes3.jpg";
-
-  document.getElementById("picture1").src = "/Pics/eyesTest.bmp";
-  document.getElementById("picture2").src = "/Pics/eyesTest.gif";
-  document.getElementById("picture3").src = "/Pics/eyesTest.png";
+  document.getElementById("picture1").src = "/Pics/eyes1.png";
+  document.getElementById("picture2").src = "/Pics/eyes2.png";
+  document.getElementById("picture3").src = "/Pics/eyes3.png";
  
 }
 
