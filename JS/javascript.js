@@ -5,9 +5,9 @@ function pumpkinChoices() {
 }
 
 function eyeChoices() {
-  document.getElementById("choice1").src = "/Pics/square.png";
-  document.getElementById("choice2").src = "/Pics/square.png";
-  document.getElementById("choice3").src = "/Pics/square.png";
+  document.getElementById("choice1").src = "/Pics/eyes1.png";
+  document.getElementById("choice2").src = "/Pics/eyes2.png";
+  document.getElementById("choice3").src = "/Pics/eyes3.png";
 }
 
 function noseChoices() {
