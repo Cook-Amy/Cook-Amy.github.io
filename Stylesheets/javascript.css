@@ -77,6 +77,10 @@ input {
   border-radius: 5px;
 }
 
+#space {
+  height: 10px;
+}
+
 #result {
   position: relative;
   height: 500px;
