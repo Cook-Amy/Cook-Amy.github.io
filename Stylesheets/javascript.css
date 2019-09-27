@@ -92,8 +92,8 @@ input {
 
 #resultEyes {
   position: absolute;
-  top: 30%;
-  left: 45%;
+  top: 27%;
+  left: 40%;
 }
 
 #resultNose {
@@ -104,8 +104,8 @@ input {
 
 #resultMouth {
   position: absolute;
-  top: 70%;
-  left: 45%;
+  top: 60%;
+  left: 35%;
 }
 
 .hidden {
