@@ -1,7 +1,7 @@
 function pumpkinChoices() {
-  document.getElementById("picture1").src = "/Pics/pumpkin-round.jpg";
-  document.getElementById("picture2").src = "/Pics/pumpkin-tall.jpg";
-  document.getElementById("picture3").src = "/Pics/pumpkin-short.jpg";
+  document.getElementById("picture1").src = "/Pics/pumpkin1.png";
+  document.getElementById("picture2").src = "/Pics/pumpkin2.png";
+  document.getElementById("picture3").src = "/Pics/pumpkin3.png";
 }
 
 function eyeChoices() {
