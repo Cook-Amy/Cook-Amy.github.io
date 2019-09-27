@@ -29,13 +29,13 @@ h2 { color: darkgreen; }
 .column {
   float: left;
   padding: 10px;
+  text-align: center;
 }
 
 /* Side Column Styles */
 .column.side {
   width: 20%;
   background-color: orange;
-  text-align: center;
 }
 
 input {
