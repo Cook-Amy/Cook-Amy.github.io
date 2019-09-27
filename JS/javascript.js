@@ -5,7 +5,8 @@ function pumpkinChoices() {
 }
 
 function eyeChoices() {
-  document.getElementById("choice1").src = "/Pics/eyes1.jpg";
+  document.getElementById("choice1").src = "";
+  // document.getElementById("choice1").src = "/Pics/eyes1.jpg";
   document.getElementById("choice2").src = "/Pics/eyes2.jpg";
   document.getElementById("choice3").src = "/Pics/eyes3.jpg";
 }
