@@ -34,6 +34,7 @@ h2 { color: darkgreen; }
 .column.side {
   width: 20%;
   background-color: darkorange;
+  text-align: center;
 }
 
 button {
