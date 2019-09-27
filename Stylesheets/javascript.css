@@ -38,6 +38,19 @@ h2 { color: darkgreen; }
   background-color: orange;
 }
 
+button {
+  background-color: brown;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
 input {
   background-color: brown;
   border: none;
