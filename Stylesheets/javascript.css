@@ -41,20 +41,7 @@ h2 { color: darkgreen; }
 button {
   background-color: brown;
   border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-  margin: 4px 2px;
-  cursor: pointer;
-  width: 180px;
-}
-
-input {
-  background-color: brown;
-  border: none;
+  border-radius: 8px;
   color: white;
   padding: 10px 20px;
   text-align: center;
