@@ -44,12 +44,12 @@ body {
 .column.left {
   width: 20%;
   background-color: orange;
+  text-align: left;
 }
 
 #choosePart {
   color: darkolivegreen;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  text-align: left;
 }
 
 button {
