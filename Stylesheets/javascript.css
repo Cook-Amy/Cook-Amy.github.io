@@ -56,30 +56,30 @@ button {
 /* 2nd Column Styles */
 .column.second {
   width: 25%;
-  background-color: darkolivegreen;
 }
 
 .choice {
-  width: 33.33%;
-  height: 150px;
+  width: 230px;
+  height: 230px;
   border: 3px solid brown;
   border-radius: 5px;
+  background-color: darkolivegreen;
 }
 
 /* Main Column Styles */
 .column.main {
   width: 45%;
-  background-color: darkolivegreen;
 }
 
 #result {
   position: relative;
-  height: 500px;
-  width: 500px;
+  height: 480px;
+  width: 480px;
   border: 7px solid brown;
   border-radius: 7px;
   padding-top: 10px;
   text-align: center;
+  background-color: darkolivegreen;
 }
 
 #resultPumpkin {
