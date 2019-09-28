@@ -100,10 +100,10 @@ function randomSelection() {
                 "/Pics/mouth5.png",
                 "/Pics/mouth6.png"];
 
-  var random1 = Math.floor(Math.random() * 3) + 1;
-  var random2 = Math.floor(Math.random() * 3) + 1;
-  var random3 = Math.floor(Math.random() * 3) + 1;
-  var random4 = Math.floor(Math.random() * 3) + 1;
+  var random1 = Math.floor(Math.random() * 3);
+  var random2 = Math.floor(Math.random() * 3);
+  var random3 = Math.floor(Math.random() * 3);
+  var random4 = Math.floor(Math.random() * 3);
 
   document.getElementById("resultPumpkin").src = pumpkins[random1];
   document.getElementById("resultEyes").src = eyes[random2];
@@ -118,7 +118,19 @@ function saveSelection() {
   var selection = [document.getElementById("resultPumpkin").src,
                    document.getElementById("resultEyes").src,
                    document.getElementById("resultNose").src,
-                   document.getElementById("getMouth").src];
+                   document.getElementById("resultMouth").src];
   
-  
+  var savedSelection1 = selection;
+  var savedSelection2 = [document.getElementById("savedPumpkin1").src,
+                          document.getElementById("savedEyes1").src,
+                          document.getElementById("savedNose1").src,
+                          document.getElementById("savedMouth1").src];
+  var savedSelection3 = [document.getElementById("savedPumpkin2").src,
+                          document.getElementById("savedEyes2").src,
+                          document.getElementById("savedNose2").src,
+                          document.getElementById("savedMouth2").src];
+  var savedSelection4 = [document.getElementById("savedPumpkin3").src,
+                          document.getElementById("savedEyes3").src,
+                          document.getElementById("savedNose3").src,
+                          document.getElementById("savedMouth3").src];
 }
