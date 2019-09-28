@@ -8,6 +8,11 @@ body {
   background-color: orange;
 }
 
+.directions {
+  color: darkolivegreen;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 /* Header Styles */
 .header {
   background-color: orange;
@@ -47,11 +52,6 @@ body {
   text-align: left;
 }
 
-#choosePart {
-  color: darkolivegreen;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
 button {
   background-color: brown;
   border: none;
@@ -71,12 +71,6 @@ button {
 /* 2nd Column Styles */
 .column.second {
   width: 20%;
-}
-
-#pickOne {
-  color: darkolivegreen;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  text-align: left;
 }
 
 .choice {
