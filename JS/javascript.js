@@ -47,15 +47,12 @@ function mouthChoices() {
  * Add the user's choice to the picture
 **************************************************************/
 function addSelection(num) {
-  var choice = num;
-  var pic1 = document.getElementById("picture1").src;
-  var pic2 = document.getElementById("picture2").src;
-  var pic3 = document.getElementById("picture3").src;
-  
-  switch(choice) {
+  switch(num) {
 
     // if the 1st picture was chosen
     case 1:
+      var pic1 = document.getElementById("picture1").src;
+
       // figure out which part of the pumpkin
       var p = pic1.includes("pumpkin");
       var e = pic1.includes("eyes");
@@ -71,6 +68,8 @@ function addSelection(num) {
 
     // if the 2nd picture was chosen
     case 2:
+      var pic2 = document.getElementById("picture2").src;
+
       // figure out which part of the pumpkin
       var p = pic2.includes("pumpkin");
       var e = pic2.includes("eyes");
@@ -86,6 +85,8 @@ function addSelection(num) {
 
     // if the 3rd picture was chosen
     case 3:
+      var pic3 = document.getElementById("picture3").src;
+
       // figure out which part of the pumpkin
       var p = pic3.includes("pumpkin");
       var e = pic3.includes("eyes");
