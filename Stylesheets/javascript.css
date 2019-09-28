@@ -46,6 +46,12 @@ body {
   background-color: orange;
 }
 
+#choosePart {
+  color: darkolivegreen;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: left;
+}
+
 button {
   background-color: brown;
   border: none;
