@@ -110,3 +110,15 @@ function randomSelection() {
   document.getElementById("resultNose").src = noses[random3];
   document.getElementById("resultMouth").src = mouths[random4];
 }
+
+/**************************************************************
+ * Save a copy of the selected jack-o-lantern
+**************************************************************/
+function saveSelection() {
+  var selection = [document.getElementById("resultPumpkin").src,
+                   document.getElementById("resultEyes").src,
+                   document.getElementById("resultNose").src,
+                   document.getElementById("getMouth").src];
+  
+  
+}
