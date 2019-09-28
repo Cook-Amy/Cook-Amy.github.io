@@ -106,8 +106,8 @@ function addSelection(num) {
 **************************************************************/
 function randomSelection() {
   var pumpkins = ["/Pics/javascriptPics/pumpkin1.png",
-                  "/Pics/pumpkin2.png",
-                  "/Pics/pumpkin3.png"];
+                  "/Pics/javascriptPics/pumpkin2.png",
+                  "/Pics/javascriptPics/pumpkin3.png"];
   var eyes = ["/Pics/javascriptPics/eyes4.png",
               "/Pics/javascriptPics/eyes5.png",
               "/Pics/javascriptPics/eyes6.png"];
