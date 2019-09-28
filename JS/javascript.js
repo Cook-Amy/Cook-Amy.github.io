@@ -4,9 +4,9 @@
 var pictureChoices = ["picture1", "picture2", "picture3"];
 
 function pumpkinChoices() {
-  var pumpkins = ["/Pics/pumpkin1.png",
-                  "/Pics/pumpkin2.png",
-                  "/Pics/pumpkin3.png"];
+  var pumpkins = ["/Pics/javascriptPics/pumpkin1.png",
+                  "/Pics/javascriptPics/pumpkin2.png",
+                  "/Pics/javascriptPics/pumpkin3.png"];
 
   for(var i = 0; i < 3; i++) {
     document.getElementById(pictureChoices[i]).src = pumpkins[i];
@@ -14,9 +14,9 @@ function pumpkinChoices() {
 }
 
 function eyeChoices() {
-  var eyes = ["/Pics/eyes4.png",
-              "/Pics/eyes5.png",
-              "/Pics/eyes6.png"];
+  var eyes = ["/Pics/javascriptPics/eyes4.png",
+              "/Pics/javascriptPics/eyes5.png",
+              "/Pics/javascriptPics/eyes6.png"];
 
   for(var i = 0; i < 3; i++) {
     document.getElementById(pictureChoices[i]).src = eyes[i];
@@ -24,9 +24,9 @@ function eyeChoices() {
 }
 
 function noseChoices() {
-  var noses = ["/Pics/nose4.png",
-              "/Pics/nose5.png",
-              "/Pics/nose6.png"];
+  var noses = ["/Pics/javascriptPics/nose4.png",
+              "/Pics/javascriptPics/nose5.png",
+              "/Pics/javascriptPics/nose6.png"];
 
   for(var i = 0; i < 3; i++) {
     document.getElementById(pictureChoices[i]).src = noses[i];
@@ -34,9 +34,9 @@ function noseChoices() {
 }
 
 function mouthChoices() {
-  var mouths = ["/Pics/mouth4.png",
-                "/Pics/mouth5.png",
-                "/Pics/mouth6.png"];
+  var mouths = ["/Pics/javascriptPics/mouth4.png",
+                "/Pics/javascriptPics/mouth5.png",
+                "/Pics/javascriptPics/mouth6.png"];
 
   for(var i = 0; i < 3; i++) {
     document.getElementById(pictureChoices[i]).src = mouths[i];
@@ -105,18 +105,18 @@ function addSelection(num) {
  * Show random jack-o-lantern pictures
 **************************************************************/
 function randomSelection() {
-  var pumpkins = ["/Pics/pumpkin1.png",
+  var pumpkins = ["/Pics/javascriptPics/pumpkin1.png",
                   "/Pics/pumpkin2.png",
                   "/Pics/pumpkin3.png"];
-  var eyes = ["/Pics/eyes4.png",
-              "/Pics/eyes5.png",
-              "/Pics/eyes6.png"];
-  var noses = ["/Pics/nose4.png",
-               "/Pics/nose5.png",
-               "/Pics/nose6.png"];
-  var mouths = ["/Pics/mouth4.png",
-                "/Pics/mouth5.png",
-                "/Pics/mouth6.png"];
+  var eyes = ["/Pics/javascriptPics/eyes4.png",
+              "/Pics/javascriptPics/eyes5.png",
+              "/Pics/javascriptPics/eyes6.png"];
+  var noses = ["/Pics/javascriptPics/nose4.png",
+               "/Pics/javascriptPics/nose5.png",
+               "/Pics/javascriptPics/nose6.png"];
+  var mouths = ["/Pics/javascriptPics/mouth4.png",
+                "/Pics/javascriptPics/mouth5.png",
+                "/Pics/javascriptPics/mouth6.png"];
 
   var random1 = Math.floor(Math.random() * 3);
   var random2 = Math.floor(Math.random() * 3);
