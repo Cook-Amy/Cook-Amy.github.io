@@ -2,9 +2,18 @@
  * Show the different choices for each part of the jack-o-lantern
 ****************************************************************/
 function pumpkinChoices() {
-  document.getElementById("picture1").src = "/Pics/pumpkin1.png";
-  document.getElementById("picture2").src = "/Pics/pumpkin2.png";
-  document.getElementById("picture3").src = "/Pics/pumpkin3.png";
+  var pumpkins = ["/Pics/pumpkin1.png",
+                  "/Pics/pumpkin2.png",
+                  "/Pics/pumpkin3.png"];
+
+  var pictureChoices = ["picture1", "picture2", "picture3"];
+
+  for(var i = 0; i < 3; i++) {
+    document.getElementById(pictureChoices[i]).src = pumpkins[i];
+  }
+  // document.getElementById("picture1").src = "/Pics/pumpkin1.png";
+  // document.getElementById("picture2").src = "/Pics/pumpkin2.png";
+  // document.getElementById("picture3").src = "/Pics/pumpkin3.png";
 }
 
 function eyeChoices() {
