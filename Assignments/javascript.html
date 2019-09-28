@@ -15,27 +15,27 @@
   </div>
 
   <div class="row main">
-    <div class="column side">
+    <div class="column left">
       <div><button id="pumpkin-shape" onclick="pumpkinChoices()">Pumpkin</button></div>
       <div><button id="eyes" onclick="eyeChoices()">Eyes</button></div>
-      <div><input type="button" id="nose" onclick="noseChoices()" value="Nose"></div>
-      <div><input type="button" id="mouth" onclick="mouthChoices()" value="Mouth"></div>
-      <div><input type="button" id="random" onclick="randomSelection()" value="Random Selection"></div>
+      <div><button id="nose" onclick="noseChoices()">Nose</button></div>
+      <div><button id="mouth" onclick="mouthChoices()">Mouth</button></div>
+      <div><button id="random" onclick="randomSelection()">Random Selection</button></div>
+    </div>
+
+    <div class="column second">
+        <div class="choice" id="choice1">
+            <img id="picture1" src="/Pics/square.png" width="120px" height="120px" onclick="addSelection(1)" />
+        </div>
+        <div class="choice" id="choice2">
+          <img id="picture2" src="/Pics/square.png" width="120px" height="120px" onclick="addSelection(2)" />
+        </div>
+        <div class="choice" id="choice3">
+          <img id="picture3" src="/Pics/square.png" width="120px" height="120px" onclick="addSelection(3)" />
+        </div>
     </div>
 
     <div class="column main">
-      <div class="row choices" id="choices">
-        <div class="column choice" id="choice1">
-            <img id="picture1" src="/Pics/square.png" width="120px" height="120px" onclick="addSelection(1)" />
-        </div>
-        <div class="column choice" id="choice2">
-          <img id="picture2" src="/Pics/square.png" width="120px" height="120px" onclick="addSelection(2)" />
-        </div>
-        <div class="column choice" id="choice3">
-          <img id="picture3" src="/Pics/square.png" width="120px" height="120px" onclick="addSelection(3)" />
-        </div>
-      </div>
-      <div id="space"></div>
       <div id="result">
         <img id="resultPumpkin" src="/Pics/square.png" width="475px" height="475px">
         <img id="resultEyes" src="/Pics/square.png" width="475px" height="475px">

@@ -33,7 +33,7 @@ h2 { color: darkgreen; }
 }
 
 /* Left Column Styles */
-.column.side {
+.column.left {
   width: 20%;
   background-color: orange;
 }
@@ -93,25 +93,31 @@ input {
 }
 
 #resultPumpkin {
-  position: relative;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: 0;
 }
 
 #resultEyes {
   position: absolute;
-  top: 20%;
-  left: 40%;
+  top: 0%;
+  left: 0%;
+  z-index: 1;
 }
 
 #resultNose {
   position: absolute;
-  top: 44%;
-  left: 45%;
+  top: 0%;
+  left: 0%;
+  z-index: 1;
 }
 
 #resultMouth {
   position: absolute;
-  top: 40%;
-  left: 35%;
+  top: 0%;
+  left: 0%;
+  z-index: 1;
 }
 
 .hidden {
