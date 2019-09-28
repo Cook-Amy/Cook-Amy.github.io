@@ -100,10 +100,10 @@ function randomSelection() {
                 "/Pics/mouth5.png",
                 "/Pics/mouth6.png"];
 
-  var random1 = Math.floor(Math.random() * 10) + 1;
-  var random2 = Math.floor(Math.random() * 10) + 1;
-  var random3 = Math.floor(Math.random() * 10) + 1;
-  var random4 = Math.floor(Math.random() * 10) + 1;
+  var random1 = Math.floor(Math.random() * 3) + 1;
+  var random2 = Math.floor(Math.random() * 3) + 1;
+  var random3 = Math.floor(Math.random() * 3) + 1;
+  var random4 = Math.floor(Math.random() * 3) + 1;
 
   document.getElementById("resultPumpkin").src = pumpkins[random1];
   document.getElementById("resultEyes").src = eyes[random2];

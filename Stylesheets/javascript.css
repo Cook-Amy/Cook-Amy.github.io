@@ -50,6 +50,7 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 4px 2px;
   cursor: pointer;
   width: 180px;
