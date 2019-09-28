@@ -1,38 +1,46 @@
 /****************************************************************
  * Show the different choices for each part of the jack-o-lantern
 ****************************************************************/
+var pictureChoices = ["picture1", "picture2", "picture3"];
+
 function pumpkinChoices() {
   var pumpkins = ["/Pics/pumpkin1.png",
                   "/Pics/pumpkin2.png",
                   "/Pics/pumpkin3.png"];
 
-  var pictureChoices = ["picture1", "picture2", "picture3"];
-
   for(var i = 0; i < 3; i++) {
     document.getElementById(pictureChoices[i]).src = pumpkins[i];
   }
-  // document.getElementById("picture1").src = "/Pics/pumpkin1.png";
-  // document.getElementById("picture2").src = "/Pics/pumpkin2.png";
-  // document.getElementById("picture3").src = "/Pics/pumpkin3.png";
 }
 
 function eyeChoices() {
-  document.getElementById("picture1").src = "/Pics/eyes4.png";
-  document.getElementById("picture2").src = "/Pics/eyes5.png";
-  document.getElementById("picture3").src = "/Pics/eyes6.png";
- 
+  var eyes = ["/Pics/eyes4.png",
+              "/Pics/eyes5.png",
+              "/Pics/eyes6.png"];
+
+  for(var i = 0; i < 3; i++) {
+    document.getElementById(pictureChoices[i]).src = eyes[i];
+  }
 }
 
 function noseChoices() {
-  document.getElementById("picture1").src = "/Pics/nose4.png";
-  document.getElementById("picture2").src = "/Pics/nose5.png";
-  document.getElementById("picture3").src = "/Pics/nose6.png";
+  var noses = ["/Pics/nose4.png",
+              "/Pics/nose5.png",
+              "/Pics/nose6.png"];
+
+  for(var i = 0; i < 3; i++) {
+    document.getElementById(pictureChoices[i]).src = noses[i];
+  }
 }
 
 function mouthChoices() {
-  document.getElementById("picture1").src = "/Pics/mouth4.png";
-  document.getElementById("picture2").src = "/Pics/mouth5.png";
-  document.getElementById("picture3").src = "/Pics/mouth6.png";
+  var mouths = ["/Pics/mouth4.png",
+                "/Pics/mouth5.png",
+                "/Pics/mouth6.png"];
+
+  for(var i = 0; i < 3; i++) {
+    document.getElementById(pictureChoices[i]).src = mouths[i];
+  }
 }
 
 /**************************************************************
@@ -118,28 +126,4 @@ function randomSelection() {
   document.getElementById("resultEyes").src = eyes[random2];
   document.getElementById("resultNose").src = noses[random3];
   document.getElementById("resultMouth").src = mouths[random4];
-}
-
-/**************************************************************
- * Save a copy of the selected jack-o-lantern
-**************************************************************/
-function saveSelection() {
-  var selection = [document.getElementById("resultPumpkin").src,
-                   document.getElementById("resultEyes").src,
-                   document.getElementById("resultNose").src,
-                   document.getElementById("resultMouth").src];
-  
-  var savedSelection1 = selection;
-  var savedSelection2 = [document.getElementById("savedPumpkin1").src,
-                          document.getElementById("savedEyes1").src,
-                          document.getElementById("savedNose1").src,
-                          document.getElementById("savedMouth1").src];
-  var savedSelection3 = [document.getElementById("savedPumpkin2").src,
-                          document.getElementById("savedEyes2").src,
-                          document.getElementById("savedNose2").src,
-                          document.getElementById("savedMouth2").src];
-  var savedSelection4 = [document.getElementById("savedPumpkin3").src,
-                          document.getElementById("savedEyes3").src,
-                          document.getElementById("savedNose3").src,
-                          document.getElementById("savedMouth3").src];
 }

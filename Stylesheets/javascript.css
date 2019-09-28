@@ -34,6 +34,12 @@ h1 {
   text-align: center;
 }
 
+/* Left Border Column Styles */
+.column.borderLeftSide {
+  width: 10%;
+  background-color: orange;
+}
+
 /* Left Column Styles */
 .column.left {
   width: 20%;
@@ -117,16 +123,8 @@ button {
   display: none;
 }
 
-/* Right Column Styles */
-.column.right {
-  width: 20%;
+/* Right Border Column Styles */
+.column.borderRightSide {
+  width: 10%;
   background-color: orange;
-}
-
-.savedSelections {
-  width: 200px;
-  height: 200px;
-  border: 3px solid brown;
-  border-radius: 5px;
-  background-color: darkolivegreen;
 }
