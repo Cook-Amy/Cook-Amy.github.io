@@ -66,26 +66,29 @@ input {
   width: 180px;
 }
 
-/* Main Column Styles */
-.column.main {
-  width: 70%;
+/* 2nd Column Styles */
+.column.second {
+  width: 25%;
   background-color: darkolivegreen;
 }
 
-.column.choice {
+.choice {
   width: 33.33%;
   height: 150px;
   border: 3px solid brown;
   border-radius: 5px;
 }
 
-#space {
-  height: 10px;
+/* Main Column Styles */
+.column.main {
+  width: 45%;
+  background-color: darkolivegreen;
 }
 
 #result {
   position: relative;
   height: 500px;
+  width: 500px;
   border: 7px solid brown;
   border-radius: 7px;
   padding-top: 10px;
