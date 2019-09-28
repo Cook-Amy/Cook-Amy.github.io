@@ -15,9 +15,11 @@ body {
   text-align: center;
 }
 
-h1 { color: brown; }
-
-h2 { color: darkgreen; }
+h1 { 
+  color: brown; 
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 50px;
+}
 
 /* Column Styles */
 .row:after {
