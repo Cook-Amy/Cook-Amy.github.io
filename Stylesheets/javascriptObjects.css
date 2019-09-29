@@ -1,6 +1,6 @@
 .grid {
   display: grid;
-  grid-template-areas: 'pic1 pic2 pic3 . . .' 'pic4 pic5 pic6 pic7 pic8 pic9' 'pic10 pic11 pic12 pic13 pic14 pic15';
+  grid-template-areas: 'pic1 pic2 pic3 . . . . . . . . .' 'pic4 pic5 pic6 pic7 pic8 pic9 . . . . . .' 'pic10 pic11 pic12 pic13 pic14 pic15 . . . . . .';
   grid-gap: 10px;
   padding: 10px;
 }
@@ -25,7 +25,7 @@
   margin: 5px;
   border: 1px solid #ccc;
   float: left;
-  width: 180px;
+  width: 100px;
 }
 
 .picture:hover {
