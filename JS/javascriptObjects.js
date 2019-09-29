@@ -132,7 +132,7 @@ function renlund() {
   var renlund = new Apostle(
     "Dale G. Renlund",
     "Apostle",
-    "October 3, 2015"
+    "October 3, 2015",
     "link pending"
   );
   renlund.output();
