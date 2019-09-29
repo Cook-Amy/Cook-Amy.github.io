@@ -35,7 +35,7 @@ function showInfo(num) {
 function nelson() {
   var nelson = new Apostle(
     "Russell M. Nelson",
-    "President",
+    "Prophet and President",
     "January 14, 2018",
     "https://www.churchofjesuschrist.org/study/general-conference/2019/04/46nelson?lang=eng"
   );
