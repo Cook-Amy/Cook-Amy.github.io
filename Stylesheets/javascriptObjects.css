@@ -5,11 +5,11 @@ div.picture {
   width: 180px;
 }
 
-div.gallery:hover {
+div.picture:hover {
   border: 1px solid #777;
 }
 
-div.gallery img {
+div.picture img {
   width: 100%;
   height: auto;
 }
