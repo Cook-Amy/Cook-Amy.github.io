@@ -21,23 +21,23 @@
 #pic14 { grid-area: pic14; }
 #pic15 { grid-area: pic15; }
 
-div.picture {
+.picture {
   margin: 5px;
   border: 1px solid #ccc;
   float: left;
   width: 180px;
 }
 
-div.picture:hover {
+.picture:hover {
   border: 1px solid #777;
 }
 
-div.picture img {
+.picture img {
   width: 100%;
   height: auto;
 }
 
-div.desc {
+.desc {
   padding: 15px;
   text-align: center;
 }
