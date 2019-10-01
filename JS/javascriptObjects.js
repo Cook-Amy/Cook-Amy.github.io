@@ -1,21 +1,25 @@
 /***************************************************
- * Define Objects
+ * Define Objects and Methods
  **************************************************/
-function Apostle(name, title, date, Talk) {
+function Apostle(name, calling, date, Talk) {
   this.name = name;
-  this.title = title;
+  this.calling = calling;
   this.date = date;
   this.Talk = Talk;
-  this.output = function() {
-    document.getElementById("info").innerHTML = this.name + " is a(n) " + this.title + " of the Church of Jesus Christ of Latter-Day Saints.";
-  }
+  this.output = output();
 }
 
-  function Talk(title, link, subject) {
-    this.title = title;
-    this.link = link;
-    this.subject = subject;
-  }
+function Talk(title, link, subject) {
+  this.title = title;
+  this.link = link;
+  this.subject = subject;
+}
+
+function output() {
+  document.getElementById("name").innerHTML = Apostle.name;
+  document.getElementById("calling").innerHTML = Apostle.calling;
+  document.getElementById("date").innerHTML = Apostle.date;
+}
 
 /***************************************************
  * New Apostle objects defined 
