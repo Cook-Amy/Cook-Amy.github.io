@@ -1,21 +1,20 @@
 .grid {
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
-  padding: 2px;
 }
 
 .picture {
-  margin: 5px;
+  margin: 2px;
   border: 8px solid #006699;
   text-align: center;
   width: 100px;
 }
 
 .picture:hover {
-  border: 1px solid #cc3300;
+  border: 8px solid #cc3300;
 }
 
 .picture img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
