@@ -1,19 +1,14 @@
 /***************************************************
  * Define Objects and Methods
  **************************************************/
-function Apostle(name, calling, date, talk) {
+function Apostle(name, calling, date) {
   this.name = name;
   this.calling = calling;
   this.date = date;
-  this.talk = talk;
   this.output = function() {
     document.getElementById("name").innerHTML = name;
     document.getElementById("calling").innerHTML = calling;
     document.getElementById("date").innerHTML = "He was sustained to this calling on " + date + ".";
-    document.getElementById("talk").innerHTML = "<p>During the " + talk.session + " session, he gave the following talk:</p>" +
-                                                "<h1>Apostle.Talk.title</h1>" +
-                                                "<p>" + talk.subject + "</p>" +
-                                                "<p>You can access the talk by clicking on this link: " + talk.link + "</p>";
   }
 }
 
@@ -22,6 +17,13 @@ function Talk(title, link, subject, session) {
   this.link = link;
   this.subject = subject;
   this.session = session;
+  this.output = function() {
+    document.getElementById("talk").innerHTML = "<p>During the " + session + " session, he gave the following talk:</p>" +
+                                                "<h1>" + title + "</h1>" +
+                                                "<p>" + subject + "</p>" +
+                                                "<p>You can access the talk by clicking on this link: " + link + "</p>";
+  }
+  
 }
 
 /***************************************************
@@ -31,10 +33,10 @@ function nelson() {
   var nelson = new Apostle(
     "Russell M. Nelson",
     "Prophet and President",
-    "January 14, 2018",
-    nelsonTalk
+    "January 14, 2018"
   );
   nelson.output();
+  nelsonTalk();
 }
 
 function oaks() {
@@ -187,4 +189,5 @@ function nelsonTalk() {
     "Jesus Christ invites us to take the covenant path back home to our Heavenly Parents and be with those we love.",
     "Sunday morning"
   );
+  nelsonTalk.output();
 }
