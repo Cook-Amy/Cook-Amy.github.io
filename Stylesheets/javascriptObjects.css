@@ -3,40 +3,19 @@
   grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
   padding: 10px;
 }
-/* 
-#pic1 { grid-area: pic1; }
-#pic2 { grid-area: pic2; }
-#pic3 { grid-area: pic3; }
-#pic4 { grid-area: pic4; }
-#pic5 { grid-area: pic5; }
-#pic6 { grid-area: pic6; }
-#pic7 { grid-area: pic7; }
-#pic8 { grid-area: pic8; }
-#pic9 { grid-area: pic9; }
-#pic10 { grid-area: pic10; }
-#pic11 { grid-area: pic11; }
-#pic12 { grid-area: pic12; }
-#pic13 { grid-area: pic13; }
-#pic14 { grid-area: pic14; }
-#pic15 { grid-area: pic15; } */
 
 .picture {
   margin: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #006699;
   text-align: center;
   width: 100px;
 }
 
 .picture:hover {
-  border: 1px solid #777;
+  border: 1px solid #cc3300;
 }
 
 .picture img {
   width: 100%;
   height: auto;
-}
-
-.desc {
-  padding: 15px;
-  text-align: center;
 }
