@@ -18,12 +18,12 @@ function Talk(title, link, subject, session) {
   this.subject = subject;
   this.session = session;
   this.output = function() {
-    document.getElementById("talk").innerHTML = "<p>During the " + session + " session, he gave the following talk:</p>" +
+    document.getElementById("talk").innerHTML = "<p>During the " + session + " session of the April 2019 General Conference, he gave the following talk:</p>" +
                                                 "<h1>" + title + "</h1>" +
-                                                "<p>" + subject + "</p>" +
-                                                "<p>You can access the talk by clicking on this link: " + link + "</p>";
+                                                "<p>\"" + subject + "\"</p>" +
+                                                "<p>You can access the talk by clicking " + 
+                                                "<a href=\"" + link + "\">HERE</a></p>";
   }
-  
 }
 
 /***************************************************
@@ -32,7 +32,7 @@ function Talk(title, link, subject, session) {
 function nelson() {
   var nelson = new Apostle(
     "Russell M. Nelson",
-    "Prophet and President",
+    "Prophet and President of the Church",
     "January 14, 2018"
   );
   nelson.output();
