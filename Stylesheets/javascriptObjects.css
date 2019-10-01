@@ -1,12 +1,12 @@
 .grid {
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
-  padding: 10px;
+  padding: 2px;
 }
 
 .picture {
   margin: 5px;
-  border: 1px solid #006699;
+  border: 8px solid #006699;
   text-align: center;
   width: 100px;
 }
