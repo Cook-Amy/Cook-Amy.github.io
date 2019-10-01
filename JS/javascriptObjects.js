@@ -1,19 +1,31 @@
-function Apostle(name, title, date, talk) {
+/***************************************************
+ * Define Objects
+ **************************************************/
+function Apostle(name, title, date, Talk) {
   this.name = name;
   this.title = title;
   this.date = date;
-  this.talk = talk;
+  this.Talk = Talk;
   this.output = function() {
     document.getElementById("info").innerHTML = this.name + " is a(n) " + this.title + " of the Church of Jesus Christ of Latter-Day Saints.";
   }
 }
 
+  function Talk(title, link, subject) {
+    this.title = title;
+    this.link = link;
+    this.subject = subject;
+  }
+
+/***************************************************
+ * New Apostle objects defined 
+ **************************************************/
 function nelson() {
   var nelson = new Apostle(
     "Russell M. Nelson",
     "Prophet and President",
     "January 14, 2018",
-    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/46nelson?lang=eng"
+    nelsonTalk
   );
   nelson.output();
 }
@@ -156,4 +168,15 @@ function soares() {
     "link pending"
   );
   soares.output();
+}
+
+/***************************************************
+ * New Talk objects defined 
+ **************************************************/
+function nelsonTalk() {
+  var nelsonTalk = new Talk(
+    "title pending",
+    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/46nelson?lang=eng",
+    "subject pending"
+  );
 }
