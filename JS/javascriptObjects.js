@@ -18,7 +18,7 @@ function Talk(title, link, subject) {
 function output() {
   document.getElementById("name").innerHTML = Apostle.name;
   document.getElementById("calling").innerHTML = Apostle.calling;
-  document.getElementById("date").innerHTML = Apostle.date;
+  document.getElementById("date").innerHTML = "He was sustained to this calling on " + Apostle.date + ".";
 }
 
 /***************************************************
