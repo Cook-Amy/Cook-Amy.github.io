@@ -1,19 +1,19 @@
 /***************************************************
  * Define Objects and Methods
  **************************************************/
-function Apostle(name, calling, date, Talk) {
+function Apostle(name, calling, date, talk) {
   this.name = name;
   this.calling = calling;
   this.date = date;
-  this.Talk = Talk;
+  this.talk = talk;
   this.output = function() {
     document.getElementById("name").innerHTML = name;
     document.getElementById("calling").innerHTML = calling;
     document.getElementById("date").innerHTML = "He was sustained to this calling on " + date + ".";
-    document.getElementById("talk").innerHTML = "<p>During the " + Talk.session + " session, he gave the following talk:</p>" +
+    document.getElementById("talk").innerHTML = "<p>During the " + talk.session + " session, he gave the following talk:</p>" +
                                                 "<h1>Apostle.Talk.title</h1>" +
-                                                "<p>" + Talk.subject + "</p>" +
-                                                "<p>You can access the talk by clicking on this link: " + Talk.link + "</p>";
+                                                "<p>" + talk.subject + "</p>" +
+                                                "<p>You can access the talk by clicking on this link: " + talk.link + "</p>";
   }
 }
 
