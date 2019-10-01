@@ -18,11 +18,11 @@ function Talk(title, link, subject, session) {
   this.subject = subject;
   this.session = session;
   this.output = function() {
-    document.getElementById("talk").innerHTML = "<p>During the " + session + " session of the April 2019 General Conference, he gave the following talk:</p>" +
-                                                "<h1>" + title + "</h1>" +
-                                                "<p>\"" + subject + "\"</p>" +
-                                                "<p>You can access the talk by clicking " + 
-                                                "<a href=\"" + link + "\">HERE</a></p>";
+    document.getElementById("talk").innerHTML = "<div class=\"talkInfo\">During the " + session + " session of the April 2019 General Conference, he gave the following talk:</div>" +
+                                                "<div id=\"title\">" + title + "</div>" +
+                                                "<div class=\"talkInfo\">\"" + subject + "\"</div>" +
+                                                "<div class=\"talkInfo\">You can access the talk by clicking " + 
+                                                "<a href=\"" + link + "\ target=\"_blank\">HERE</a></div>";
   }
 }
 
