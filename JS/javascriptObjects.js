@@ -6,7 +6,15 @@ function Apostle(name, calling, date, Talk) {
   this.calling = calling;
   this.date = date;
   this.Talk = Talk;
-  this.output = output();
+  this.output = function() {
+    document.getElementById("name").innerHTML = name;
+    document.getElementById("calling").innerHTML = calling;
+    document.getElementById("date").innerHTML = "He was sustained to this calling on " + date + ".";
+    document.getElementById("talk").innerHTML = "<p>During the " + Talk.session + " session, he gave the following talk:</p>" +
+                                                "<h1>Apostle.Talk.title</h1>" +
+                                                "<p>" + Talk.subject + "</p>" +
+                                                "<p>You can access the talk by clicking on this link: " + Talk.link + "</p>";
+  }
 }
 
 function Talk(title, link, subject, session) {
@@ -14,16 +22,6 @@ function Talk(title, link, subject, session) {
   this.link = link;
   this.subject = subject;
   this.session = session;
-}
-
-function output() {
-  document.getElementById("name").innerHTML = Apostle.name;
-  document.getElementById("calling").innerHTML = Apostle.calling;
-  document.getElementById("date").innerHTML = "He was sustained to this calling on " + Apostle.date + ".";
-  document.getElementById("talk").innerHTML = "<p>During the " + Apostle.Talk.session + " session, he gave the following talk:</p>" +
-                                              "<h1>Apostle.Talk.title</h1>" +
-                                              "<p>" + Apostle.Talk.subject + "</p>" +
-                                              "<p>You can access the talk by clicking on this link: " + Apostle.Talk.link + "</p>";
 }
 
 /***************************************************
