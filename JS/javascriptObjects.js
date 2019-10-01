@@ -9,16 +9,21 @@ function Apostle(name, calling, date, Talk) {
   this.output = output();
 }
 
-function Talk(title, link, subject) {
+function Talk(title, link, subject, session) {
   this.title = title;
   this.link = link;
   this.subject = subject;
+  this.session = session;
 }
 
 function output() {
   document.getElementById("name").innerHTML = Apostle.name;
   document.getElementById("calling").innerHTML = Apostle.calling;
   document.getElementById("date").innerHTML = "He was sustained to this calling on " + Apostle.date + ".";
+  document.getElementById("talk").innerHTML = "<p>During the " + Apostle.Talk.session + " session, he gave the following talk:</p>" +
+                                              "<h1>Apostle.Talk.title</h1>" +
+                                              "<p>" + Apostle.Talk.subject + "</p>" +
+                                              "<p>You can access the talk by clicking on this link: " + Apostle.Talk.link + "</p>";
 }
 
 /***************************************************
@@ -179,8 +184,9 @@ function soares() {
  **************************************************/
 function nelsonTalk() {
   var nelsonTalk = new Talk(
-    "title pending",
+    "Come, Follow Me",
     "https://www.churchofjesuschrist.org/study/general-conference/2019/04/46nelson?lang=eng",
-    "subject pending"
+    "Jesus Christ invites us to take the covenant path back home to our Heavenly Parents and be with those we love.",
+    "Sunday morning"
   );
 }
