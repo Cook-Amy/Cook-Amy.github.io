@@ -51,6 +51,12 @@
 }
 
 #title {
+  text-align: center;
   font-size: 25px;
+  font-weight: bold;
+}
+
+#talkSubject {
+  text-align: center;
   font-weight: bold;
 }

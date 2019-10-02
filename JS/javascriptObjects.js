@@ -25,7 +25,7 @@ function Talk(title, link, subject, session) {
   this.output = function() {
     document.getElementById("talk").innerHTML = "<p><div class=\"talkInfo\">During the " + session + " session of the April 2019 General Conference, he gave the following talk:</div>" +
                                                 "<div id=\"title\">" + title + "</div>" +
-                                                "<div class=\"talkInfo\">\"" + subject + "\"</div>" +
+                                                "<div id=\"talkSubject\" class=\"talkInfo\">\"" + subject + "\"</div>" +
                                                 "<div class=\"talkInfo\">You can access the talk by clicking " + 
                                                 "<a href=\"" + link + "\" target=\"_blank\">HERE</a></div></p>";
   }
