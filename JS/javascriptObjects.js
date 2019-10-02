@@ -4,11 +4,16 @@
 function Apostle(name, calling, date) {
   this.name = name;
   this.calling = calling;
-  this.date = date;
+  this.date = new Date(date);
+  this.calcTime = function() {
+    var now = new Date();
+    var diff = new Number((now.getTime() - this.date.getTime()) / 31536000000).toFixed(0);
+    return diff;
+  }
   this.output = function() {
     document.getElementById("name").innerHTML = name;
     document.getElementById("calling").innerHTML = calling;
-    document.getElementById("date").innerHTML = "He was sustained to this calling on " + date + ".";
+    document.getElementById("date").innerHTML = "He was sustained to this calling on " + date + ", which was " + calcTime() + " years ago.";
   }
 }
 
