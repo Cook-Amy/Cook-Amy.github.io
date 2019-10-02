@@ -5,15 +5,15 @@ function Apostle(name, calling, date) {
   this.name = name;
   this.calling = calling;
   this.date = new Date(date);
-  this.calcTime = function() {
-    var now = new Date();
-    var diff = new Number((now.getTime() - this.date.getTime()) / 31536000000).toFixed(0);
-    return diff;
-  }
-  this.output = function() {
+  // this.calcTime = function() {
+  //   var now = new Date();
+  //   var diff = ((now.getTime() - this.date.getTime()) / 31536000000).toFixed(0);
+  //   return diff;
+  // }
+  this.output = function(yr) {
     document.getElementById("name").innerHTML = name;
     document.getElementById("calling").innerHTML = calling;
-    document.getElementById("date").innerHTML = "He was sustained to this calling on " + date + ", which was " + calcTime() + " years ago.";
+    document.getElementById("date").innerHTML = "He was sustained to this calling on " + date + ", which was " + yr + " years ago.";
   }
 }
 
@@ -31,6 +31,12 @@ function Talk(title, link, subject, session) {
   }
 }
 
+function calcTime(date) {
+    var now = new Date();
+    var diff = ((now.getTime() - date.getTime()) / 31536000000).toFixed(0);
+    return diff;
+}
+
 /***************************************************
  * New Apostle objects defined 
  **************************************************/
@@ -40,7 +46,8 @@ function nelson() {
     "Prophet and President of the Church",
     "January 14, 2018"
   );
-  nelson.output();
+  var yr = calcTime(nelson.date);
+  nelson.output(yr);
   nelsonTalk();
 }
 
