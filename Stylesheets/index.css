@@ -41,3 +41,15 @@ h1 {
   width: 100%;
   text-decoration: none;
 }
+
+.skilled {
+  background-color: green;
+}
+
+.working {
+  background-color: yellow;
+}
+
+.basic {
+  background-color: red;
+}
