@@ -22,7 +22,7 @@ function Talk(title, link, subject, session) {
                                                 "<div id=\"title\">" + title + "</div>" +
                                                 "<div class=\"talkInfo\">\"" + subject + "\"</div>" +
                                                 "<div class=\"talkInfo\">You can access the talk by clicking " + 
-                                                "<a href=\"" + link + "\ target=\"_blank\">HERE</a></div>";
+                                                "<a href=\"" + link + "\" target=\"_blank\">HERE</a></div>";
   }
 }
 
@@ -76,7 +76,7 @@ function holland() {
     "June 23, 1994",
     "link pending"
   );
-  holland.output;
+  holland.output();
 }
 
 function uchtdorf() {
@@ -187,7 +187,147 @@ function nelsonTalk() {
     "Come, Follow Me",
     "https://www.churchofjesuschrist.org/study/general-conference/2019/04/46nelson?lang=eng",
     "Jesus Christ invites us to take the covenant path back home to our Heavenly Parents and be with those we love.",
-    "Sunday morning"
+    "Sunday Morning"
   );
   nelsonTalk.output();
+}
+
+function oaksTalk() {
+  var oaksTalk = new Talk(
+    "Cleansed By Repentance",
+    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/51oaks?lang=eng",
+    "Because of God’s plan and the Atonement of Jesus Christ, we can be cleansed by the process of repentance.",
+    "Sunday Afternoon"
+  );
+  oaksTalk.output();
+}
+
+function eyringTalk() {
+  var eyringTalk = new Talk(
+    "A Home Where the Spirit of the Lord Dwells",
+    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/16eyring?lang=eng",
+    "You will find some of your greatest joys in your efforts to make your home a place of faith in the Lord Jesus Christ and a place that is permeated with love.",
+    "Saturday Morning"
+  );
+  eyringTalk.output();
+}
+
+function ballardTalk() {
+  var ballardTalk = new Talk(
+    "The True, Pure, and Simple Gospel of Jesus Christ",
+    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/23ballard?lang=eng",
+    "Loving God and loving our neighbors is the doctrinal foundation of ministering; home-centered, Church-supported learning; Sabbath-day spiritual worship; and the work of salvation.",
+    "Saturday Afternoon"
+  );
+  ballardTalk.output();
+}
+
+function holland() {
+  var hollandTalk = new Talk(
+    "Behold the Lamb of God",
+    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/28holland?lang=eng",
+    "Our modified Sunday service is to emphasize the sacrament of the Lord’s Supper as the sacred, acknowledged focal point of our weekly worship experience.",
+    "Saturday Afternoon"
+  );
+  hollandTalk.output();
+}
+
+function uchtdorfTalk() {
+  var uchtdorfTalk = new Talk(
+    "Missionary Work: Sharing What is in Your Heart",
+    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/14uchtdorf?lang=eng",
+    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/14uchtdorf?lang=eng",
+    "Saturday Morning"
+  );
+  uchtdorfTalk.output();
+}
+
+function bednarTalk() {
+  var bednarTalk = new Talk(
+    "Prepared to Obtain Every Needful Thing",
+    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/54bednar?lang=eng",
+    "Blessings will come as we strive to fulfill our individual responsibility to learn and love the restored gospel of Jesus Christ.",
+    "Sunday Afternoon"
+  );
+  bednarTalk.output();
+}
+
+function cookTalk() {
+  var cookTalk = new Talk(
+    "Great Love for Our Father's Children",
+    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/43cook?lang=eng",
+    "Love is the primary attribute and motive for the spiritual purposes we were charged to undertake by our beloved prophet.",
+    "Sunday Morning"
+  );
+  cookTalk.output();
+}
+
+function christoffersonTalk() {
+  var christoffersonTalk = new Talk(
+    "Preparing for the Lord's Return",
+    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/44christofferson?lang=eng",
+    "The Church of Jesus Christ of Latter-day Saints is uniquely empowered and commissioned to accomplish the necessary preparations for the Lord’s Second Coming.",
+    "Sunday Morning"
+  );
+  christoffersonTalk.output();
+}
+
+function andersenTalk() {
+  var andersenTalk = new Talk(
+    "The Eye of Faith",
+    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/25andersen?lang=eng",
+    "If we pick and choose what we accept in the proclamation, we cloud our eternal view, putting too much importance on our experience here and now.",
+    "Saturday Afternoon"
+  );
+  andersenTalk.output();
+}
+
+function rasbandTalk() {
+  var rasbandTalk = new Talk(
+    "Build a Fortress of Spirituality and Protection",
+    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/56rasband?lang=eng",
+    "When we live the gospel of Jesus Christ, when we draw upon the Savior’s Atonement and press forward with faith, we are fortified against the adversary.",
+    "Sunday Afternoon"
+  );
+  rasbandTalk.output();
+}
+
+function stevensonTalk() {
+  var stevensonTalk = new Talk(
+    "Your Priesthood Playbook",
+    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/31stevenson?lang=eng",
+    "Create your own playbook of how you will prove yourself as a disciple of Christ.",
+    "General Priesthood"
+  );
+  stevensonTalk.output();
+}
+
+function renlundTalk() {
+  var renlundTalk = new Talk(
+    "Abound with Blessings",
+    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/41renlund?lang=eng",
+    "Most blessings that God desires to give us require action on our part﻿—action based on our faith in Jesus Christ.",
+    "Sunday Morning"
+  );
+  renlundTalk.output();
+}
+
+function gongTalk() {
+  var gongTalk = new Talk(
+    "Good Shepherd, Lamb of God",
+    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/53gong?lang=eng",
+    "Jesus Christ calls us in His voice and His name. He seeks and gathers us. He teaches us how to minister in love.",
+    "Sunday Afternoon"
+  );
+  gongTalk.output();
+}
+
+function soaresTalk() {
+  var soaresTalk = new Talk(
+    "How Can I Understand",
+    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/11soares?lang=eng",
+    "When we earnestly, heartily, firmly, and sincerely seek to learn the gospel of Jesus Christ and teach it to one another, these teachings may transform hearts.",
+    "Saturday Morning"
+  );
+  soaresTalk.output();
 }
