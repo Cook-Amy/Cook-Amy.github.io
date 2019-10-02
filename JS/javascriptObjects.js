@@ -48,8 +48,7 @@ function oaks() {
   var oaks = new Apostle(
     "Dallin H. Oaks",
     "First Counselor in the First Presidency",
-    "January 14, 2018",
-    "link pending"
+    "January 14, 2018"
   );
   oaks.output();
 }
@@ -58,8 +57,7 @@ function eyring() {
   var eyring = new Apostle(
     "Henry B. Eyring",
     "Second Counselor in the First Presidency",
-    "January 14, 2018",
-    "link pending"
+    "January 14, 2018"
   );
   eyring.output();
 }
@@ -68,8 +66,7 @@ function ballard() {
   var ballard = new Apostle(
     "M. Russell Ballard",
     "Apostle",
-    "October 6, 1985",
-    "link pending"
+    "October 6, 1985"
   );
   ballard.output();
 }
@@ -78,8 +75,7 @@ function holland() {
   var holland = new Apostle(
     "Jeffrey R. Holland",
     "Apostle",
-    "June 23, 1994",
-    "link pending"
+    "June 23, 1994"
   );
   holland.output();
 }
@@ -88,8 +84,7 @@ function uchtdorf() {
   var uchtdorf = new Apostle(
     "Dieter F. Uchtdorf",
     "Apostle",
-    "October 2, 2004",
-    "link pending"
+    "October 2, 2004"
   );
   uchtdorf.output();
 }
@@ -98,8 +93,7 @@ function bednar() {
   var bednar = new Apostle(
     "David A. Bednar",
     "Apostle",
-    "October 7, 2004",
-    "link pending"
+    "October 7, 2004"
   );
   bednar.output();
 }
@@ -108,8 +102,7 @@ function cook() {
   var cook = new Apostle(
     "Quentin L. Cook",
     "Apostle",
-    "October 6, 2007",
-    "link pending"
+    "October 6, 2007"
   );
   cook.output();
 }
@@ -118,8 +111,7 @@ function christofferson() {
   var christofferson = new Apostle(
     "D. Todd Christofferson",
     "Apostle",
-    "April 5, 2008",
-    "link pending"
+    "April 5, 2008"
   );
   christofferson.output();
 }
@@ -128,8 +120,7 @@ function andersen() {
   var andersen = new Apostle(
     "Neil L. Andersen",
     "Apostle",
-    "April 4, 2009",
-    "link pending"
+    "April 4, 2009"
   );
   andersen.output();
 }
@@ -138,8 +129,7 @@ function rasband() {
   var rasband = new Apostle(
     "Ronald A. Rasband",
     "Apostle",
-    "October 3, 2015",
-    "link pending"
+    "October 3, 2015"
   );
   rasband.output();
 }
@@ -148,8 +138,7 @@ function stevenson() {
   var stevenson = new Apostle(
     "Gary E. Stevenson",
     "Apostle",
-    "October 3, 2015",
-    "link pending"
+    "October 3, 2015"
   );
   stevenson.output();
 }
@@ -158,8 +147,7 @@ function renlund() {
   var renlund = new Apostle(
     "Dale G. Renlund",
     "Apostle",
-    "October 3, 2015",
-    "link pending"
+    "October 3, 2015"
   );
   renlund.output();
 }
@@ -168,8 +156,7 @@ function gong() {
   var gong = new Apostle(
     "Gerrit W. Gong",
     "Apostle",
-    "March 31, 2018",
-    "link pending"
+    "March 31, 2018"
   );
   gong.output();
 }
@@ -178,8 +165,7 @@ function soares() {
   var soares = new Apostle(
     "Ulisses Soares",
     "Apostle",
-    "March 31, 2018",
-    "link pending"
+    "March 31, 2018"
   );
   soares.output();
 }
