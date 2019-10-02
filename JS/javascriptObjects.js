@@ -57,7 +57,9 @@ function oaks() {
     "First Counselor in the First Presidency",
     "January 14, 2018"
   );
-  oaks.output();
+  var yr = calcTime(oaks.date);
+  oaks.output(yr);
+  oaksTalk();
 }
 
 function eyring() {
@@ -66,7 +68,9 @@ function eyring() {
     "Second Counselor in the First Presidency",
     "January 14, 2018"
   );
-  eyring.output();
+  var yr = calcTime(eyring.date);
+  eyring.output(yr);
+  eyringTalk();
 }
 
 function ballard() {
@@ -75,7 +79,9 @@ function ballard() {
     "Apostle",
     "October 6, 1985"
   );
-  ballard.output();
+  var yr = calcTime(ballard.date);
+  ballard.output(yr);
+  ballardTalk();
 }
 
 function holland() {
@@ -84,7 +90,9 @@ function holland() {
     "Apostle",
     "June 23, 1994"
   );
-  holland.output();
+  var yr = calcTime(holland.date);
+  holland.output(yr);
+  hollandTalk();
 }
 
 function uchtdorf() {
@@ -93,7 +101,9 @@ function uchtdorf() {
     "Apostle",
     "October 2, 2004"
   );
-  uchtdorf.output();
+  var yr = calcTime(uchtdorf.date);
+  uchtdorf.output(yr);
+  uchtdorfTalk();
 }
 
 function bednar() {
@@ -102,7 +112,9 @@ function bednar() {
     "Apostle",
     "October 7, 2004"
   );
-  bednar.output();
+  var yr = calcTime(bednar.date);
+  bednar.output(yr);
+  bednarTalk();
 }
 
 function cook() {
@@ -111,7 +123,9 @@ function cook() {
     "Apostle",
     "October 6, 2007"
   );
-  cook.output();
+  var yr = calcTime(cook.date);
+  cook.output(yr);
+  cookTalk();
 }
 
 function christofferson() {
@@ -120,7 +134,9 @@ function christofferson() {
     "Apostle",
     "April 5, 2008"
   );
-  christofferson.output();
+  var yr = calcTime(christofferson.date);
+  christofferson.output(yr);
+  christoffersonTalk();
 }
 
 function andersen() {
@@ -129,7 +145,9 @@ function andersen() {
     "Apostle",
     "April 4, 2009"
   );
-  andersen.output();
+  var yr = calcTime(andersen.date);
+  andersen.output(yr);
+  andersenTalk();
 }
 
 function rasband() {
@@ -138,7 +156,9 @@ function rasband() {
     "Apostle",
     "October 3, 2015"
   );
-  rasband.output();
+  var yr = calcTime(rasband.date);
+  rasband.output(yr);
+  rasbandTalk();
 }
 
 function stevenson() {
@@ -147,7 +167,9 @@ function stevenson() {
     "Apostle",
     "October 3, 2015"
   );
-  stevenson.output();
+  var yr = calcTime(stevenson.date);
+  stevenson.output(yr);
+  stevensonTalk();
 }
 
 function renlund() {
@@ -156,7 +178,9 @@ function renlund() {
     "Apostle",
     "October 3, 2015"
   );
-  renlund.output();
+  var yr = calcTime(renlund.date);
+  renlund.output(yr);
+  renlundTalk();
 }
 
 function gong() {
@@ -165,7 +189,9 @@ function gong() {
     "Apostle",
     "March 31, 2018"
   );
-  gong.output();
+  var yr = calcTime(gong.date);
+  gong.output(yr);
+  gongTalk();
 }
 
 function soares() {
@@ -174,7 +200,9 @@ function soares() {
     "Apostle",
     "March 31, 2018"
   );
-  soares.output();
+  var yr = calcTime(soares.date);
+  soares.output(yr);
+  soaresTalk();
 }
 
 /***************************************************
