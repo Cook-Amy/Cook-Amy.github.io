@@ -262,7 +262,7 @@ function uchtdorfTalk() {
   var uchtdorfTalk = new Talk(
     "Missionary Work: Sharing What is in Your Heart",
     "https://www.churchofjesuschrist.org/study/general-conference/2019/04/14uchtdorf?lang=eng",
-    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/14uchtdorf?lang=eng",
+    "Wherever you are on this earth, there are plenty of opportunities to share the good news of the gospel of Jesus Christ.",
     "Saturday Morning"
   );
   uchtdorfTalk.output();
