@@ -248,7 +248,7 @@ function ballardTalk() {
   ballardTalk.output();
 }
 
-function holland() {
+function hollandTalk() {
   var hollandTalk = new Talk(
     "Behold the Lamb of God",
     "https://www.churchofjesuschrist.org/study/general-conference/2019/04/28holland?lang=eng",
