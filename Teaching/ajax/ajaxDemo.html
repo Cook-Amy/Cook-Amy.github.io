@@ -38,7 +38,9 @@
     var nasaRequest = new XMLHttpRequest();
     nasaRequest.onreadystatechange = function() {
       if(this.readyState == 4 && this.status == 200) {
-        formatPicture(this.responseText);
+        // document.getElementById("nasaPic").innerHTML = this.responseText;
+        var jsonResp = JSON.parse(this.responseText);
+        formatPicture(jsonResp);
       }
     };
     nasaRequest.open("GET", 
@@ -47,11 +49,45 @@
     nasaRequest.send();
   }
 
-  function formatPicture(text) {
-    document.getElementById("nasaPic").innerHTML = text;
+  function formatPicture(response) {
+    var myString =  "<h1>" + response.title + "</h1>" +
+                    "<img src=\"" + response.url + "\">";
+    document.getElementById("nasaPic").innerHTML = myString;
   }
-
+  
   </script>
 </body>
 
 </html>
+
+
+
+
+
+
+<p>Now let's try something fun. Let's get NASA's picture of the day.</p>
+<button id="apiBtn" onclick="getNasaPic()">Get Picture</button>
+<div id="nasaPic"></div>
+
+<script>
+  function getNasaPic() {
+    var nasaRequest = new XMLHttpRequest();
+    nasaRequest.onreadystatechange = function() {
+      if(this.readyState == 4 && this.status == 200) {
+        // document.getElementById("nasaPic").innerHTML = this.responseText;
+        var jsonResp = JSON.parse(this.responseText);
+        formatPicture(jsonResp);
+      }
+    };
+    nasaRequest.open("GET", 
+      "https://api.nasa.gov/planetary/apod?api_key=BBrVMqBlbbRlGVKuh2SRO1LWdHe6f7iccCPFTDQD", 
+       true);
+    nasaRequest.send();
+  }
+
+  function formatPicture(response) {
+    var myString =  "<h1>" + response.title + "</h1>" +
+                    "<img src=\"" + response.url + "\">";
+    document.getElementById("nasaPic").innerHTML = myString;
+  }
+</script>
