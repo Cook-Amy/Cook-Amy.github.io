@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AJAX Demo</title>
+  <link rel="stylesheet" type="text/css" href="ajaxDemo.css" />
+</head>
+
+<body>
+  <div id="header">AJAX Demo</div>
+
+  <div>
+    <p>Let's get a file from my local computer</p>
+    <button id="localBtn" onclick="getFile()">Get File</button>
+    <div id="fileInfo"></div>
+  </div>
+
+  <div>
+    <p>Now let's try something fun. Let's get NASA's picture of the day.</p>
+    <button id="apiBtn" onclick="getNasaPic()">Get Picture</button>
+    <div id="nasaPic"></div>
+  </div>
+
+  <script>
+  function getFile() {
+    /******** local file AJAX request ********/
+    var fileRequest = new XMLHttpRequest();
+    fileRequest.onreadystatechange = function() {
+      if(this.readyState == 4 && this.status == 200) {
+        document.getElementById("fileInfo").innerHTML = this.responseText;
+      }
+    };
+    fileRequest.open("GET", "myText.txt", true);
+    fileRequest.send();
+  }
+
+  /******** NASA API AJAX request ********/
+  function getNasaPic() {
+    var nasaRequest = new XMLHttpRequest();
+    nasaRequest.onreadystatechange = function() {
+      if(this.readyState == 4 && this.status == 200) {
+        formatPicture(this.responseText);
+      }
+    };
+    nasaRequest.open("GET", 
+                    "https://api.nasa.gov/planetary/apod?api_key=BBrVMqBlbbRlGVKuh2SRO1LWdHe6f7iccCPFTDQD", 
+                    true);
+    nasaRequest.send();
+  }
+
+  function formatPicture(text) {
+    document.getElementById("nasaPic").innerHTML = text;
+  }
+
+  </script>
+</body>
+
+</html>
