@@ -1,6 +1,6 @@
 * {
   font-family: 'Courier New', Courier, monospace;
-  background-color: #ecb3ff;
+  background-color: #f2ccff;
   text-align: center;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .btn {
-    background-color: black;
+    background-color: #39004d;
     border: none;
     color: white;
     padding: 8px 10px;
@@ -27,5 +27,6 @@
 #fileInfo {
   font-size: 20px;
   white-space: pre;
-  min-height: 50px;
+  min-height: 100px;
+  padding: 20px;
 }
