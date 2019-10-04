@@ -8,29 +8,31 @@
 <body>
 <div id="header">Manipulating CSS Properties using JavaScript</div>
 
-<div class="changeDiv" id="changeFont" onclick="changeFont()">
-  <h2 class="textDiv" id="fontText">Change the Font</h2>
-</div>
-<div class="changeDiv" id="changeColor" onclick="changeColor()">
-  <h2 class="textDiv" id="colorText">Change the Color</h2>
-</div>
-<div class="changeDiv" id="changeWidth" onclick="changeWidth()">
-  <h2 class="textDiv">Change the Width</h2>
-</div>
-<div class="changeDiv" id="changeRadius" onclick="changeRadius()">
-  <h2 class="textDiv">Change the Radius</h2>
-</div>
-<div class="changeDiv" id="changeBackgroundColor" onclick="changeBackgroundColor()">
-  <h2 class="textDiv">Change the Background Color</h2>
-</div>
-<div class="changeDiv" id="changeSkew" onclick="changeSkew()">
-  <h2 class="textDiv" id="skewText">Change the Skew</h2>
-</div>
-<div class="changeDiv" id="changeSize" onclick="changeSize()">
-  <h2 class="textDiv" id="sizeText">Change the Size</h2>
-</div>
-<div class="changeDiv" id="changeBorder" onclick="changeBorder()">
-  <h2 class="textDiv">Change the Border</h2>
+<div class="grid-container">
+  <div class="changeDiv" id="changeFont" onclick="changeFont()">
+    <h2 class="textDiv" id="fontText">Change the Font</h2>
+  </div>
+  <div class="changeDiv" id="changeColor" onclick="changeColor()">
+    <h2 class="textDiv" id="colorText">Change the Color</h2>
+  </div>
+  <div class="changeDiv" id="changeWidth" onclick="changeWidth()">
+    <h2 class="textDiv">Change the Width</h2>
+  </div>
+  <div class="changeDiv" id="changeRadius" onclick="changeRadius()">
+    <h2 class="textDiv">Change the Radius</h2>
+  </div>
+  <div class="changeDiv" id="changeBackgroundColor" onclick="changeBackgroundColor()">
+    <h2 class="textDiv">Change the Background Color</h2>
+  </div>
+  <div class="changeDiv" id="changeSkew" onclick="changeSkew()">
+    <h2 class="textDiv" id="skewText">Change the Skew</h2>
+  </div>
+  <div class="changeDiv" id="changeSize" onclick="changeSize()">
+    <h2 class="textDiv" id="sizeText">Change the Size</h2>
+  </div>
+  <div class="changeDiv" id="changeBorder" onclick="changeBorder()">
+    <h2 class="textDiv">Change the Border</h2>
+  </div>
 </div>
 
 <button id="changeAllText" onclick="changeText()">Add Styling</button>
@@ -120,14 +122,14 @@
   }
 
   function changeText() {
-    let textElement = document.getElementsByClassName("textDiv");
+    var textElement = document.getElementsByClassName("textDiv");
     for(var i = 0; i < textElement.length; i++) {
       textElement[i].classList.add("allText");
     }
   }
 
   function resetText() {
-    let resetText = document.getElementsByClassName("textDiv");
+    var resetText = document.getElementsByClassName("textDiv");
     for(var i = 0; i < resetText.length; i++) {
       resetText[i].classList.remove("allText");
     }
