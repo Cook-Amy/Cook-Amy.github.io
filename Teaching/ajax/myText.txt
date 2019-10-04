@@ -1,6 +1,4 @@
-Hello World!
-
-This is an AJAX demo. 
-I hope you found it helpful. 
+I hope you found this AJAX demo helpful. 
 
 Have a great day!
+

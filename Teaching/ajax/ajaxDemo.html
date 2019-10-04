@@ -7,16 +7,20 @@
 
 <body>
   <div id="header">AJAX Demo</div>
+  <hr>
 
-  <div>
-    <p>Let's get a file from my local computer</p>
-    <button id="localBtn" onclick="getFile()">Get File</button>
+  <div id="localSection">
+    <p class="intro">Let's first try a local file.</p>
+    <button class="btn" onclick="getFile()">Get File</button>
     <div id="fileInfo"></div>
   </div>
 
-  <div>
-    <p>Now let's try something fun. Let's get NASA's picture of the day.</p>
-    <button id="apiBtn" onclick="getNasaPic()">Get Picture</button>
+  <hr><hr>
+
+  <div id="nasaSection">
+    <p class="intro">Now let's try something fun.</p> 
+    <p class="intro">Get NASA's picture of the day.</p>
+    <button class="btn" onclick="getNasaPic()">Get Picture</button>
     <div id="nasaPic"></div>
   </div>
 
@@ -38,7 +42,7 @@
     var nasaRequest = new XMLHttpRequest();
     nasaRequest.onreadystatechange = function() {
       if(this.readyState == 4 && this.status == 200) {
-        // document.getElementById("nasaPic").innerHTML = this.responseText;
+        //document.getElementById("nasaPic").innerHTML = this.responseText;
         var jsonResp = JSON.parse(this.responseText);
         formatPicture(jsonResp);
       }
