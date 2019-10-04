@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CSS Properties Demo</title>
+  <link rel="stylesheet" type="text/css" href="cssProperties.css" />
+</head>
+
+<body>
+<div id="header">Manipulating CSS Properties using JavaScript</div>
+
+<div class="changeDiv" id="changeFont" onclick="changeFont()">
+  <h2 class="textDiv" id="fontText">Change the Font</h2>
+</div>
+<div class="changeDiv" id="changeColor" onclick="changeColor()">
+  <h2 class="textDiv" id="colorText">Change the Color</h2>
+</div>
+<div class="changeDiv" id="changeWidth" onclick="changeWidth()">
+  <h2 class="textDiv">Change the Width</h2>
+</div>
+<div class="changeDiv" id="changeRadius" onclick="changeRadius()">
+  <h2 class="textDiv">Change the Radius</h2>
+</div>
+<div class="changeDiv" id="changeBackgroundColor" onclick="changeBackgroundColor()">
+  <h2 class="textDiv">Change the Background Color</h2>
+</div>
+<div class="changeDiv" id="changeSkew" onclick="changeSkew()">
+  <h2 class="textDiv" id="skewText">Change the Skew</h2>
+</div>
+<div class="changeDiv" id="changeSize" onclick="changeSize()">
+  <h2 class="textDiv" id="sizeText">Change the Size</h2>
+</div>
+<div class="changeDiv" id="changeBorder" onclick="changeBorder()">
+  <h2 class="textDiv">Change the Border</h2>
+</div>
+
+<button id="changeAllText" onclick="changeText()">Add Styling</button>
+<button id="resetAllText" onclick="resetText()">Remove Styling</button>
+<button id="toggleText" onclick="toggleText()">Toggle Styling</button>
+
+<script>
+  function changeFont() {
+    //document.getElementById("changeText").style.fontFamily = "Impact, Charcoal, sans-serif"
+    var font = document.getElementById("fontText").style.fontFamily;
+    if(font.includes("Arial")) {
+      document.getElementById("fontText").style.fontFamily = "Impact, Charcoal, sans-serif";
+    }
+    else {
+      document.getElementById("fontText").style.fontFamily = "Arial, Helvetica, sans-serif";
+    }
+  }
+
+  function changeColor() {
+    var color = document.getElementById("colorText").style.color;
+    if(color.includes("black")) {
+      document.getElementById("colorText").style.color = "red";
+    }
+    else {
+      document.getElementById("colorText").style.color = "black";
+    }
+  }
+
+  function changeWidth() {
+    var width = document.getElementById("changeWidth").style.width;
+    if(width.includes(200)) {
+      document.getElementById("changeWidth").style.width = "400px";
+    }
+    else {
+      document.getElementById("changeWidth").style.width = "200px";
+    }
+  }
+
+  function changeRadius() {
+    var radius = document.getElementById("changeRadius").style.borderRadius;
+    if(radius.includes("0")) {
+      document.getElementById("changeRadius").style.borderRadius = "99px";
+    }
+    else {
+      document.getElementById("changeRadius").style.borderRadius = "0px";
+    }
+  }
+
+  function changeBackgroundColor() {
+    var background = document.getElementById("changeBackgroundColor").style.backgroundColor;
+    if(background.includes("yellow")) {
+      document.getElementById("changeBackgroundColor").style.backgroundColor = "blue";
+    }
+    else {
+      document.getElementById("changeBackgroundColor").style.backgroundColor = "yellow";
+    }
+  }
+
+  function changeSkew() {
+    var skew = document.getElementById("changeSkew").style.transform;
+    if(skew.includes("skew(0")) {
+      document.getElementById("changeSkew").style.transform = "skew(22deg,11deg)";
+    }
+    else {
+      document.getElementById("changeSkew").style.transform = "skew(0deg,0deg)";
+    }
+  }
+
+  function changeSize() {
+    var size = document.getElementById("sizeText").style.fontSize;
+    if(size.includes("30")) {
+      document.getElementById("sizeText").style.fontSize = "5px";
+    }
+    else {
+      document.getElementById("sizeText").style.fontSize = "30px";
+    }
+  }
+
+  function changeBorder() {
+    var border = document.getElementById("changeBorder").style.border;
+    if(border.includes("0")) {
+      document.getElementById("changeBorder").style.border = "11px dashed purple";
+    }
+    else {
+      document.getElementById("changeBorder").style.border = "0px";
+    }
+  }
+
+  function changeText() {
+    let textElement = document.getElementsByClassName("textDiv");
+    for(var i = 0; i < textElement.length; i++) {
+      textElement[i].classList.add("allText");
+    }
+  }
+
+  function resetText() {
+    let resetText = document.getElementsByClassName("textDiv");
+    for(var i = 0; i < resetText.length; i++) {
+      resetText[i].classList.remove("allText");
+    }
+  }
+
+  function toggleText() {
+    var toggleText = document.getElementsByClassName("textDiv");
+    for(var i = 0; i < toggleText.length; i++) {
+      toggleText[i].classList.toggle("allText");
+    }
+  }
+
+</script>
+
+</body>
+</html>

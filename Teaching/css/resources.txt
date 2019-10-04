@@ -1,0 +1,2 @@
+https://www.kirupa.com/html5/setting_css_styles_using_javascript.htm
+  This has some good information about restyling a group of elements with the same class name or same HTML tag

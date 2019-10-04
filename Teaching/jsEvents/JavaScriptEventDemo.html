@@ -63,7 +63,7 @@
 
     <div class="grid-item">
       <!-- onload video -->
-      <video src="movie1.mp4" type="video/mp4" onload="function7()" width="141.75px" height="252px" controls></video>
+      <video src="movie1.mp4" type="video/mp4" onpause="function7()" onplay="function10()" width="141.75px" height="252px" controls></video>
       <div id="videoMsg">Message: <span id="videoLoadedMsg"></span></div>
     </div>
 
@@ -137,7 +137,11 @@
   }
 
   function function7() {
-    document.getElementById("videoLoadedMsg").innerHTML = "The video is ready to play.";
+    document.getElementById("videoLoadedMsg").innerHTML = "The video is paused.";
+  }
+
+  function function10() {
+    document.getElementById("videoLoadedMsg").innerHTML = "The video is playing.";
   }
 
   /*********** FocusEvents ***********/
