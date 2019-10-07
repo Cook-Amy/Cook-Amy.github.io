@@ -135,12 +135,20 @@
   padding: 8px;
 }
 
+h2.touchHeading {
+  color: darkgoldenrod;
+}
+
 #touchDemo1 {
   white-space: pre;
   min-height: 50px;
+  font-size: 30px;
+  color: green;
 }
 
 #touchDemo2 {
   white-space: pre;
   min-height: 50px;
+  font-size: 30px;
+  color: green;
 }
