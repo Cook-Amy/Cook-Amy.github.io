@@ -1,0 +1,19 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.grid-item {
+  border: 10px solid #666666;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+#orSpace {
+  border: none;
+}
+

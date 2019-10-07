@@ -42,81 +42,81 @@
 <script>
   function changeFont() {
     var font = document.getElementById("fontText").style.fontFamily;
-    if(font.includes("Arial")) {
-      document.getElementById("fontText").style.fontFamily = "Impact, Charcoal, sans-serif";
+    if(font.includes("Impact")) {
+      document.getElementById("fontText").style.fontFamily = "Arial, Helvetica, sans-serif";
     }
     else {
-      document.getElementById("fontText").style.fontFamily = "Arial, Helvetica, sans-serif";
+      document.getElementById("fontText").style.fontFamily = "Impact, Charcoal, sans-serif";
     }
   }
 
   function changeColor() {
     var color = document.getElementById("colorText").style.color;
-    if(color.includes("black")) {
-      document.getElementById("colorText").style.color = "red";
+    if(color.includes("red")) {
+      document.getElementById("colorText").style.color = "black";
     }
     else {
-      document.getElementById("colorText").style.color = "black";
+      document.getElementById("colorText").style.color = "red";
     }
   }
 
   function changeWidth() {
     var width = document.getElementById("changeWidth").style.width;
-    if(width.includes(200)) {
-      document.getElementById("changeWidth").style.width = "400px";
+    if(width.includes(400)) {
+      document.getElementById("changeWidth").style.width = "200px";
     }
     else {
-      document.getElementById("changeWidth").style.width = "200px";
+      document.getElementById("changeWidth").style.width = "400px";
     }
   }
 
   function changeRadius() {
     var radius = document.getElementById("changeRadius").style.borderRadius;
-    if(radius.includes("0")) {
-      document.getElementById("changeRadius").style.borderRadius = "99px";
+    if(radius.includes("99")) {
+      document.getElementById("changeRadius").style.borderRadius = "0px";
     }
     else {
-      document.getElementById("changeRadius").style.borderRadius = "0px";
+      document.getElementById("changeRadius").style.borderRadius = "99px";
     }
   }
 
   function changeBackgroundColor() {
     var background = document.getElementById("changeBackgroundColor").style.backgroundColor;
-    if(background.includes("yellow")) {
-      document.getElementById("changeBackgroundColor").style.backgroundColor = "blue";
+    if(background.includes("blue")) {
+      document.getElementById("changeBackgroundColor").style.backgroundColor = "yellow";      
     }
     else {
-      document.getElementById("changeBackgroundColor").style.backgroundColor = "yellow";
+      document.getElementById("changeBackgroundColor").style.backgroundColor = "blue";
     }
   }
 
   function changeSkew() {
     var skew = document.getElementById("changeSkew").style.transform;
-    if(skew.includes("skew(0")) {
-      document.getElementById("changeSkew").style.transform = "skew(22deg,11deg)";
+    if(skew.includes("skew(2")) {
+      document.getElementById("changeSkew").style.transform = "skew(0deg,0deg)";
     }
     else {
-      document.getElementById("changeSkew").style.transform = "skew(0deg,0deg)";
+      document.getElementById("changeSkew").style.transform = "skew(22deg,11deg)";
     }
   }
 
   function changeSize() {
     var size = document.getElementById("sizeText").style.fontSize;
-    if(size.includes("30")) {
-      document.getElementById("sizeText").style.fontSize = "5px";
+    if(size.includes("5")) {
+      document.getElementById("sizeText").style.fontSize = "30px";
     }
     else {
-      document.getElementById("sizeText").style.fontSize = "30px";
+      document.getElementById("sizeText").style.fontSize = "5px";
     }
   }
 
   function changeBorder() {
     var border = document.getElementById("changeBorder").style.border;
-    if(border.includes("0")) {
-      document.getElementById("changeBorder").style.border = "11px dashed purple";
+    if(border.includes("11")) {
+      document.getElementById("changeBorder").style.border = "0px";
     }
     else {
-      document.getElementById("changeBorder").style.border = "0px";
+      document.getElementById("changeBorder").style.border = "11px dashed purple";
     }
   }
 
