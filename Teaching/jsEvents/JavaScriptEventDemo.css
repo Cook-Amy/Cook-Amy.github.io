@@ -37,6 +37,21 @@
   text-align: center;
 }
 
+.touch-grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: #666666;
+  padding: 10px;
+}
+
+.touch-grid-item {
+  background-color: black;
+  border: 10px solid #666666;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
 #btns {
   padding: 25px;
 }
@@ -118,4 +133,14 @@
 .focusInput {
   font-size: 18px;
   padding: 8px;
+}
+
+#touchDemo1 {
+  white-space: pre;
+  min-height: 50px;
+}
+
+#touchDemo2 {
+  white-space: pre;
+  min-height: 50px;
 }

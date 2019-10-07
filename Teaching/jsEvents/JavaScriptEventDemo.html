@@ -83,6 +83,23 @@
       </div>
     </div>
 
+    <!-- touch events -->
+    <div class="touch-grid-container">
+      <!-- ontouchstart -->
+      <div class="touch-grid-item">
+        <h2 class="touchHeading"><stong>Touch Devices Only</stong></h2>
+        <p ontouchstart="function11()">Touch this paragraph to trigger a function that will write "Hello World".</p>
+        <div id="touchDemo1"></div>
+      </div>
+
+      <!-- ontouchmove -->
+      <div class="touch-grid-item">
+        <h2><stong>Touch Devices Only</stong></h2>
+        <p ontouchmove="function12()">Touch this paragraph, and move your finger to trigger a function that will display the x and y coordinates of the touch, according to the document.</p>
+        <div id="touchDemo2"></div>
+      </div>
+    </div>
+
 
   <script>
   /*********** MouseEvents ***********/
@@ -105,11 +122,11 @@
 
     function function3() {
       var c1 = document.getElementById("mouseOver").style.backgroundColor;
-      if(c1 == "green") {
-        document.getElementById("mouseOver").style.backgroundColor = "blue";
+      if(c1 == "blue") {
+        document.getElementById("mouseOver").style.backgroundColor = "green";
       }
       else {
-        document.getElementById("mouseOver").style.backgroundColor = "green";
+        document.getElementById("mouseOver").style.backgroundColor = "blue";
       }
     }
 
@@ -164,6 +181,16 @@
       document.getElementById("input2").style.borderColor = "white";
       document.getElementById("focusMsg2").innerHTML = "That's a great choice!"
     }
+  }
+
+  function function11() {
+    document.getElementById("touchDemo1").innerHTML = "Hello World";
+  }
+
+  function function12() {
+    var x = event.touches[0].clientX;
+    var y = event.touches[0].clientY;
+    document.getElementById("touchDem2").innerHTML = x + ", " + y;
   }
   </script>
 </body>
