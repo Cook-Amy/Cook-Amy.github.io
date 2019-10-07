@@ -74,13 +74,15 @@
 
     <div class="grid-item" id="chooseName">
       <p>Choose A Name</p>
-      <select name="name">
-        <option value="bruce">Bruce</option>
-        <option value="courtney">Courtney</option>
-        <option value="dylan">Dylan</option>
-        <option value="travis">Travis</option>
+      <select id="name" name="name">
+        <option value="chooseName" selected disabled>Choose A Name</option>
+        <option value="bruce">Bruce Cook</option>
+        <option value="courtney">Courtney Cook</option>
+        <option value="dylan">Dylan Cook</option>
+        <option value="travis">Travis Cook</option>
       </select>
       <button id="Select" onclick="chooseName()">Select</button>
+      <div id="nameError"></div>
     </div> <!-- grid-item -->
   
 

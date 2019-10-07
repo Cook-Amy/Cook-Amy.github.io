@@ -47,7 +47,7 @@ person.info.push({
 });
 
 /*****************************************************
- * Select button functions
+ * Select Date button
 ******************************************************/
 function chooseDate() {
   var results = "<table id='table'><tr><th>Date</th><th>Name</th></tr>";
@@ -90,7 +90,8 @@ function chooseDate() {
   
         // get results if all dates are selected
         if(dayNum == 0) {
-          results += "<tr><td>" + birthday + "</td><td>" + name + "</td></tr>";
+          results += "<tr><td>" + birthday + "</td>" + 
+                    "<td onclick=\"displayPerson(\'" + name + "\')\">" + name + "</td></tr>";
           count++;
         }
   
@@ -105,18 +106,97 @@ function chooseDate() {
     }
     results += "</table>";
   
-    // if(count == 0) {
-    //   results = "No birthdays are listed for your selection.";
-    // }
+    // no results found
+    if(count == 0) {
+      results = "No birthdays are listed for your selection.";
+    }
   
+    // display results
     document.getElementById("resultDate").innerHTML = results;
   }
 
+  // if month or date are not selected, show error message
   else {
     document.getElementById("dateError").innerHTML = errorMsg;
   }
 }
 
+/*****************************************************
+ * Select Name button
+******************************************************/
 function chooseName() {
+  var errorMsg = ""
 
+  // get name selection
+  var selName = document.getElementById("name");
+  var optName = selName.options[selName.selectedIndex];
+  var nameValue = selName.value;
+  var nameText = optName.text;
+
+  if(nameValue == "chooseName") {
+    errorMsg = "Please select a name."; 
+    document.getElementById("nameError").innerHTML = errorMsg;
+  }
+
+  else {
+    document.getElementById("nameError").innerHTML = "";
+    displayPerson(nameText);
+  }
+}
+
+/*****************************************************
+ * Display a person's details
+******************************************************/
+function displayPerson(input) {
+  var result = "";
+
+  // get today's date to calculate age
+  var today = new Date();
+  var yyyy = today.getFullYear();
+  var mm = today.getMonth() + 1;
+  var dd = today.getDate();
+
+  result = "<p>Today: " + mm + "-" + dd + "-" + yyyy + "</p>";
+
+  // find the person's info
+  for(var i = 0; i < person.info.length; i++) {
+    if(person.info[i].first + " " + person.info[i].last == input) {
+      // save all their info to variables for easier use
+      var name = person.info[i].first + " " + person.info[i].last;
+      var birthday = person.info[i].birthday.month + "-" + person.info[i].birthday.day + "-" + person.info[i].birthday.year;
+      var age = yyyy - person.info[i].birthday.year;
+      if(mm == person.info[i].birthday.month){
+        if (dd < person.info[i].birthday.day) {
+          age -=1;
+        }
+      }
+      else if(mm < person.info[i].birthday.month) {
+        age -=1;
+      }
+      var ideas = [];
+      for(var j = 0; j < person.info[i].ideas.length; j++) {
+        ideas.push(person.info[i].ideas[j]);
+      }
+
+      // format display
+      result += "<p>Name: " + name + "</p>" +
+                "<p>Birthday: " + birthday + "<p>" +
+                "<p>Age: " + age + "</p>" +
+                "<p>Gift Ideas: ";
+      
+      for(var m = 0; m < ideas.length; m++) {
+        if(m > 0) {
+          result += ", ";
+        }
+        result += ideas[m];
+      }
+
+      result += "</p>";
+    }
+
+    // display the results
+    document.getElementById("resultName").innerHTML = result;
+  }
+  
+  
 }
