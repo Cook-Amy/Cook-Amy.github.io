@@ -51,6 +51,7 @@ person.info.push({
 ******************************************************/
 function chooseDate() {
   var results = "<table id='table'><tr><th>Date</th><th>Name</th></tr>";
+  var errorMsg = ""
 
   // get month selection
   var selMonth = document.getElementById("month");
@@ -62,40 +63,58 @@ function chooseDate() {
   var selDate = document.getElementById("day");
   var dayNum = selDate.value;
 
-  var count = 0;
+  var err = 0;
+  // check if user selected a month
+  if(monthNum == "month") {
+    errorMsg = "Please select a month.";
+    err++;
+  }
 
-  // find matched objects
-  for(var i = 0; i < person.info.length; i++) {
-    var birthday = person.info[i].birthday.day;
-    var name = person.info[i].first + " " + person.info[i].last;
+  // check if user selected a date
+  if(dayNum == "date") {
+    errorMsg += " Please select a date.";
+    err++;
+  }
 
-    // get results that match selected month
-    if(person.info[i].birthday.month == monthNum) {
-
-      // get results if all dates are selected
-      if(dayNum == 0) {
-        results += "<tr><td>" + birthday + "</td><td>" + name + "</td></tr>";
-        count++;
-      }
-
-      // get results for specific date selected
-      else {
-        if(person.info[i].birthday.day == dayNum) {
+  // if month and date are selected, continue
+  if(err == 0) {
+    document.getElementById("dateError").innerHTML = "";
+    var count = 0;
+    // find matched objects
+    for(var i = 0; i < person.info.length; i++) {
+      var birthday = person.info[i].birthday.day;
+      var name = person.info[i].first + " " + person.info[i].last;
+  
+      // get results that match selected month
+      if(person.info[i].birthday.month == monthNum) {
+  
+        // get results if all dates are selected
+        if(dayNum == 0) {
           results += "<tr><td>" + birthday + "</td><td>" + name + "</td></tr>";
           count++;
         }
+  
+        // get results for specific date selected
+        else {
+          if(person.info[i].birthday.day == dayNum) {
+            results += "<tr><td>" + birthday + "</td><td>" + name + "</td></tr>";
+            count++;
+          }
+        }
       }
     }
+    results += "</table>";
+  
+    // if(count == 0) {
+    //   results = "No birthdays are listed for your selection.";
+    // }
+  
+    document.getElementById("resultDate").innerHTML = results;
   }
-  results += "</table>";
 
-  if(count == 0) {
-    results = "No birthdays are listed for your selection.";
+  else {
+    document.getElementById("dateError").innerHTML = errorMsg;
   }
-
-  document.getElementById("resultDate").innerHTML = results;
-
-
 }
 
 function chooseName() {
