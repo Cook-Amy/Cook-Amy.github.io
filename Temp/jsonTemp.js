@@ -62,24 +62,36 @@ function chooseDate() {
   var selDate = document.getElementById("day");
   var dayNum = selDate.value;
 
+  var count = 0;
+
   // find matched objects
   for(var i = 0; i < person.info.length; i++) {
     var birthday = person.info[i].birthday.day;
     var name = person.info[i].first + " " + person.info[i].last;
+
+    // get results that match selected month
     if(person.info[i].birthday.month == monthNum) {
+
+      // get results if all dates are selected
       if(dayNum == 0) {
         results += "<tr><td>" + birthday + "</td><td>" + name + "</td></tr>";
+        count++;
       }
+
+      // get results for specific date selected
       else {
         if(person.info[i].birthday.day == dayNum) {
           results += "<tr><td>" + birthday + "</td><td>" + name + "</td></tr>";
+          count++;
         }
       }
     }
-
-
   }
   results += "</table>";
+
+  if(count == 0) {
+    results = "No birthdays are listed for your selection.";
+  }
 
   document.getElementById("resultDate").innerHTML = results;
 
