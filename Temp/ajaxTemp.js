@@ -1,0 +1,142 @@
+  // all the info we're looking for
+  var name = "";
+  var population = "";
+  var capital = "";
+  var borders = [];
+  var languages = [];
+  var currencies = [];
+  var region = "";
+
+/***************************************************************
+ * Get user's input
+ * Send AJAX request
+****************************************************************/
+function getInfo() {
+  var input = document.getElementById("userInput").value;
+  clearInfo();
+  if(input == "") {
+    document.getElementById("errorMsg").innerHTML = "What country would you like to search for?";
+    document.getElementById("errorMsg").style.color = "red";
+  }
+  else {
+    document.getElementById("errorMsg").innerHTML = "";
+
+    var countryRequest = new XMLHttpRequest();
+    countryRequest.onreadystatechange = function() {
+      if(this.readyState == 4 && this.status == 200) {
+        //document.getElementById("zipInfo").innerHTML = this.responseText;
+        var jsonResp = JSON.parse(this.responseText);
+        findCountryInfo(jsonResp, input);
+      }
+    };
+    countryRequest.open("GET", 
+                    "https://ajayakv-rest-countries-v1.p.rapidapi.com/rest/v1/all", 
+                    true);
+    countryRequest.setRequestHeader("x-rapidapi-host", "ajayakv-rest-countries-v1.p.rapidapi.com");
+    countryRequest.setRequestHeader("x-rapidapi-key", "ee4b7e9cd4msh3784326c778d050p14e05bjsn5708de186e98");
+    countryRequest.send();
+  }
+}
+
+/***************************************************************
+ * Find the country info that matches user's input
+****************************************************************/
+function findCountryInfo(jsonResp, input) {
+  country = changeCase(input);
+
+  // loop through response JSON
+  for(var i = 0; i < jsonResp.length; i++) {
+    var respName = jsonResp[i].name;
+    for(var j = 0; j < jsonResp[i].altSpellings.length; j++) {
+      var respAltName = jsonResp[i].altSpellings[j];
+      // check if input matches country name or alternate name
+      if((respName == input) || (respAltName == input)) {
+        // get single variables
+        name = respName;
+        population = jsonResp[i].population;
+        capital = jsonResp[i].capital;
+        region = jsonResp[i].region;
+
+        // get border countries
+        for(var b = 0; b < jsonResp[i].borders.length; b++) {
+          borders.push(jsonResp[i].borders[b]);
+        }
+
+        // get languages
+        for(var l = 0; l < jsonResp[i].languages.length; l++) {
+          languages.push(jsonResp[i].languages[l]);
+        }
+
+        // get currencies
+        for(var c = 0; c < jsonResp[i].currencies.length; c++) {
+          currencies.push(jsonResp[i].currencies[c]);
+        }
+
+      }
+    }
+  }
+  formatDisplay();
+}
+
+/***************************************************************
+ * Change all names to lower case so case won't matter during search
+****************************************************************/
+function changeCase(input) {
+
+}
+
+/***************************************************************
+ * Format the results and display to the screen
+****************************************************************/
+function formatDisplay() {
+  document.getElementById("listName").innerHTML = name;
+  document.getElementById("listRegion").innerHTML = region;
+  document.getElementById("listPopulation").innerHTML = population;
+  document.getElementById("listCapital").innerHTML = capital;
+
+  var dispLanguages = "";
+  for(var l = 0; l < languages.length; l++) {
+    if(l > 0)
+      dispLanguages += ", ";
+    dispLanguages += languages[l];
+  }
+  document.getElementById("listLanguages").innerHTML = dispLanguages;
+
+  var dispCurrencies = "";
+  for(var c = 0; c < currencies.length; c++) {
+    if(c > 0)
+      dispCurrencies += ", ";
+    dispCurrencies += currencies[c];
+  }
+  document.getElementById("listCurrencies").innerHTML = dispCurrencies;
+
+  var dispBorders = "";
+  for(var b = 0; b < borders.length; b++) {
+    if(b > 0)
+      dispBorders += ", ";
+    dispBorders += borders[b];
+  }
+  document.getElementById("listBorders").innerHTML = dispBorders;
+}
+
+/***************************************************************
+ * Clear all results from variables and screen. 
+****************************************************************/
+function clearInfo() {
+  name = "";
+  population = "";
+  capital = "";
+  borders = [];
+  languages = [];
+  currencies = [];
+  region = "";
+
+  document.getElementById("userInput").value = "";
+  document.getElementById("listName").innerHTML = "";
+  document.getElementById("listRegion").innerHTML = "";
+  document.getElementById("listPopulation").innerHTML = "";
+  document.getElementById("listCapital").innerHTML = "";
+  document.getElementById("listLanguages").innerHTML = "";
+  document.getElementById("listCurrencies").innerHTML = "";
+  document.getElementById("listBorders").innerHTML = "";
+}
