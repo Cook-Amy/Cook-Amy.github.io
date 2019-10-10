@@ -1,10 +1,10 @@
 @font-face {
   font-family: headerFont;
-  src: url(curlz.TTF);
+  src: url(/Other/curlz.TTF);
 }
 
 body {
-  background-image: url("balloon-background.jpg");
+  background-image: url("/Pics/jsonPics/balloon-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
