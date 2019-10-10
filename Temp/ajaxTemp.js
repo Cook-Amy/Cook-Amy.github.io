@@ -42,8 +42,8 @@ function getInfo() {
     var languageRequest = new XMLHttpRequest();
     languageRequest.onreadystatechange = function() {
       if(this.readyState == 4 && this.status == 200) {
-        document.getElementById("temp").innerHTML = this.responseText;
         languageJSON = JSON.parse(this.responseText);
+        document.getElementById("temp").innerHTML = languageJSON["ar"];
       }
     };
     languageRequest.open("GET", "languageCodes.txt", true);
