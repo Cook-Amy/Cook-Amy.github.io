@@ -16,8 +16,10 @@ body {
 }
 
 #homeButton{
-  text-align: right;
-  margin-right: 50px;
+  position: absolute;
+  z-index: -1;
+  margin-left: 25px;
+  margin-top: 10px;
 }
 
 .grid-container {
