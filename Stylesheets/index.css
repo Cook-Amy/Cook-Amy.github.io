@@ -66,5 +66,6 @@ h1 {
 }
 
 .profComment {
-  font-weight: bold;
+  font-weight: bolder;
+  color: #303C6C;
 }
