@@ -6,6 +6,7 @@
   var languages = [];
   var currencies = [];
   var region = "";
+  var languageJSON = {};
 
 /***************************************************************
  * Get user's input
@@ -21,6 +22,7 @@ function getInfo() {
   else {
     document.getElementById("errorMsg").innerHTML = "";
 
+    // country AJAX request
     var countryRequest = new XMLHttpRequest();
     countryRequest.onreadystatechange = function() {
       if(this.readyState == 4 && this.status == 200) {
@@ -35,6 +37,17 @@ function getInfo() {
     countryRequest.setRequestHeader("x-rapidapi-host", "ajayakv-rest-countries-v1.p.rapidapi.com");
     countryRequest.setRequestHeader("x-rapidapi-key", "ee4b7e9cd4msh3784326c778d050p14e05bjsn5708de186e98");
     countryRequest.send();
+
+    // language AJAX request
+    var languageRequest = new XMLHttpRequest();
+    languageRequest.onreadystatechange = function() {
+      if(this.readyState == 4 && this.status == 200) {
+        document.getElementById("temp").innerHTML = this.responseText;
+        languageJSON = JSON.parse(this.responseText);
+      }
+    };
+    languageRequest.open("GET", "languageCodes.txt", true);
+    languageRequest.send();
   }
 }
 
@@ -47,6 +60,7 @@ function findCountryInfo(jsonResp, input) {
   // loop through response JSON
   for(var i = 0; i < jsonResp.length; i++) {
     var respName = jsonResp[i].name;
+
     for(var j = 0; j < jsonResp[i].altSpellings.length; j++) {
       var respAltName = jsonResp[i].altSpellings[j];
       // check if input matches country name or alternate name
@@ -71,11 +85,11 @@ function findCountryInfo(jsonResp, input) {
         for(var c = 0; c < jsonResp[i].currencies.length; c++) {
           currencies.push(jsonResp[i].currencies[c]);
         }
-
+        break;
       }
     }
   }
-  formatDisplay();
+  formatDisplay(jsonResp);
 }
 
 /***************************************************************
@@ -88,33 +102,43 @@ function changeCase(input) {
 /***************************************************************
  * Format the results and display to the screen
 ****************************************************************/
-function formatDisplay() {
+function formatDisplay(jsonResp) {
+  // display single variables
   document.getElementById("listName").innerHTML = name;
   document.getElementById("listRegion").innerHTML = region;
   document.getElementById("listPopulation").innerHTML = population;
   document.getElementById("listCapital").innerHTML = capital;
 
+  // display languages
   var dispLanguages = "";
   for(var l = 0; l < languages.length; l++) {
-    if(l > 0)
+    if(l > 0) {
       dispLanguages += ", ";
-    dispLanguages += languages[l];
+    }
+    dispLanguages += languageJSON[languages[l]];
   }
   document.getElementById("listLanguages").innerHTML = dispLanguages;
 
+  // display currencies
   var dispCurrencies = "";
   for(var c = 0; c < currencies.length; c++) {
-    if(c > 0)
+    if(c > 0) {
       dispCurrencies += ", ";
+    }
     dispCurrencies += currencies[c];
   }
   document.getElementById("listCurrencies").innerHTML = dispCurrencies;
 
+  // diplay borders
   var dispBorders = "";
   for(var b = 0; b < borders.length; b++) {
-    if(b > 0)
+    if(b > 0) {
       dispBorders += ", ";
-    dispBorders += borders[b];
+    }
+    for(var i = 0; i < jsonResp.length; i++) {
+      if(jsonResp[i].alpha3Code == borders[b])
+      dispBorders += jsonResp[i].name;
+    }
   }
   document.getElementById("listBorders").innerHTML = dispBorders;
 }
