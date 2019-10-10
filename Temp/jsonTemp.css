@@ -13,14 +13,13 @@ body {
   text-align: center;
   font-family: headerFont;
   font-size: 70px;
-   
+  overflow: auto;
 }
 
 #homeButton{
-  position: absolute;
-  z-index: -1;
   margin-left: 25px;
   margin-top: 10px;
+  float: left;
 }
 
 .grid-container {
