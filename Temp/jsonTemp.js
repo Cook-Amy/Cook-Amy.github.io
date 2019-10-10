@@ -155,7 +155,8 @@ function displayDateResults(monthNum, dayNum) {
 
   var birthdayJson = JSON.parse(birthdays);
   var count = 0;
-  var results = "<table id='table'><tr><th>Date</th><th>Name</th></tr>";
+  var results = "<div>Click on a name to see details</div>" +
+              "<table id='table'><tr><th>Date</th><th>Name</th></tr>";
 
   // find matched objects
   for(var i = 0; i < birthdayJson.person.length; i++) {

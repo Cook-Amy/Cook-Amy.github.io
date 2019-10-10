@@ -1,10 +1,10 @@
 @font-face {
   font-family: headerFont;
-  src: url(/Other/curlz.TTF);
+  src: url(curlz.TTF);
 }
 
 body {
-  background-image: url("/Pics/jsonPics/balloon-background.jpg");
+  background-image: url("balloon-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -34,19 +34,21 @@ body {
   border: 10px solid #002966;
   background-color: #0066ff;
   color: white;
-  width: 400px;
+  width: 100%;
 }
 
 #chooseName {
   border: 10px solid #004d00;
   background-color: #009900;
   color: white;
-  width: 400px;
+  width: 100%;
 }
 
 #orSpace {
   border: none;
   color: #cc3300;
+  width: 100%;
+  margin: 15px;
 }
 
 .error {
@@ -61,14 +63,14 @@ body {
 }
 
 #resultDate {
-  width: 400px;
+  width: 100%;
   background-color: white;
   border: 10px solid #002966;
   min-height: 200px;
 }
 
 #resultName {
-  width: 400px;
+  width: 100%;
   background-color: white;
   border: 10px solid #004d00;
   min-height: 200px;
