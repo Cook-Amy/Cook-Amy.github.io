@@ -206,7 +206,7 @@ function displayPerson(input) {
   var mm = today.getMonth() + 1;
   var dd = today.getDate();
 
-  result = "<p>Today: " + mm + "-" + dd + "-" + yyyy + "</p>";
+  result = "<div id=\"todayDate\">Today is " + mm + "-" + dd + "-" + yyyy + "</div>";
 
   // find the person's info
   for(var i = 0; i < birthdayJson.person.length; i++) {
@@ -229,10 +229,10 @@ function displayPerson(input) {
       }
 
       // format display
-      result += "<p>Name: " + name + "</p>" +
-                "<p>Birthday: " + birthday + "<p>" +
-                "<p>Age: " + age + "</p>" +
-                "<p>Gift Ideas: ";
+      result += "<div>Name: " + name + "</div>" +
+                "<div>Birthday: " + birthday + "<div>" +
+                "<div>Age: " + age + "</div>" +
+                "<div>Gift Ideas: ";
       
       for(var m = 0; m < ideas.length; m++) {
         if(m > 0) {
@@ -241,7 +241,7 @@ function displayPerson(input) {
         result += ideas[m];
       }
 
-      result += "</p>" +
+      result += "</div>" +
             "<div><input id=\"addGiftInput\">" +
             "<button id=\"addGift\" onclick=\"addGift(\'" + name + "\')\">Add A Gift</button></div>" +
             "<div><input id=\"deleteGiftInput\">" + 
@@ -258,17 +258,20 @@ function displayPerson(input) {
 ******************************************************/
 function addGift(name) {
   var giftAdd = document.getElementById("addGiftInput").value;
-  var birthdayJson = JSON.parse(birthdays);
+  
+  if(giftAdd != ""){
+    var birthdayJson = JSON.parse(birthdays);
 
-  for(var i = 0; i < birthdayJson.person.length; i++) {
-    if(birthdayJson.person[i].first + " " + birthdayJson.person[i].last == name) {
-      birthdayJson.person[i].ideas.push(giftAdd);
+    for(var i = 0; i < birthdayJson.person.length; i++) {
+      if(birthdayJson.person[i].first + " " + birthdayJson.person[i].last == name) {
+        birthdayJson.person[i].ideas.push(giftAdd);
+      }
     }
-  }
 
-  // update the original string and display new list
-  birthdays = JSON.stringify(birthdayJson);
-  displayPerson(name);
+    // update the original string and display new list
+    birthdays = JSON.stringify(birthdayJson);
+    displayPerson(name);
+  }
 }
 
 function deleteGift(name) {

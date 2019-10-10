@@ -1,23 +1,102 @@
+@font-face {
+  font-family: headerFont;
+  src: url(curlz.TTF);
+}
+
+body {
+  background-image: url("balloon-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#header {
+  text-align: center;
+  font-family: headerFont;
+  font-size: 70px;
+   
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
   padding: 10px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
 .grid-item {
-  border: 10px solid #666666;
   padding: 20px;
   font-size: 30px;
   text-align: center;
 }
 
+#chooseDate {
+  border: 10px solid #002966;
+  background-color: #0066ff;
+  color: white;
+  width: 400px;
+}
+
+#chooseName {
+  border: 10px solid #004d00;
+  background-color: #009900;
+  color: white;
+  width: 400px;
+}
+
 #orSpace {
   border: none;
+  color: #cc3300;
+}
+
+.error {
+  font-size: 20px;
+  white-space: pre;
+  min-height: 25px;
 }
 
 .resultRow {
   border: none;
+  margin-top: 20px;
+}
+
+#resultDate {
+  width: 400px;
+  background-color: white;
+  border: 10px solid #002966;
+  min-height: 200px;
+}
+
+#resultName {
+  width: 400px;
+  background-color: white;
+  border: 10px solid #004d00;
+  min-height: 200px;
+  text-align: left;
+  padding-left: 15px;
+}
+
+#table {
+  text-align: left;
+  width: 100%;
+}
+
+#table th {
+  background-color: #0066ff;
+  color: white;
+  padding: 5px 0px 5px 10px;
+}
+
+#todayDate {
+  text-align: center;
+  background-color: #009900;
+  color: white;
+  padding: 5px;
+}
+
+button {
+  font-size: 18px;
+  background-color: goldenrod;
+  margin-left: 10px;
 }
 
