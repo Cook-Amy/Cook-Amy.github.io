@@ -16,6 +16,11 @@ body {
    
 }
 
+#homeButton{
+  text-align: right;
+  margin-right: 50px;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;

@@ -13,7 +13,11 @@ body {
   text-align: center;
   font-family: headerFont;
   font-size: 70px;
-   
+}
+
+#homeButton{
+  text-align: right;
+  margin-right: 50px;
 }
 
 .grid-container {
