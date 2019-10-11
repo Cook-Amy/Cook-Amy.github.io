@@ -1,0 +1,50 @@
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-image: url("worldMap2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#header {
+  text-align: center;
+  font-size: 70px;
+  overflow: auto;
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
+
+#header::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#homeButton{
+  margin-right: 25px;
+  margin-top: 10px;
+  float: right;
+}
+
+#main {
+  width: 600px;
+  margin: auto;
+  font-size: 30px;
+}
+
+#userInput {
+  font-size: 20px;
+  padding: 7px;
+  margin: 10px;
+}
+
+.btn {
+  background-color: orange;
+  font-size: 20px;
+}
+
+.listTag {
+  font-weight: bold;
+}
