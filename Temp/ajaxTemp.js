@@ -7,6 +7,7 @@
   var currencies = [];
   var region = "";
   var languageJSON = {};
+  var currencyJSON = {};
 
 /***************************************************************
  * Get user's input
@@ -26,7 +27,6 @@ function getInfo() {
     var countryRequest = new XMLHttpRequest();
     countryRequest.onreadystatechange = function() {
       if(this.readyState == 4 && this.status == 200) {
-        //document.getElementById("zipInfo").innerHTML = this.responseText;
         var jsonResp = JSON.parse(this.responseText);
         findCountryInfo(jsonResp, input);
       }
@@ -43,11 +43,20 @@ function getInfo() {
     languageRequest.onreadystatechange = function() {
       if(this.readyState == 4 && this.status == 200) {
         languageJSON = JSON.parse(this.responseText);
-        document.getElementById("temp").innerHTML = languageJSON["ar"];
       }
     };
     languageRequest.open("GET", "languageCodes.txt", true);
     languageRequest.send();
+
+    // currency AJAX request
+    var currencyRequest = new XMLHttpRequest();
+    currencyRequest.onreadystatechange = function() {
+      if(this.readyState == 4 && this.status == 200) {
+        currencyJSON = JSON.parse(this.responseText);
+      }
+    };
+    currencyRequest.open("GET", "currencyCodes.txt", true);
+    currencyRequest.send();
   }
 }
 
@@ -125,7 +134,7 @@ function formatDisplay(jsonResp) {
     if(c > 0) {
       dispCurrencies += ", ";
     }
-    dispCurrencies += currencies[c];
+    dispCurrencies += currencyJSON[currencies[c]];
   }
   document.getElementById("listCurrencies").innerHTML = dispCurrencies;
 
