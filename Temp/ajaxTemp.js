@@ -76,9 +76,10 @@ function findCountryInfo(jsonResp, input) {
       if((respName == input) || (respAltName == input)) {
         // get single variables
         name = respName;
-        population = jsonResp[i].population;
+        var pop = jsonResp[i].population;
+        population = pop.toLocaleString("en-US");
         capital = jsonResp[i].capital;
-        region = jsonResp[i].region;
+        region = jsonResp[i].region + "/" + jsonResp[i].subregion;
 
         // get border countries
         for(var b = 0; b < jsonResp[i].borders.length; b++) {
