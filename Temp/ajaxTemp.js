@@ -128,7 +128,7 @@ function formatDisplay(jsonResp) {
   var dispLanguages = "";
   for(var l = 0; l < languages.length; l++) {
     if(l > 0) {
-      dispLanguages += ", ";
+      dispLanguages += "<br>";
     }
     dispLanguages += languageJSON[languages[l]];
   }
@@ -138,7 +138,7 @@ function formatDisplay(jsonResp) {
   var dispCurrencies = "";
   for(var c = 0; c < currencies.length; c++) {
     if(c > 0) {
-      dispCurrencies += ", ";
+      dispCurrencies += "<br>";
     }
     dispCurrencies += currencyJSON[currencies[c]];
   }
@@ -148,7 +148,7 @@ function formatDisplay(jsonResp) {
   var dispBorders = "";
   for(var b = 0; b < borders.length; b++) {
     if(b > 0) {
-      dispBorders += ", ";
+      dispBorders += "<br>";
     }
     for(var i = 0; i < jsonResp.length; i++) {
       if(jsonResp[i].alpha3Code == borders[b])
