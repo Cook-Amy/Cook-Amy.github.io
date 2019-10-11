@@ -4,18 +4,45 @@
   <title>Assignment - AJAX</title>
 
   <link rel="stylesheet" type="text/css" href="/Stylesheets/ajax.css" />
+  <script type="text/javascript" src="/JS/ajax.js"></script>
 
 </head>
 
 <body>
-  <div id="homeButton">
+  <div id="header">
     <a href="/index.html">
       <img id="homeButton" src="/Pics/home.png" width="50px" height="50px" />
     </a>
-  </div>
-  <h2>Assignment - AJAX</h2>
+    Learn About the World
+</div>
 
-  <div>*****Content pending*****</div>
+  <div id="main">
+    <div id="instructions">Type the name of a country:</div>
+    <input id="userInput" type="text">
+    <button id="inputBtn" class="btn" onclick="getInfo()">Find Country</button>
+    <button id="clearBtn" class="btn" onclick="clearInfo()">Reset</button>
+    <div id="errorMsg"></div>
+    <div id="response">
+      <dl id="listResponse">
+        <dt class="listTag">Name:</dt>
+        <dd id="listName"></dd>
+        <dt class="listTag">Region:</dt>
+        <dd id="listRegion"></dd>
+        <dt class="listTag">Population:</dt>
+        <dd id="listPopulation"></dd>
+        <dt class="listTag">Capital:</dt>
+        <dd id="listCapital"></dd>
+        <dt class="listTag">Languages:</dt>
+        <dd id="listLanguages"></dd>
+        <dt class="listTag">Currencies</dt>
+        <dd id="listCurrencies"></dd>
+        <dt class="listTag">Border Countries:</dt>
+        <dd id="listBorders"></dd>
+      </dl>
+    </div>
+  </div>
+
+  <div id="temp"></div>
 
 </body>
 
