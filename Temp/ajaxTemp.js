@@ -18,7 +18,7 @@ function getInfo() {
   clearInfo();
   if(input == "") {
     document.getElementById("errorMsg").innerHTML = "What country would you like to search for?";
-    document.getElementById("errorMsg").style.color = "red";
+    // document.getElementById("errorMsg").style.color = "red";
   }
   else {
     document.getElementById("errorMsg").innerHTML = "";
@@ -99,7 +99,12 @@ function findCountryInfo(jsonResp, input) {
       }
     }
   }
-  formatDisplay(jsonResp);
+  if(name == "") {
+    document.getElementById("errorMsg").innerHTML = "No information available for \"" + input + "\".";
+  }
+  else {
+    formatDisplay(jsonResp);
+  }
 }
 
 /***************************************************************
@@ -173,4 +178,5 @@ function clearInfo() {
   document.getElementById("listLanguages").innerHTML = "";
   document.getElementById("listCurrencies").innerHTML = "";
   document.getElementById("listBorders").innerHTML = "";
+  document.getElementById("errorMsg").innerHTML = "";
 }

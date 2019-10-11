@@ -48,3 +48,9 @@ body {
 .listTag {
   font-weight: bold;
 }
+
+#errorMsg {
+  font-size: 15px;
+  font-weight: bold;
+  color: red;
+}
