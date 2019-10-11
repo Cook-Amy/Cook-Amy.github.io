@@ -16,6 +16,7 @@
 function getInfo() {
   var input = document.getElementById("userInput").value;
   clearInfo();
+  document.getElementById("userInput").value = input;
   if(input == "") {
     document.getElementById("errorMsg").innerHTML = "What country would you like to search for?";
     // document.getElementById("errorMsg").style.color = "red";
@@ -69,11 +70,13 @@ function findCountryInfo(jsonResp, input) {
   // loop through response JSON
   for(var i = 0; i < jsonResp.length; i++) {
     var respName = jsonResp[i].name;
+    respNameCase = changeCase(respName);
 
     for(var j = 0; j < jsonResp[i].altSpellings.length; j++) {
       var respAltName = jsonResp[i].altSpellings[j];
+      respAltNameCase = changeCase(respAltName);
       // check if input matches country name or alternate name
-      if((respName == input) || (respAltName == input)) {
+      if((respNameCase == country) || (respAltNameCase == country)) {
         // get single variables
         name = respName;
         var pop = jsonResp[i].population;
@@ -108,10 +111,10 @@ function findCountryInfo(jsonResp, input) {
 }
 
 /***************************************************************
- * Change all names to lower case so case won't matter during search
+ * Change all names to lower case for comparison
 ****************************************************************/
-function changeCase(input) {
-
+function changeCase(inputChange) {
+  return inputChange.toLowerCase();
 }
 
 /***************************************************************

@@ -54,3 +54,8 @@ body {
   font-weight: bold;
   color: red;
 }
+
+dd {
+  white-space: pre;
+  min-height: 35px;
+}
