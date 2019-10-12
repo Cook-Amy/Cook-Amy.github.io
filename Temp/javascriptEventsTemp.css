@@ -1,0 +1,39 @@
+#header {
+  text-align: center;
+  font-size: 70px;
+  overflow: auto;
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
+
+#header::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#homeButton{
+  margin-right: 25px;
+  margin-top: 10px;
+  float: right;
+}
+
+.pic-grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #666666;
+  padding: 10px;
+}
+
+.pic-grid-item {
+  background-color: black;
+  border: 10px solid #666666;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.dogPic {
+  height: 200px;
+  width: auto;
+}
