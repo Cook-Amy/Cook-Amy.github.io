@@ -40,6 +40,10 @@
   width: auto;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 /********** word scramble **********/
 #unscrambleSection {
   margin: auto;
