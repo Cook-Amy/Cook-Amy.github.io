@@ -1,3 +1,4 @@
+/********** header **********/
 #header {
   text-align: center;
   font-size: 70px;
@@ -18,6 +19,7 @@
   float: right;
 }
 
+/********** dog pics **********/
 .pic-grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -37,3 +39,33 @@
   height: 200px;
   width: auto;
 }
+
+/********** word scramble **********/
+#unscrambleSection {
+  margin: auto;
+}
+
+.scrambleLine {
+  padding-top: 15px;
+}
+
+.scrambleText {
+  font-size: 25px;
+  min-width: 200px;
+  display: inline-block;
+  padding-left: 50px;
+}
+
+.scrambleInput {
+  font-size: 25px;
+  width: 300px;
+}
+
+.scrambleCor {
+  font-size: 25px;
+  min-width: 300px;
+  display: inline-block;
+  padding-left: 50px;
+}
+
+/********** dog names **********/

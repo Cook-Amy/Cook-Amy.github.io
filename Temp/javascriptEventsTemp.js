@@ -79,3 +79,15 @@ function changePic(num) {
       break;
   }
 }
+
+/*************************************************
+ * Puppy Pictures
+ * ontouch events. Change the picture when it is 
+ * touched. Change back when finger is let go.
+*************************************************/
+function checkScramble(num) {
+  switch (num){
+    case 1:
+      
+  }
+}
