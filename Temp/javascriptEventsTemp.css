@@ -67,9 +67,18 @@
 
 .scrambleCor {
   font-size: 25px;
-  min-width: 300px;
+  min-width: 150px;
   display: inline-block;
   padding-left: 50px;
+}
+
+.scrambleHint {
+  font-size: 25px;
+}
+
+.scrambleBtn {
+  font-size: 25px;
+  background-color: cornflowerblue;
 }
 
 /********** dog names **********/

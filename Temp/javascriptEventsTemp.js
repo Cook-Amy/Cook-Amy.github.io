@@ -81,13 +81,86 @@ function changePic(num) {
 }
 
 /*************************************************
- * Puppy Pictures
- * ontouch events. Change the picture when it is 
- * touched. Change back when finger is let go.
+ * Breed Unscramble
+ * onkeyup events. When the correct name has been
+ * entered, a message will be displayed for the user.
 *************************************************/
 function checkScramble(num) {
   switch (num){
     case 1:
-      
+      var input1 = document.getElementById("scrambleInp1").value;
+      input1 = input1.toLowerCase();
+      if(input1.includes("rottweiler")) {
+        document.getElementById("scrambleCor1").innerHTML = "Correct!";
+      }
+      break;
+    case 2:
+      var input2 = document.getElementById("scrambleInp2").value;
+      input2 = input2.toLowerCase();
+      if(input2.includes("sheepdog")) {
+        document.getElementById("scrambleCor2").innerHTML = "Correct!";
+      }
+      break;
+    case 3:
+      var input3 = document.getElementById("scrambleInp3").value;
+      input3 = input3.toLowerCase();
+      if(input3.includes("dalmatian")) {
+        document.getElementById("scrambleCor3").innerHTML = "Correct!";
+      }
+      break;
+    case 4:
+      var input4 = document.getElementById("scrambleInp4").value;
+      input4 = input4.toLowerCase();
+      if(input4.includes("collie")) {
+        document.getElementById("scrambleCor4").innerHTML = "Correct!";
+      }
+      break;
+    case 5:
+      var input5 = document.getElementById("scrambleInp5").value;
+      input5 = input5.toLowerCase();
+      if(input5.includes("bloodhound")) {
+        document.getElementById("scrambleCor5").innerHTML = "Correct!";
+      }
+      break;
+    case 6:
+      var input6 = document.getElementById("scrambleInp6").value;
+      input6 = input6.toLowerCase();
+      if(input6.includes("greyhound")) {
+        document.getElementById("scrambleCor6").innerHTML = "Correct!";
+      }
+      break;
+    case 7:
+      var input7 = document.getElementById("scrambleInp7").value;
+      input7 = input7.toLowerCase();
+      if(input7.includes("mastiff")) {
+        document.getElementById("scrambleCor7").innerHTML = "Correct!";
+      }
+      break;
+  }
+}
+
+function hint(num) {
+  switch (num) {
+    case 1:
+      document.getElementById("scrambleHint1").innerHTML = "No rotten apples here";
+      break;
+    case 2:
+      document.getElementById("scrambleHint2").innerHTML = "BAAAAAA";
+      break;
+    case 3:
+      document.getElementById("scrambleHint3").innerHTML = "I see spots.";
+      break;
+    case 4:
+      document.getElementById("scrambleHint4").innerHTML = "Lassie";
+      break;
+    case 5:
+      document.getElementById("scrambleHint5").innerHTML = "My nose is the best in the biz!";
+      break;
+    case 6:
+      document.getElementById("scrambleHint6").innerHTML = "I race for treats!";
+      break;
+    case 7:
+      document.getElementById("scrambleHint7").innerHTML = "He is MASsive!";
+      break;
   }
 }
