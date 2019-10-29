@@ -30,6 +30,7 @@
 .textDiv {
   font-size: 30px;
   color: black;
+  font-weight: bold;
 }
 
 .allText {
@@ -39,7 +40,40 @@
 button {
   margin-left: 100px;
   font-size: 30px;
+  background-color: darkcyan;
+  border-radius: 8px;
 }
 
+.explanation {
+  margin: 25px;
+}
 
+.explanation p {
+  font-size: 25px;
+}
+
+.highlight {
+  background-color: lightsalmon;
+}
+
+#resources {
+  margin: 30px;
+  background-color: palegoldenrod;
+}
+
+#section1 {
+  background-color: palegoldenrod;
+}
+
+#section3 {
+  background-color: palegoldenrod;
+}
+
+#section2 {
+  background-color: lightsteelblue;
+}
+
+#section4 {
+  background-color: lightsteelblue;
+}
 

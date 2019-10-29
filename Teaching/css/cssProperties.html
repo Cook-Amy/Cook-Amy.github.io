@@ -9,39 +9,149 @@
 <div id="header">Manipulating CSS Properties using JavaScript</div>
 
 <div class="grid-container">
+<!-- First row -->
   <div class="changeDiv" id="changeFont" onclick="changeFont()">
-    <h2 class="textDiv" id="fontText">Change the Font</h2>
+    <p class="textDiv" id="fontText">Change the Font Type</p>
   </div>
   <div class="changeDiv" id="changeColor" onclick="changeColor()">
-    <h2 class="textDiv" id="colorText">Change the Color</h2>
+    <p class="textDiv" id="colorText">Change the Font Color</p>
   </div>
   <div class="changeDiv" id="changeWidth" onclick="changeWidth()">
-    <h2 class="textDiv">Change the Width</h2>
+    <p class="textDiv">Change the Width</p>
   </div>
   <div class="changeDiv" id="changeRadius" onclick="changeRadius()">
-    <h2 class="textDiv">Change the Radius</h2>
+    <p class="textDiv">Change the Radius</p>
   </div>
-  <div class="changeDiv" id="changeBackgroundColor" onclick="changeBackgroundColor()">
-    <h2 class="textDiv">Change the Background Color</h2>
+
+  <!-- Second Row -->
+  <div class="changeDiv border" id="changeBackgroundColor" onclick="changeBackgroundColor()">
+    <p class="textDiv">Change the Background Color</p>
   </div>
-  <div class="changeDiv" id="changeSkew" onclick="changeSkew()">
-    <h2 class="textDiv" id="skewText">Change the Skew</h2>
+  <div class="changeDiv border" id="changeSkew" onclick="changeSkew()">
+    <p class="textDiv" id="skewText">Change the Skew</p>
   </div>
-  <div class="changeDiv" id="changeSize" onclick="changeSize()">
-    <h2 class="textDiv" id="sizeText">Change the Size</h2>
+  <div class="changeDiv border" id="changeSize" onclick="changeSize()">
+    <p class="textDiv" id="sizeText">Change the Font Size</p>
   </div>
-  <div class="changeDiv" id="changeBorder" onclick="changeBorder()">
-    <h2 class="textDiv">Change the Border</h2>
+  <div class="changeDiv border" id="changeBorder" onclick="changeBorder()">
+    <p class="textDiv">Change the Border</p>
+  </div>
+
+</div>
+
+<button id="changeAllText" onclick="addStyling()">Add Styling</button>
+<button id="resetAllText" onclick="removeStyling()">Remove Styling</button>
+<button id="toggleText" onclick="toggleStyling()">Toggle Styling</button>
+
+<div class="explanation">
+  <div id="section1">
+    <div class="divSections">
+      <h2>Using classList Property</h2>
+      <p id="explanation1">Here 2 of the 8 div sections before any changes</p>
+      <pre>
+        &lt;div <span class="highlight">class="changeDiv"</span> id="changeFont" onclick="changeFont()">
+              &lt;p class="textDiv" id="fontText">Change the Font Type&lt;/p>
+        &lt;/div>
+        &lt;div <span class="highlight">class="changeDiv"</span> id="changeColor" onclick="changeColor()">
+              &lt;p class="textDiv" id="colorText">Change the Font Color&lt;/p>
+        &lt;/div>
+      </pre>
+    </div>
+
+    <div class="divSections">
+      <p id="explanation2">Here is the style section</p>
+      <pre>
+        &lt;style>
+          .changeDiv {
+            text-align: center;
+            margin-left: 100px;
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            border-radius: 0px;
+            transform: skew(0deg,0deg);
+            border: 0px; 
+          }
+          
+          .allText {
+            text-decoration: underline;
+          }
+        &lt;/style>
+      </pre>
+    </div>
+  </div>
+
+  <div class="divSections">
+    <pre>      
+    <div id="section2">
+      <p id="add">classList.add("className") will add a predefined CSS class to an HTML element</p>
+      &lt;script>
+      function addStyling() {
+        var textElement = document.getElementsByClassName("textDiv");
+        for(var i = 0; i &lt; textElement.length; i++) {
+          textElement[i].classList.add("allText");
+        }
+      }
+      &lt;/script>
+
+      <p id="addNew">Now the div sections have another class</p>
+      &lt;div <span class="highlight">class="changeDiv allText"</span> id="changeFont" onclick="changeFont()">
+            &lt;p class="textDiv" id="fontText">Change the Font Type&lt;/p>
+      &lt;/div>
+      &lt;div <span class="highlight">class="changeDiv allText"</span> id="changeColor" onclick="changeColor()">
+            &lt;p class="textDiv" id="colorText">Change the Font Color&lt;/p>
+      &lt;/div>
+    </div>
+    
+    <div id="section3">
+      <p id="remove">classList.remove("className") will remove a CSS class to an HTML element</p>
+      function removeStyling() {
+        var resetText = document.getElementsByClassName("textDiv");
+        for(var i = 0; i &lt; resetText.length; i++) {
+          resetText[i].classList.remove("allText");
+        }
+      }
+
+      <p id="removeNew">Now the div sections have only the original class</p>
+      &lt;div <span class="highlight">class="changeDiv"</span> id="changeFont" onclick="changeFont()">
+            &lt;p class="textDiv" id="fontText">Change the Font Type&lt;/p>
+      &lt;/div>
+      &lt;div <span class="highlight">class="changeDiv"</span> id="changeColor" onclick="changeColor()">
+            &lt;p class="textDiv" id="colorText">Change the Font Color&lt;/p>
+      &lt;/div>
+    </div>
+
+    <div id="section4">
+      <p id="toggle">classList.toggle("className") will check if a predefined CSS class is present on an<br> 
+        HTML element and then add or remove it</p>
+      function toggleStyling() {
+        var toggleText = document.getElementsByClassName("textDiv");
+        for(var i = 0; i &lt; toggleText.length; i++) {
+          toggleText[i].classList.toggle("allText");
+        }
+      }
+      &lt;/script>
+    </div>
+    </pre>
   </div>
 </div>
 
-<button id="changeAllText" onclick="changeText()">Add Styling</button>
-<button id="resetAllText" onclick="resetText()">Remove Styling</button>
-<button id="toggleText" onclick="toggleText()">Toggle Styling</button>
+<div id="resources">
+  <h3>Resources for classList property</h3>
+  <p>1. <a href="https://www.kirupa.com/html5/setting_css_styles_using_javascript.htm" target="_blank">
+    https://www.kirupa.com/html5/setting_css_styles_using_javascript.htm</a></p>
+  <p>2. <a href="https://www.w3schools.com/jsref/prop_element_classlist.asp" target="_blank">
+    https://www.w3schools.com/jsref/prop_element_classlist.asp</a></p>
+</div>
 
 <script>
+  
+
   function changeFont() {
     var font = document.getElementById("fontText").style.fontFamily;
+    // if(font == "Impact, Charcoal, sans-serif")
     if(font.includes("Impact")) {
       document.getElementById("fontText").style.fontFamily = "Arial, Helvetica, sans-serif";
     }
@@ -59,6 +169,16 @@
       document.getElementById("colorText").style.color = "red";
     }
   }
+
+  // function changeColor() {
+  //   var color = document.getElementById("colorText").style.color;
+  //   if(color.includes("black")) {
+  //     document.getElementById("colorText").style.color = "red";
+  //   }
+  //   else {
+  //     document.getElementById("colorText").style.color = "black";
+  //   }
+  // }
 
   function changeWidth() {
     var width = document.getElementById("changeWidth").style.width;
@@ -112,34 +232,40 @@
 
   function changeBorder() {
     var border = document.getElementById("changeBorder").style.border;
+    var changeBorder = document.getElementsByClassName("border");
     if(border.includes("11")) {
-      document.getElementById("changeBorder").style.border = "0px";
+      for(var i = 0; i < changeBorder.length; i++) {
+        changeBorder[i].style.border = "0px";
+      }
     }
     else {
-      document.getElementById("changeBorder").style.border = "11px dashed purple";
+      for(var i = 0; i < changeBorder.length; i++) {
+        changeBorder[i].style.border = "11px dashed purple";
+      }
     }
   }
 
-  function changeText() {
+  function addStyling() {
     var textElement = document.getElementsByClassName("textDiv");
     for(var i = 0; i < textElement.length; i++) {
       textElement[i].classList.add("allText");
     }
   }
 
-  function resetText() {
+  function removeStyling() {
     var resetText = document.getElementsByClassName("textDiv");
     for(var i = 0; i < resetText.length; i++) {
       resetText[i].classList.remove("allText");
     }
   }
 
-  function toggleText() {
+  function toggleStyling() {
     var toggleText = document.getElementsByClassName("textDiv");
     for(var i = 0; i < toggleText.length; i++) {
       toggleText[i].classList.toggle("allText");
     }
   }
+
 </script>
 
 </body>
