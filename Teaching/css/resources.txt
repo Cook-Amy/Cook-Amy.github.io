@@ -1,3 +1,0 @@
-https://www.kirupa.com/html5/setting_css_styles_using_javascript.htm
-  -Restyling a group of elements with the same class name or same HTML tag instead of a single element.
-  -Also, how to add/remove/toggle a styling class to an element
