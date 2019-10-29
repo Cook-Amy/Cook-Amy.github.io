@@ -103,6 +103,7 @@
       &lt;div <span class="highlight">class="changeDiv allText"</span> id="changeColor" onclick="changeColor()">
             &lt;p class="textDiv" id="colorText">Change the Font Color&lt;/p>
       &lt;/div>
+      <p id="addOptions">classList.add(class1, class2, ...)</p>
     </div>
     
     <div class="colored" id="section3">
@@ -121,10 +122,11 @@
       &lt;div <span class="highlight">class="changeDiv"</span> id="changeColor" onclick="changeColor()">
             &lt;p class="textDiv" id="colorText">Change the Font Color&lt;/p>
       &lt;/div>
+      <p id="removeOptions">classList.remove(class1, class2, ...)</p>
     </div>
 
     <div class="colored" id="section4">
-      <p id="toggle">classList.toggle("className") will check if a predefined CSS class is present on an<br> 
+      <p id="toggle">classList.toggle("className") will check if a predefined CSS class is present on an 
         HTML element and then add or remove it</p>
       function toggleStyling() {
         var toggleText = document.getElementsByClassName("textDiv");
@@ -135,6 +137,13 @@
       &lt;/script>
     </div>
     </pre>
+    <div class="colored" id="section5">
+      <p id="otherUses">Other methods for classList Property
+        <div>classList.contains(class) = Returns a boolean value indicating whether an element has the specified class name.</div>
+        <div>classList.item(index) = Returns the class name with the specified index number from an element. Index starts at 0.</div>
+        <div>classList.length = Returns the number of classes defined in an element.</div>
+      </p>
+    </div>
   </div>
 </div>
 
