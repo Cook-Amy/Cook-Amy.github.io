@@ -45,7 +45,8 @@ button {
 }
 
 .explanation {
-  margin: 25px;
+  margin-left: 80px;
+  margin-top: 20px;
 }
 
 .explanation p {
@@ -57,7 +58,8 @@ button {
 }
 
 #resources {
-  margin: 30px;
+  margin-left: 80px;
+  margin-top: 30px;
   background-color: lightsteelblue;
 }
 
