@@ -2,88 +2,55 @@
 <html lang="en">
 <head>
   <title>Assignment - Local Storage</title>
-
-  <script type="text/javascript" src="/JS/localStorage.js"></script>
   <link rel="stylesheet" type="text/css" href="/Stylesheets/localStorage.css" />
-
+  <script type="text/javascript" src="/JS/localStorage.js"></script>
 </head>
 
-<body>
-  <div id="homeButton">
+<body onload="fillDropdown()">
+  <div id="header">
     <a href="/index.html">
       <img id="homeButton" src="/Pics/home.png" width="60px" height="60px" />
     </a>
-  </div>
-  <div id="header">
-    <h1>Prophets and Apostles of The Church of Jesus Christ of Latter-Day Saints</h1>
+    A Year of Birthdays
   </div>
 
+  <div class="grid-container">
 
-  <div class="grid">
-    <!-- Pictures -->
-    <div class="picture" id=pic1 onclick="nelson()">
-      <img src="/Pics/javascriptObjectsPics/Nelson.jpg" alt="Russell M. Nelson" width="75" height="100">
-    </div>
-    <div class="picture" id=pic2 onclick="oaks()">
-      <img src="/Pics/javascriptObjectsPics/Oaks.jpg" alt="Dallin H. Oaks" width="75" height="100">
-    </div>
-    <div class="picture" id=pic3 onclick="eyring()">
-      <img src="/Pics/javascriptObjectsPics/Eyring.jpg" alt="Henry B. Eyring" width="75" height="100">
-    </div>
-    <div class="picture" id=pic4 onclick="ballard()">
-      <img src="/Pics/javascriptObjectsPics/Ballard.jpg" alt="M. Russell Ballard" width="75" height="100">
-    </div>
-    <div class="picture" id=pic5 onclick="holland()">
-      <img src="/Pics/javascriptObjectsPics/Holland.jpg" alt="Jeffrey R. Holland" width="75" height="100">
-    </div>
-    <div class="picture" id=pic6 onclick="uchtdorf()">
-      <img src="/Pics/javascriptObjectsPics/Uchtdorf.jpg" alt="Dieter F. Uchtdorf" width="75" height="100">
-    </div>
-    <div class="picture" id=pic7 onclick="bednar()">
-      <img src="/Pics/javascriptObjectsPics/Bednar.jpg" alt="David A. Bednar" width="75" height="100">
-    </div>
-    <div class="picture" id=pic8 onclick="cook()">
-      <img src="/Pics/javascriptObjectsPics/Cook.jpg" alt="Quentin L. Cook" width="75" height="100">
-    </div>
-    <div class="picture" id=pic9 onclick="christofferson()">
-      <img src="/Pics/javascriptObjectsPics/Christofferson.jpg" alt="D. Todd Christofferson" width="75" height="100">
-    </div>
-    <div class="picture" id=pic10 onclick="andersen()">
-      <img src="/Pics/javascriptObjectsPics/Andersen.jpg" alt="Neil L. Andersen" width="75" height="100">
-    </div>
-    <div class="picture" id=pic11 onclick="rasband()">
-      <img src="/Pics/javascriptObjectsPics/Rasband.jpg" alt="Ronald A. Rasband" width="75" height="100">
-    </div>
-    <div class="picture" id=pic12 onclick="stevenson()">
-      <img src="/Pics/javascriptObjectsPics/Stevenson.jpg" alt="Gary E. Stevenson" width="75" height="100">
-    </div>
-    <div class="picture" id=pic13 onclick="renlund()">
-      <img src="/Pics/javascriptObjectsPics/Renlund.jpg" alt="Dale G. Renlund" width="75" height="100">
-    </div>
-    <div class="picture" id=pic14 onclick="gong()">
-      <img src="/Pics/javascriptObjectsPics/Gong.jpg" alt="Gerrit W. Gong" width="75" height="100">
-    </div>
-    <div class="picture" id=pic15 onclick="soares()">
-      <img src="/Pics/javascriptObjectsPics/Soares.jpg" alt="Ulisses Soares" width="75" height="100">
-    </div>
-  </div>
+    <!-- select a date -->
+    <div class="grid-item" id="chooseDate">
+      <p>Choose A Date</p>
+      <select class="choose" id="monthDropdown" name="month">
+        <option value="month" selected disabled>Choose A Month</option>
+      </select>
+      <select class="choose" id="dayDropdown" name="day">
+        <option value="date" selected disabled>Choose A Date</option>
+        <option value="0">See All</option>
+      </select>
+      <button id="dateBtn" onclick="chooseDate()">Select</button>
+      <div class="error" id="dateError"></div>
+    </div> <!-- grid-item -->
 
-  <div id="info">
-    <div id="name"></div>
-    <div id="calling"></div>
-    <p><div id="date"></div></p>
-    <div id="talk"></div>
-  </div>
+    <div class="grid-item" id="orSpace">
+      <p>OR</p>
+    </div>
 
-  <div id="notesSection">
-    <form id="notesFrom">
-      <input id="note" type="textbox">
-    </form>
-    <h2>Saved Notes</h2>
-    <ul></ul>
-    <button>Save</button>
-  </div>
+    <div class="grid-item" id="chooseName">
+      <p>Choose A Name</p>
+      <select class="choose" id="nameDropdown" name="name">
+        <option value="chooseName" selected disabled>Choose A Name</option>
+      </select>
+      <button id="Select" onclick="chooseName()">Select</button>
+      <div class="error" id="nameError"></div>
+    </div> <!-- grid-item -->
+  
+
+    <div class="grid-item resultRow" id="resultDate"></div>
+
+    <div class="grid-item resultRow" id="resultSpace"></div>
+
+    <div class="grid-item resultRow" id="resultName"></div>
+
+  </div> <!-- grid-container -->
 
 </body>
-
 </html>

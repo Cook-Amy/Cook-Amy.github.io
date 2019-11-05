@@ -1,415 +1,295 @@
-/***************************************************
- * Define Objects and Methods
- **************************************************/
-function Apostle(name, calling, date) {
-  this.name = name;
-  this.calling = calling;
-  this.date = new Date(date);
-  // this.calcTime = function() {
-  //   var now = new Date();
-  //   var diff = ((now.getTime() - this.date.getTime()) / 31536000000).toFixed(0);
-  //   return diff;
-  // }
-  this.output = function(yr) {
-    document.getElementById("name").innerHTML = name;
-    document.getElementById("calling").innerHTML = calling;
-    document.getElementById("date").innerHTML = "He was sustained to this calling on " + date + ", which was " + yr + " years ago.";
+
+var birthdays = '{"person":[' +
+'{"first": "AJ","last": "Shane","birthday": {"month": 8,"day": 11,"year": 2016 },"ideas": ["card"]},' +
+'{"first": "Ashton","last": "Saari","birthday": {"month": 5,"day": 17,"year": 2005 },"ideas": ["giftcard"]},' +
+'{"first": "Brandon","last": "Saari","birthday": {"month": 10,"day": 13,"year": 1998 },"ideas": ["giftcard", "cash"]},' +
+'{"first": "Bruce","last": "Cook","birthday": {"month": 7,"day": 7,"year": 1973 },"ideas": ["drill", "kayak", "headphones"]},' +
+'{"first": "Caleb","last": "Caten","birthday": {"month": 4,"day": 11,"year": 2003 },"ideas": ["cash", "card"]},' +
+'{"first": "Carter","last": "Shane","birthday": {"month": 6,"day": 19,"year": 2005 },"ideas": ["cash", "card"]},' +
+'{"first": "Courtney","last": "Cook","birthday": {"month": 10,"day": 7,"year": 1998 },"ideas": ["mallets", "keyboard", "plane ticket"]},' +
+'{"first": "Dylan","last": "Cook","birthday":{"month": 7,"day": 6,"year": 2003 },"ideas": ["book", "movie", "watch"]},' +
+'{"first": "Ethan","last": "Saari","birthday": {"month": 4,"day": 20,"year": 2001 },"ideas": ["cash", "card"]},' +
+'{"first": "Grace","last": "Caten","birthday": {"month": 10,"day": 6,"year": 2005 },"ideas": ["cash", "card"]},' +
+'{"first": "Ian","last": "Shane","birthday": {"month": 1,"day": 22,"year": 1999 },"ideas": ["cash", "card"]},' +
+'{"first": "Jason","last": "Saari","birthday": {"month": 5,"day": 28,"year": 1971 },"ideas": ["giftcard"]},' +
+'{"first": "Jaxon","last": "Shane","birthday": {"month": 9,"day": 24,"year": 2007 },"ideas": ["cash", "card"]},' +
+'{"first": "Jayleen","last": "Shane","birthday": {"month": 3,"day": 5,"year": 1974 },"ideas": ["giftcard"]},' +
+'{"first": "Jeff","last": "Shane","birthday": {"month": 10,"day": 14,"year": 1970 },"ideas": ["giftcard"]},' +
+'{"first": "Jessica","last": "Shane","birthday": {"month": 10,"day": 20,"year": 1981 },"ideas": ["giftcard"]},' +
+'{"first": "Jill","last": "Saari","birthday": {"month": 10,"day": 8,"year": 1975 },"ideas": ["giftcard"]},' +
+'{"first": "JoAnn","last": "Shane","birthday": {"month": 6,"day": 10,"year": 1946 },"ideas": ["sweater", "tickets", "photos"]},' +
+'{"first": "Jordan","last": "Saari","birthday": {"month": 10,"day": 7,"year": 1995 },"ideas": ["cash", "card"]},' +
+'{"first": "Joshua","last": "Caten","birthday": {"month": 12,"day": 28,"year": 2009 },"ideas": ["cash", "card"]},' +
+'{"first": "June","last": "Saari","birthday": {"month": 10,"day": 6,"year": 2018 },"ideas": ["card"]},' +
+'{"first": "Justin","last": "Caten","birthday": {"month": 2,"day": 17,"year": 1978 },"ideas": ["giftcard"]},' +
+'{"first": "Kim","last": "Caten","birthday": {"month": 5,"day": 12,"year": 1981 },"ideas": ["giftcard"]},' +
+'{"first": "Kimmie","last": "Saari","birthday": {"month": 4,"day": 29,"year": 1996 },"ideas": ["card"]},' +
+'{"first": "Lexie","last": "Shane","birthday": {"month": 2,"day": 18,"year": 2011 },"ideas": ["cash", "card"]},' +
+'{"first": "Luke","last": "Caten","birthday": {"month": 8,"day": 8,"year": 2011 },"ideas": ["cash", "card"]},' +
+'{"first": "Matt","last": "Shane","birthday": {"month": 3,"day": 30,"year": 1979 },"ideas": ["giftcard"]},' +
+'{"first": "Michael","last": "Shane","birthday": {"month": 5,"day": 12,"year": 1946 },"ideas": ["photos", "cookies", "tickets"]},' +
+'{"first": "Morgan","last": "Shane","birthday": {"month": 5,"day": 2,"year": 2007 },"ideas": ["card", "cash"]},' +
+'{"first": "Travis","last": "Cook","birthday": {"month": 7,"day": 19,"year": 2006 },"ideas": ["headphones", "phone", "video game"]},' +
+'{"first": "Vance","last": "Caten","birthday": {"month": 8,"day": 12,"year": 2013 },"ideas": ["cash", "card"]}]}';
+
+var months = ["January", "February", "March", "April", 
+            "May", "June", "July", "August", 
+            "September", "October", "November", "December"];
+
+function fillDropdown() {
+  /*****************************************************
+   * Create Month Dropdown
+  ******************************************************/
+  let dropdownMonth = document.getElementById("monthDropdown");
+  //dropdownMonth.length = 0;
+
+  var option;
+  // fill in options
+  for(var i = 0; i < months.length; i++) {
+    option = document.createElement("option");
+    option.text = months[i];
+    option.value = i + 1;
+    dropdownMonth.options.add(option);
+  }
+
+
+  /*****************************************************
+   * Create Date Dropdown
+  ******************************************************/
+  let dropdownDate = document.getElementById("dayDropdown");
+
+  var option;
+  // fill in options
+  for(var i = 1; i < 32; i++) {
+    option = document.createElement("option");
+    option.text = i;
+    option.value = i;
+    dropdownDate.options.add(option);
+  }
+
+  /*****************************************************
+   * Create Name Dropdown
+  ******************************************************/
+  let dropdownName = document.getElementById("nameDropdown");
+  var birthdayJson = JSON.parse(birthdays);
+
+  var option;
+  // fill in options
+  for(var i = 0; i < birthdayJson.person.length; i++) {
+    option = document.createElement("option");
+    option.text = birthdayJson.person[i].first + " " + birthdayJson.person[i].last;
+    option.value = birthdayJson.person[i].first + birthdayJson.person[i].last;
+    dropdownName.options.add(option);
   }
 }
 
-function Talk(title, link, subject, session) {
-  this.title = title;
-  this.link = link;
-  this.subject = subject;
-  this.session = session;
-  this.output = function() {
-    document.getElementById("talk").innerHTML = "<p><div class=\"talkInfo\">During the " + session + " session of the April 2019 General Conference, he gave the following talk:</div>" +
-                                                "<div id=\"title\">" + title + "</div>" +
-                                                "<div id=\"talkSubject\" class=\"talkInfo\">\"" + subject + "\"</div>" +
-                                                "<div class=\"talkInfo\">You can access the talk by clicking " + 
-                                                "<a href=\"" + link + "\" target=\"_blank\">HERE</a></div></p>";
+/*****************************************************
+* Select Date button
+******************************************************/
+function chooseDate() {
+var errorMsg = ""
+
+// get month selection
+var selMonth = document.getElementById("monthDropdown");
+var optMonth = selMonth.options[selMonth.selectedIndex];
+var monthNum = selMonth.value;
+var monthText = optMonth.text;
+
+// get date selection
+var selDate = document.getElementById("dayDropdown");
+var dayNum = selDate.value;
+
+var err = 0;
+// check if user selected a month
+if(monthNum == "month") {
+  errorMsg = "Please select a month.";
+  err++;
+}
+
+// check if user selected a date
+if(dayNum == "date") {
+  errorMsg += " Please select a date.";
+  err++;
+}
+
+// if month and date are selected, continue
+if(err == 0) {
+  displayDateResults(monthNum, dayNum);
+}
+
+// if month or date are not selected, show error message
+else {
+  document.getElementById("dateError").innerHTML = errorMsg;
+}
+}
+
+/*****************************************************
+* Select Name button
+******************************************************/
+function chooseName() {
+var errorMsg = ""
+
+// get name selection
+var selName = document.getElementById("nameDropdown");
+var optName = selName.options[selName.selectedIndex];
+var nameValue = selName.value;
+var nameText = optName.text;
+
+if(nameValue == "chooseName") {
+  errorMsg = "Please select a name."; 
+  document.getElementById("nameError").innerHTML = errorMsg;
+}
+
+else {
+  document.getElementById("nameError").innerHTML = "";
+  displayPerson(nameText);
+}
+}
+
+/*****************************************************
+* Display date results
+******************************************************/
+function displayDateResults(monthNum, dayNum) {
+// clear error message if needed
+document.getElementById("dateError").innerHTML = "";
+
+var birthdayJson = JSON.parse(birthdays);
+var count = 0;
+var results = "<div>Click on a name to see details</div>" +
+            "<table id='table'><tr><th>Date</th><th>Name</th></tr>";
+
+// find matched objects
+for(var i = 0; i < birthdayJson.person.length; i++) {
+  var birthday = birthdayJson.person[i].birthday.day;
+  var name = birthdayJson.person[i].first + " " + birthdayJson.person[i].last;
+
+  // get results that match selected month
+  if(birthdayJson.person[i].birthday.month == monthNum) {
+
+    // get results if all dates are selected
+    if(dayNum == 0) {
+      results += "<tr><td>" + birthday + "</td>" + 
+                "<td onclick=\"displayPerson(\'" + name + "\')\">" + name + "</td></tr>";
+      count++;
+    }
+
+    // get results for specific date selected
+    else {
+      if(birthday == dayNum) {
+        results += "<tr><td>" + birthday + "</td>" +
+                  "<td onclick=\"displayPerson(\'" + name + "\')\">" + name + "</td></tr>";
+        count++;
+      }
+    }
+  }
+}
+results += "</table>";
+
+// no results found
+if(count == 0) {
+  results = "No birthdays are listed for your selection.";
+}
+
+// display results
+document.getElementById("resultDate").innerHTML = results;
+}
+
+/*****************************************************
+* Display a person's details
+******************************************************/
+function displayPerson(input) {
+var result = "";
+var birthdayJson = JSON.parse(birthdays);
+
+// get today's date to calculate age
+var today = new Date();
+var yyyy = today.getFullYear();
+var mm = today.getMonth() + 1;
+var dd = today.getDate();
+
+result = "<div id=\"todayDate\">Today is " + mm + "-" + dd + "-" + yyyy + "</div>";
+
+// find the person's info
+for(var i = 0; i < birthdayJson.person.length; i++) {
+  if(birthdayJson.person[i].first + " " + birthdayJson.person[i].last == input) {
+    // save all their info to variables for easier use
+    var name = birthdayJson.person[i].first + " " + birthdayJson.person[i].last;
+    var birthday = birthdayJson.person[i].birthday.month + "-" + birthdayJson.person[i].birthday.day + "-" + birthdayJson.person[i].birthday.year;
+    var age = yyyy - birthdayJson.person[i].birthday.year;
+    if(mm == birthdayJson.person[i].birthday.month){
+      if (dd < birthdayJson.person[i].birthday.day) {
+        age -=1;
+      }
+    }
+    else if(mm < birthdayJson.person[i].birthday.month) {
+      age -=1;
+    }
+    var ideas = [];
+    for(var j = 0; j < birthdayJson.person[i].ideas.length; j++) {
+      ideas.push(birthdayJson.person[i].ideas[j]);
+    }
+
+    // format display
+    result += "<div>Name: " + name + "</div>" +
+              "<div>Birthday: " + birthday + "<div>" +
+              "<div>Age: " + age + "</div>" +
+              "<div>Gift Ideas: ";
+    
+    for(var m = 0; m < ideas.length; m++) {
+      if(m > 0) {
+        result += ", ";
+      }
+      result += ideas[m];
+    }
+
+    result += "</div>" +
+          "<div><input id=\"addGiftInput\">" +
+          "<button id=\"addGift\" onclick=\"addGift(\'" + name + "\')\">Add A Gift</button></div>" +
+          "<div><input id=\"deleteGiftInput\">" + 
+          "<button id=\"deleteGift\" onclick=\"deleteGift(\'" + name + "\')\">Delete A Gift</button></div>";
+  }
+
+  // display the results
+  document.getElementById("resultName").innerHTML = result;
+}
+}
+
+/*****************************************************
+* Edit list of gifts for a person
+******************************************************/
+function addGift(name) {
+var giftAdd = document.getElementById("addGiftInput").value;
+
+if(giftAdd != ""){
+  var birthdayJson = JSON.parse(birthdays);
+
+  for(var i = 0; i < birthdayJson.person.length; i++) {
+    if(birthdayJson.person[i].first + " " + birthdayJson.person[i].last == name) {
+      birthdayJson.person[i].ideas.push(giftAdd);
+    }
+  }
+
+  // update the original string and display new list
+  birthdays = JSON.stringify(birthdayJson);
+  displayPerson(name);
+}
+}
+
+function deleteGift(name) {
+var giftDelete = document.getElementById("deleteGiftInput").value;
+var birthdayJson = JSON.parse(birthdays);
+
+for(var i = 0; i < birthdayJson.person.length; i++) {
+  if(birthdayJson.person[i].first + " " + birthdayJson.person[i].last == name) {
+    for(var j = 0; j < birthdayJson.person[i].ideas.length; j++) {
+      if(birthdayJson.person[i].ideas[j] == giftDelete) {
+        birthdayJson.person[i].ideas.splice(j, 1);
+      }
+    }
   }
 }
 
-function calcTime(date) {
-    var now = new Date();
-    var diff = ((now.getTime() - date.getTime()) / 31536000000).toFixed(0);
-    return diff;
+// update the original string and display new list
+birthdays = JSON.stringify(birthdayJson);
+displayPerson(name);
 }
-
-let notesArray = localStorage.getItem("notes") ? JSON.parse(localStorage.getItem("items")) : [];
-localStorage.setItem('notes', JSON.stringify(notesArray));
-
-/***************************************************
- * New Apostle objects defined 
- **************************************************/
-function nelson() {
-  var nelson = new Apostle(
-    "Russell M. Nelson",
-    "Prophet and President of the Church",
-    "January 14, 2018"
-  );
-  var yr = calcTime(nelson.date);
-  nelson.output(yr);
-  nelsonTalk();
-  myNotes(nelson.name);
-}
-
-function oaks() {
-  var oaks = new Apostle(
-    "Dallin H. Oaks",
-    "First Counselor in the First Presidency",
-    "January 14, 2018"
-  );
-  var yr = calcTime(oaks.date);
-  oaks.output(yr);
-  oaksTalk();
-  myNotes(oaks.name);
-}
-
-function eyring() {
-  var eyring = new Apostle(
-    "Henry B. Eyring",
-    "Second Counselor in the First Presidency",
-    "January 14, 2018"
-  );
-  var yr = calcTime(eyring.date);
-  eyring.output(yr);
-  eyringTalk();
-}
-
-function ballard() {
-  var ballard = new Apostle(
-    "M. Russell Ballard",
-    "Apostle",
-    "October 6, 1985"
-  );
-  var yr = calcTime(ballard.date);
-  ballard.output(yr);
-  ballardTalk();
-}
-
-function holland() {
-  var holland = new Apostle(
-    "Jeffrey R. Holland",
-    "Apostle",
-    "June 23, 1994"
-  );
-  var yr = calcTime(holland.date);
-  holland.output(yr);
-  hollandTalk();
-}
-
-function uchtdorf() {
-  var uchtdorf = new Apostle(
-    "Dieter F. Uchtdorf",
-    "Apostle",
-    "October 2, 2004"
-  );
-  var yr = calcTime(uchtdorf.date);
-  uchtdorf.output(yr);
-  uchtdorfTalk();
-}
-
-function bednar() {
-  var bednar = new Apostle(
-    "David A. Bednar",
-    "Apostle",
-    "October 7, 2004"
-  );
-  var yr = calcTime(bednar.date);
-  bednar.output(yr);
-  bednarTalk();
-}
-
-function cook() {
-  var cook = new Apostle(
-    "Quentin L. Cook",
-    "Apostle",
-    "October 6, 2007"
-  );
-  var yr = calcTime(cook.date);
-  cook.output(yr);
-  cookTalk();
-}
-
-function christofferson() {
-  var christofferson = new Apostle(
-    "D. Todd Christofferson",
-    "Apostle",
-    "April 5, 2008"
-  );
-  var yr = calcTime(christofferson.date);
-  christofferson.output(yr);
-  christoffersonTalk();
-}
-
-function andersen() {
-  var andersen = new Apostle(
-    "Neil L. Andersen",
-    "Apostle",
-    "April 4, 2009"
-  );
-  var yr = calcTime(andersen.date);
-  andersen.output(yr);
-  andersenTalk();
-}
-
-function rasband() {
-  var rasband = new Apostle(
-    "Ronald A. Rasband",
-    "Apostle",
-    "October 3, 2015"
-  );
-  var yr = calcTime(rasband.date);
-  rasband.output(yr);
-  rasbandTalk();
-}
-
-function stevenson() {
-  var stevenson = new Apostle(
-    "Gary E. Stevenson",
-    "Apostle",
-    "October 3, 2015"
-  );
-  var yr = calcTime(stevenson.date);
-  stevenson.output(yr);
-  stevensonTalk();
-}
-
-function renlund() {
-  var renlund = new Apostle(
-    "Dale G. Renlund",
-    "Apostle",
-    "October 3, 2015"
-  );
-  var yr = calcTime(renlund.date);
-  renlund.output(yr);
-  renlundTalk();
-}
-
-function gong() {
-  var gong = new Apostle(
-    "Gerrit W. Gong",
-    "Apostle",
-    "March 31, 2018"
-  );
-  var yr = calcTime(gong.date);
-  gong.output(yr);
-  gongTalk();
-}
-
-function soares() {
-  var soares = new Apostle(
-    "Ulisses Soares",
-    "Apostle",
-    "March 31, 2018"
-  );
-  var yr = calcTime(soares.date);
-  soares.output(yr);
-  soaresTalk();
-}
-
-/***************************************************
- * New Talk objects defined 
- **************************************************/
-function nelsonTalk() {
-  var nelsonTalk = new Talk(
-    "Come, Follow Me",
-    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/46nelson?lang=eng",
-    "Jesus Christ invites us to take the covenant path back home to our Heavenly Parents and be with those we love.",
-    "Sunday Morning"
-  );
-  nelsonTalk.output();
-}
-
-function oaksTalk() {
-  var oaksTalk = new Talk(
-    "Cleansed By Repentance",
-    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/51oaks?lang=eng",
-    "Because of God’s plan and the Atonement of Jesus Christ, we can be cleansed by the process of repentance.",
-    "Sunday Afternoon"
-  );
-  oaksTalk.output();
-}
-
-function eyringTalk() {
-  var eyringTalk = new Talk(
-    "A Home Where the Spirit of the Lord Dwells",
-    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/16eyring?lang=eng",
-    "You will find some of your greatest joys in your efforts to make your home a place of faith in the Lord Jesus Christ and a place that is permeated with love.",
-    "Saturday Morning"
-  );
-  eyringTalk.output();
-}
-
-function ballardTalk() {
-  var ballardTalk = new Talk(
-    "The True, Pure, and Simple Gospel of Jesus Christ",
-    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/23ballard?lang=eng",
-    "Loving God and loving our neighbors is the doctrinal foundation of ministering; home-centered, Church-supported learning; Sabbath-day spiritual worship; and the work of salvation.",
-    "Saturday Afternoon"
-  );
-  ballardTalk.output();
-}
-
-function hollandTalk() {
-  var hollandTalk = new Talk(
-    "Behold the Lamb of God",
-    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/28holland?lang=eng",
-    "Our modified Sunday service is to emphasize the sacrament of the Lord’s Supper as the sacred, acknowledged focal point of our weekly worship experience.",
-    "Saturday Afternoon"
-  );
-  hollandTalk.output();
-}
-
-function uchtdorfTalk() {
-  var uchtdorfTalk = new Talk(
-    "Missionary Work: Sharing What is in Your Heart",
-    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/14uchtdorf?lang=eng",
-    "Wherever you are on this earth, there are plenty of opportunities to share the good news of the gospel of Jesus Christ.",
-    "Saturday Morning"
-  );
-  uchtdorfTalk.output();
-}
-
-function bednarTalk() {
-  var bednarTalk = new Talk(
-    "Prepared to Obtain Every Needful Thing",
-    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/54bednar?lang=eng",
-    "Blessings will come as we strive to fulfill our individual responsibility to learn and love the restored gospel of Jesus Christ.",
-    "Sunday Afternoon"
-  );
-  bednarTalk.output();
-}
-
-function cookTalk() {
-  var cookTalk = new Talk(
-    "Great Love for Our Father's Children",
-    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/43cook?lang=eng",
-    "Love is the primary attribute and motive for the spiritual purposes we were charged to undertake by our beloved prophet.",
-    "Sunday Morning"
-  );
-  cookTalk.output();
-}
-
-function christoffersonTalk() {
-  var christoffersonTalk = new Talk(
-    "Preparing for the Lord's Return",
-    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/44christofferson?lang=eng",
-    "The Church of Jesus Christ of Latter-day Saints is uniquely empowered and commissioned to accomplish the necessary preparations for the Lord’s Second Coming.",
-    "Sunday Morning"
-  );
-  christoffersonTalk.output();
-}
-
-function andersenTalk() {
-  var andersenTalk = new Talk(
-    "The Eye of Faith",
-    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/25andersen?lang=eng",
-    "If we pick and choose what we accept in the proclamation, we cloud our eternal view, putting too much importance on our experience here and now.",
-    "Saturday Afternoon"
-  );
-  andersenTalk.output();
-}
-
-function rasbandTalk() {
-  var rasbandTalk = new Talk(
-    "Build a Fortress of Spirituality and Protection",
-    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/56rasband?lang=eng",
-    "When we live the gospel of Jesus Christ, when we draw upon the Savior’s Atonement and press forward with faith, we are fortified against the adversary.",
-    "Sunday Afternoon"
-  );
-  rasbandTalk.output();
-}
-
-function stevensonTalk() {
-  var stevensonTalk = new Talk(
-    "Your Priesthood Playbook",
-    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/31stevenson?lang=eng",
-    "Create your own playbook of how you will prove yourself as a disciple of Christ.",
-    "General Priesthood"
-  );
-  stevensonTalk.output();
-}
-
-function renlundTalk() {
-  var renlundTalk = new Talk(
-    "Abound with Blessings",
-    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/41renlund?lang=eng",
-    "Most blessings that God desires to give us require action on our part﻿—action based on our faith in Jesus Christ.",
-    "Sunday Morning"
-  );
-  renlundTalk.output();
-}
-
-function gongTalk() {
-  var gongTalk = new Talk(
-    "Good Shepherd, Lamb of God",
-    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/53gong?lang=eng",
-    "Jesus Christ calls us in His voice and His name. He seeks and gathers us. He teaches us how to minister in love.",
-    "Sunday Afternoon"
-  );
-  gongTalk.output();
-}
-
-function soaresTalk() {
-  var soaresTalk = new Talk(
-    "How Can I Understand",
-    "https://www.churchofjesuschrist.org/study/general-conference/2019/04/11soares?lang=eng",
-    "When we earnestly, heartily, firmly, and sincerely seek to learn the gospel of Jesus Christ and teach it to one another, these teachings may transform hearts.",
-    "Saturday Morning"
-  );
-  soaresTalk.output();
-}
-
-/***************************************************
- * My Notes Section
- **************************************************/
-function myNotes(name) {
-
- var notesJson = "{" + 
-    "'myNotes': " +
-      "{" +
-        "'nelson': []," +
-        "'oaks': []," +
-        "'eyring': []," +
-        "'ballard': []," +
-        "'holland': []," +
-        "'uchtdorf': []," +
-        "'bednar': []," +
-        "'cook': []," +
-        "'christofferson': []," +
-        "'andersen': []," +
-        "'rasband': []," +
-        "'stevenson': []," +
-        "'renlund': []," +
-        "'gong': []," +
-        "'soares': []" +
-      "}" +
-  "}";
- 
-}
-
-
-// Notes JSON
-// {
-//   "myNotes": 
-//     {
-//       "nelson": [],
-//       "oaks": [],
-//       "eyring": [],
-//       "ballard": [],
-//       "holland": [],
-//       "uchtdorf": [],
-//       "bednar": [],
-//       "cook": [],
-//       "christofferson": [],
-//       "andersen": [],
-//       "rasband": [],
-//       "stevenson": [],
-//       "renlund": [],
-//       "gong": [],
-//       "soares": []
-//     }
-// }
