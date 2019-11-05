@@ -18,7 +18,7 @@
   <div class="grid-container">
 
     <div class="grid-item">
-      <h3>onclick events</h3>
+      <h3>Click the buttons to see a message.</h3>
       <!-- onclick button -->
       <div id="btns">
         <button class="onClickBtn" onclick="function1()">Click Me</button>
@@ -30,6 +30,7 @@
 
 
     <div class="grid-item">
+      <h3>Click on the picture to see it change.</h3>
       <!-- onclick picture -->
       <img id="changeImage" src="/Pics/javascriptEventsPics/picture1.jpg" onclick="function2()" height="228.15px" width="405px" >
     </div>
@@ -52,6 +53,7 @@
 
 
     <div class="grid-item">
+      <h3>Type something in the box.</h3>
       <!-- keyup -->
       <div id=keyUpDiv>
         <input id="keyUp" type="text" onkeyup="function5()"> 
@@ -61,15 +63,17 @@
 
 
 
-    <div class="grid-item">    
+    <div class="grid-item">  
+      <h3>Click the button to reveal a hidden message. </h3>  
       <!-- onload page -->
-      <div id="onLoadResult">This is always hidden when page is loaded!</div>
+      <div id="onLoadResult">You found me!</div>
       <button id="onLoadButton" onclick="undoOnLoad()">Show Hidden Element</button>
     </div>
 
 
 
     <div class="grid-item">
+      <h3>Play and pause the video to see a message.</h3>
       <!-- onload video -->
       <video src="/Pics/javascriptEventsPics/movie1.mp4" type="video/mp4" onpause="function7()" onplay="function10()" width="141.75px" height="252px" controls></video>
       <div id="videoMsg">Message: <span id="videoLoadedMsg"></span></div>

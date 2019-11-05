@@ -54,7 +54,7 @@ document.getElementById("videoLoadedMsg").innerHTML = "The video is paused.";
 }
 
 function function10() {
-document.getElementById("videoLoadedMsg").innerHTML = "The video is playing.";
+document.getElementById("videoLoadedMsg").innerHTML = "My dog loves the dog park!";
 }
 
 /*********** FocusEvents ***********/
