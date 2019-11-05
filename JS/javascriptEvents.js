@@ -9,7 +9,7 @@ function undoFunction1() {
 function function2() {
   var x = document.getElementById("changeImage").src;
   if(x.includes("picture1")) {
-    document.getElementById("changeImage").src = "picture2.jpg";
+    document.getElementById("changeImage").src = "/Pics/javascriptEventsPics/picture2.jpg";
   }
   else {
     document.getElementById("changeImage").src = "picture1.jpg";
