@@ -14,6 +14,10 @@
   margin-right: 50px;
 }
 
+h3 {
+  color: #666699;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: auto auto;
@@ -138,6 +142,10 @@
 .focusInput {
   font-size: 18px;
   padding: 8px;
+}
+
+.focusMsgs {
+  color: green;
 }
 
 h2.touchHeading {
