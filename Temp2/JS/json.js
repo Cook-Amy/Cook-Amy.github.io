@@ -32,6 +32,10 @@ var birthdays = '{"person":[' +
 '{"first": "Travis","last": "Cook","birthday": {"month": 7,"day": 19,"year": 2006 },"ideas": ["headphones", "phone", "video game"]},' +
 '{"first": "Vance","last": "Caten","birthday": {"month": 8,"day": 12,"year": 2013 },"ideas": ["cash", "card"]}]}';
 
+//localStorage.clear();
+var birthdayJson = localStorage.getItem("birthdays") ? JSON.parse(localStorage.getItem("birthdays")) : JSON.parse(birthdays);
+localStorage.setItem("birthdays", JSON.stringify(birthdayJson));
+
 var months = ["January", "February", "March", "April", 
             "May", "June", "July", "August", 
             "September", "October", "November", "December"];
@@ -153,7 +157,6 @@ function displayDateResults(monthNum, dayNum) {
 // clear error message if needed
 document.getElementById("dateError").innerHTML = "";
 
-var birthdayJson = JSON.parse(birthdays);
 var count = 0;
 var results = "<div>Click on a name to see details</div>" +
             "<table id='table'><tr><th>Date</th><th>Name</th></tr>";
@@ -199,7 +202,6 @@ document.getElementById("resultDate").innerHTML = results;
 ******************************************************/
 function displayPerson(input) {
 var result = "";
-var birthdayJson = JSON.parse(birthdays);
 
 // get today's date to calculate age
 var today = new Date();
@@ -209,24 +211,26 @@ var dd = today.getDate();
 
 result = "<div id=\"todayDate\">Today is " + mm + "-" + dd + "-" + yyyy + "</div>";
 
+var personArray = JSON.parse(localStorage.getItem("birthdays"));
+
 // find the person's info
-for(var i = 0; i < birthdayJson.person.length; i++) {
-  if(birthdayJson.person[i].first + " " + birthdayJson.person[i].last == input) {
+for(var i = 0; i < personArray.person.length; i++) {
+  if(personArray.person[i].first + " " + personArray.person[i].last == input) {
     // save all their info to variables for easier use
-    var name = birthdayJson.person[i].first + " " + birthdayJson.person[i].last;
-    var birthday = birthdayJson.person[i].birthday.month + "-" + birthdayJson.person[i].birthday.day + "-" + birthdayJson.person[i].birthday.year;
-    var age = yyyy - birthdayJson.person[i].birthday.year;
-    if(mm == birthdayJson.person[i].birthday.month){
-      if (dd < birthdayJson.person[i].birthday.day) {
+    var name = personArray.person[i].first + " " + personArray.person[i].last;
+    var birthday = personArray.person[i].birthday.month + "-" + personArray.person[i].birthday.day + "-" + personArray.person[i].birthday.year;
+    var age = yyyy - personArray.person[i].birthday.year;
+    if(mm == personArray.person[i].birthday.month){
+      if (dd < personArray.person[i].birthday.day) {
         age -=1;
       }
     }
-    else if(mm < birthdayJson.person[i].birthday.month) {
+    else if(mm < personArray.person[i].birthday.month) {
       age -=1;
     }
     var ideas = [];
-    for(var j = 0; j < birthdayJson.person[i].ideas.length; j++) {
-      ideas.push(birthdayJson.person[i].ideas[j]);
+    for(var j = 0; j < personArray.person[i].ideas.length; j++) {
+      ideas.push(personArray.person[i].ideas[j]);
     }
 
     // format display
@@ -261,35 +265,33 @@ function addGift(name) {
 var giftAdd = document.getElementById("addGiftInput").value;
 
 if(giftAdd != ""){
-  var birthdayJson = JSON.parse(birthdays);
 
   for(var i = 0; i < birthdayJson.person.length; i++) {
     if(birthdayJson.person[i].first + " " + birthdayJson.person[i].last == name) {
       birthdayJson.person[i].ideas.push(giftAdd);
+      localStorage.setItem("birthdays", JSON.stringify(birthdayJson));
     }
   }
 
-  // update the original string and display new list
-  birthdays = JSON.stringify(birthdayJson);
+  //display new list
   displayPerson(name);
 }
 }
 
 function deleteGift(name) {
 var giftDelete = document.getElementById("deleteGiftInput").value;
-var birthdayJson = JSON.parse(birthdays);
 
 for(var i = 0; i < birthdayJson.person.length; i++) {
   if(birthdayJson.person[i].first + " " + birthdayJson.person[i].last == name) {
     for(var j = 0; j < birthdayJson.person[i].ideas.length; j++) {
       if(birthdayJson.person[i].ideas[j] == giftDelete) {
         birthdayJson.person[i].ideas.splice(j, 1);
+        localStorage.setItem("birthdays", JSON.stringify(birthdayJson));
       }
     }
   }
 }
 
-// update the original string and display new list
-birthdays = JSON.stringify(birthdayJson);
+//display new list
 displayPerson(name);
 }

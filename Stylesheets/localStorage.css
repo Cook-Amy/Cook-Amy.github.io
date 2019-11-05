@@ -4,7 +4,7 @@
 }
 
 body {
-  /* background-image: url("/Pics/localStoragePics/balloon-background.jpg"); */
+  background-image: url(/Pics/jsonPics/balloon-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
