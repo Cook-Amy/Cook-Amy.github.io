@@ -5,11 +5,6 @@ function Apostle(name, calling, date) {
   this.name = name;
   this.calling = calling;
   this.date = new Date(date);
-  // this.calcTime = function() {
-  //   var now = new Date();
-  //   var diff = ((now.getTime() - this.date.getTime()) / 31536000000).toFixed(0);
-  //   return diff;
-  // }
   this.output = function(yr) {
     document.getElementById("name").innerHTML = name;
     document.getElementById("calling").innerHTML = calling;

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Assignment - LocalStorage</title>
+  <link rel="stylesheet" type="text/css" href="Stylesheets/localStorage.css" />
+  <script type="text/javascript" src="JS/localStorage.js"></script>
+</head>
+
+<body onload="fillDropdown()">
+  <div id="header">
+    <a href="/index.html">
+      <img id="homeButton" src="Pics/home.png" width="60px" height="60px" />
+    </a>
+    A Year of Birthdays
+  </div>
+
+  <div class="grid-container">
+
+    <!-- select a date -->
+    <div class="grid-item" id="chooseDate">
+      <p>Choose A Date</p>
+      <select class="choose" id="monthDropdown" name="month">
+        <option value="month" selected disabled>Choose A Month</option>
+      </select>
+      <select class="choose" id="dayDropdown" name="day">
+        <option value="date" selected disabled>Choose A Date</option>
+        <option value="0">See All</option>
+      </select>
+      <button id="dateBtn" onclick="chooseDate()">Select</button>
+      <div class="error" id="dateError"></div>
+    </div> <!-- grid-item -->
+
+    <div class="grid-item" id="orSpace">
+      <p>OR</p>
+    </div>
+
+    <div class="grid-item" id="chooseName">
+      <p>Choose A Name</p>
+      <select class="choose" id="nameDropdown" name="name">
+        <option value="chooseName" selected disabled>Choose A Name</option>
+      </select>
+      <button id="Select" onclick="chooseName()">Select</button>
+      <div class="error" id="nameError"></div>
+    </div> <!-- grid-item -->
+  
+
+    <div class="grid-item resultRow" id="resultDate"></div>
+
+    <div class="grid-item resultRow" id="resultSpace"></div>
+
+    <div class="grid-item resultRow" id="resultName"></div>
+
+  </div> <!-- grid-container -->
+
+</body>
+</html>
