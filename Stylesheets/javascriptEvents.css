@@ -1,7 +1,3 @@
-<div id="homeButton">
-<a href="/index.html">
-  <img id="homeButton" src="/Pics/home.png" width="60px" height="60px" />
-</a>
 * {
   background-color: black;
   color: white;
@@ -11,6 +7,11 @@
 #header {
   text-align: center;
   font-size: 50px;
+}
+
+#homeButton {
+  text-align: right;
+  margin-right: 50px;
 }
 
 .grid-container {
