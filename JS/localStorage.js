@@ -32,6 +32,8 @@ var birthdays = '{"person":[' +
 '{"first": "Travis","last": "Cook","birthday": {"month": 7,"day": 19,"year": 2006 },"ideas": ["headphones", "phone", "video game"]},' +
 '{"first": "Vance","last": "Caten","birthday": {"month": 8,"day": 12,"year": 2013 },"ideas": ["cash", "card"]}]}';
 
+var birthdayJson = JSON.parse(birthdays);
+
 var months = ["January", "February", "March", "April", 
             "May", "June", "July", "August", 
             "September", "October", "November", "December"];
@@ -71,7 +73,7 @@ function fillDropdown() {
    * Create Name Dropdown
   ******************************************************/
   let dropdownName = document.getElementById("nameDropdown");
-  var birthdayJson = JSON.parse(birthdays);
+  //var birthdayJson = JSON.parse(birthdays);
 
   var option;
   // fill in options
@@ -199,7 +201,7 @@ document.getElementById("resultDate").innerHTML = results;
 ******************************************************/
 function displayPerson(input) {
 var result = "";
-var birthdayJson = JSON.parse(birthdays);
+//var birthdayJson = JSON.parse(birthdays);
 
 // get today's date to calculate age
 var today = new Date();
@@ -261,7 +263,7 @@ function addGift(name) {
 var giftAdd = document.getElementById("addGiftInput").value;
 
 if(giftAdd != ""){
-  var birthdayJson = JSON.parse(birthdays);
+  //var birthdayJson = JSON.parse(birthdays);
 
   for(var i = 0; i < birthdayJson.person.length; i++) {
     if(birthdayJson.person[i].first + " " + birthdayJson.person[i].last == name) {
