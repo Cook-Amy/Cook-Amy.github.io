@@ -79,6 +79,7 @@ else {
 }
 }
 
+/*********** Touch Events **************/
 function function11() {
 document.getElementById("touchDemo1").innerHTML = "Hello World";
 }
