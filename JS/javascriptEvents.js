@@ -12,7 +12,7 @@ function function2() {
     document.getElementById("changeImage").src = "/Pics/javascriptEventsPics/picture2.jpg";
   }
   else {
-    document.getElementById("changeImage").src = "picture1.jpg";
+    document.getElementById("changeImage").src = "/Pics/javascriptEventsPics/picture1.jpg";
   }
 }
 
