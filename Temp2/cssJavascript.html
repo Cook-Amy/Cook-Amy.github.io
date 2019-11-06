@@ -6,56 +6,49 @@
   <script type="text/javascript" src="JS/cssJavascript.js"></script>
 </head>
 
-<body onload="fillDropdown()" style="background-image: src('balloon-background.jpg')">
+<body >
   <div id="header">
-    <a href="/index.html">
-      <img id="homeButton" src="Pics/home.png" width="60px" height="60px" />
-    </a>
-    A Year of Birthdays
+    Making Ed
+    <div id="homeButton">
+      <a href="/index.html">
+        <img id="homeButton" src="Pics/home.png" width="60px" height="60px" />
+      </a>
+      </div>
   </div>
 
-  <div class="grid-container">
-
-    <!-- select a date -->
-    <div class="grid-item" id="chooseDate">
-      <p>Choose A Date</p>
-      <select class="choose" id="monthDropdown" name="month">
-        <option value="month" selected disabled>Choose A Month</option>
-      </select>
-      <select class="choose" id="dayDropdown" name="day">
-        <option value="date" selected disabled>Choose A Date</option>
-        <option value="0">See All</option>
-      </select>
-      <button id="dateBtn" onclick="chooseDate()">Select</button>
-      <div class="error" id="dateError"></div>
-    </div> <!-- grid-item -->
-
-    <div class="grid-item" id="orSpace">
-      <p>OR</p>
+ <div class="mainSection">
+    <div class="column btns">
+      <nav class="menu">            
+        <ul>
+          <li onclick="nameFont()">Name Font</li>
+          <li onclick="nameColor()">Name Color</li>
+          <li onclick="border()">Border</li>
+          <li onclick="headColor()">Head Color</li>             
+          <li onclick="headShape()">Head Shape</li>
+          <li onclick="bodyColor()">Body Color</li>
+          <li onclick="height()">Height</li>
+          <li onclick="width()">Width</li>
+        </ul>
+      </nav>
     </div>
 
-    <div class="grid-item" id="chooseName">
-      <p>Choose A Name</p>
-      <select class="choose" id="nameDropdown" name="name">
-        <option value="chooseName" selected disabled>Choose A Name</option>
-      </select>
-      <button id="Select" onclick="chooseName()">Select</button>
-      <div class="error" id="nameError"></div>
-    </div> <!-- grid-item -->
-  
+    <div class="column selections" id="selections">
 
-    <div class="grid-item resultRow" id="resultDate"></div>
-
-    <div class="grid-item resultRow" id="resultSpace"></div>
-
-    <div class="grid-item resultRow" id="resultName"></div>
-
-  </div> <!-- grid-container -->
-
-  <div style="visibility: hidden;">
-    <!-- <img src="Pics/jsonPics/balloon-background.jpg"> -->
-    <a href="Other/curlz.TTF"></a>
-  </div>
+    </div>
+    <div class="column picture">
+      <p id="name">My name is Ed.</p>
+      <div class="figure">
+        <div class="head"></div>
+        <div class="torso"></div>
+        <div class="leftarm"></div>
+        <div class="rightarm"></div>
+        <div class="leftleg"></div>
+        <div class="leftfoot"></div>
+        <div class="rightleg"></div>
+        <div class="rightfoot"></div>
+      </div>
+    </div>
+</div>
 
 </body>
 </html>
