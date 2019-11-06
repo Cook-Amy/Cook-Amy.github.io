@@ -12,7 +12,16 @@ function nameFont() {
 
 function changeFont(num) {
   switch (num) {
-  
+    case 1:
+      document.getElementById.name.style.fontFamily = "dalekFont";
+    case 2:
+        document.getElementById.name.style.fontFamily = "goudyFont";
+    case 3:
+        document.getElementById.name.style.fontFamily = "magnetoFont";
+    case 4:
+        document.getElementById.name.style.fontFamily = "segoeFont";
+    case 5:
+        document.getElementById.name.style.fontFamily = "snapFont";
   }
 }
 
