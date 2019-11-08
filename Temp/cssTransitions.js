@@ -10,6 +10,10 @@
   var currencyJSON = {};
 
 /***************************************************************
+ * Menu buttons
+****************************************************************/
+
+/***************************************************************
  * Load Country Search
 ****************************************************************/
 function loadCountrySearch() {
@@ -106,7 +110,8 @@ function getInfo() {
         languageJSON = JSON.parse(this.responseText);
       }
     };
-    languageRequest.open("GET", "/Other/languageCodes.txt", true);
+    // languageRequest.open("GET", "/Other/languageCodes.txt", true);
+    languageRequest.open("GET", "languageCodes.txt", true);
     languageRequest.send();
 
     // currency AJAX request
@@ -116,7 +121,8 @@ function getInfo() {
         currencyJSON = JSON.parse(this.responseText);
       }
     };
-    currencyRequest.open("GET", "/Other/currencyCodes.txt", true);
+    // currencyRequest.open("GET", "/Other/currencyCodes.txt", true);
+    currencyRequest.open("GET", "currencyCodes.txt", true);
     currencyRequest.send();
   }
 }

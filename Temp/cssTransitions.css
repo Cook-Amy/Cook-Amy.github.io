@@ -4,7 +4,8 @@
 }
 
 body {
-  background-image: url("/Pics/ajax/worldMap2.png");
+  /* background-image: url("/Pics/ajax/worldMap2.png"); */
+  background-image: url("worldMap2.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
