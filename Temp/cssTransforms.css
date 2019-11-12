@@ -4,7 +4,8 @@
 }
 
 body {
-  background-image: url("/Pics/ajax/worldMap2.png");
+  /* background-image: url("/Pics/ajax/worldMap2.png"); */
+  background-image: url("worldMap2.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -78,6 +79,8 @@ body {
 /*************** Display Country Search ***************/
 #displayCountry {
   display: none;
+  /* width: 600px;
+  margin: auto; */
   font-size: 30px;
 }
 
@@ -96,6 +99,10 @@ body {
 #instructions {
   margin: 10px 10px 10px 200px;
 }
+
+/* .listTag {
+  font-weight: bold;
+} */
 
 #errorMsg {
   font-size: 15px;

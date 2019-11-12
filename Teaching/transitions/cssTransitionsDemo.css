@@ -26,6 +26,10 @@ p {
   margin-left: 30px;
 }
 
+.example {
+  margin-left: 100px;
+}
+
 .menu {
   margin: 50px;
   /* width: 50%; */
@@ -148,33 +152,6 @@ p {
 
 
 
-/********************* Timing *********************/
-.circle0 {
-  background: PaleTurquoise;
-  transition: transform 3s linear;
-} 
-
-.circle1 {
-  background: salmon;
-  transition: transform 3s ease;
-}
-
-.circle2 {
-  background: lightskyblue;
-  transition: transform 3s ease-in;
-}
-
-.circle3 {
-  background: khaki;
-  transition: transform 3s ease-out;
-}
-
-.circle4 {
-  background: mediumturquoise;
-  transition: transform 3s ease-in-out;
-}
-
-
 /********************* Duration *********************/
 .circle5 {
   background: PaleTurquoise;
@@ -199,6 +176,33 @@ p {
 .circle9 {
   background: mediumturquoise;
   transition: transform 5s;
+}
+
+
+/********************* Timing *********************/
+.circle0 {
+  background: PaleTurquoise;
+  transition: transform 3s linear;
+} 
+
+.circle1 {
+  background: salmon;
+  transition: transform 3s ease;
+}
+
+.circle2 {
+  background: lightskyblue;
+  transition: transform 3s ease-in;
+}
+
+.circle3 {
+  background: khaki;
+  transition: transform 3s ease-out;
+}
+
+.circle4 {
+  background: mediumturquoise;
+  transition: transform 3s ease-in-out;
 }
 
 

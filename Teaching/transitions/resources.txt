@@ -3,6 +3,3 @@ https://codepen.io/anon/pen/WOEpva
 https://www.webdesignerdepot.com/2014/05/8-simple-css3-transitions-that-will-wow-your-users/
 https://thoughtbot.com/blog/transitions-and-transforms
 
-
-Dance Tunes
-https://www.programmableweb.com/api/dance-tunes

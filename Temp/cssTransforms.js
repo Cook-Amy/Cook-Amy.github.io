@@ -188,10 +188,10 @@ function changeCase(inputChange) {
 ****************************************************************/
 function formatDisplay(jsonResp) {
   // display single variables
-  document.getElementById("listName").innerHTML = name;
-  document.getElementById("listRegion").innerHTML = region;
-  document.getElementById("listPopulation").innerHTML = population;
-  document.getElementById("listCapital").innerHTML = capital;
+  document.getElementById("countryName").innerHTML = name;
+  document.getElementById("countryRegion").innerHTML = region;
+  document.getElementById("countryPopulation").innerHTML = population;
+  document.getElementById("countryCapital").innerHTML = capital;
 
   // display languages
   var dispLanguages = "";
@@ -201,7 +201,7 @@ function formatDisplay(jsonResp) {
     }
     dispLanguages += languageJSON[languages[l]];
   }
-  document.getElementById("listLanguages").innerHTML = dispLanguages;
+  document.getElementById("countryLanguages").innerHTML = dispLanguages;
 
   // display currencies
   var dispCurrencies = "";
@@ -211,7 +211,7 @@ function formatDisplay(jsonResp) {
     }
     dispCurrencies += currencyJSON[currencies[c]];
   }
-  document.getElementById("listCurrencies").innerHTML = dispCurrencies;
+  document.getElementById("countryCurrencies").innerHTML = dispCurrencies;
 
   // diplay borders
   var dispBorders = "";
@@ -224,7 +224,7 @@ function formatDisplay(jsonResp) {
       dispBorders += jsonResp[i].name;
     }
   }
-  document.getElementById("listBorders").innerHTML = dispBorders;
+  document.getElementById("countryBorderCountries").innerHTML = dispBorders;
 }
 
 /***************************************************************
@@ -240,12 +240,12 @@ function clearInfo() {
   region = "";
 
   document.getElementById("userInput").value = "";
-  document.getElementById("listName").innerHTML = "";
-  document.getElementById("listRegion").innerHTML = "";
-  document.getElementById("listPopulation").innerHTML = "";
-  document.getElementById("listCapital").innerHTML = "";
-  document.getElementById("listLanguages").innerHTML = "";
-  document.getElementById("listCurrencies").innerHTML = "";
-  document.getElementById("listBorders").innerHTML = "";
+  document.getElementById("countryName").innerHTML = "";
+  document.getElementById("countryRegion").innerHTML = "";
+  document.getElementById("countryPopulation").innerHTML = "";
+  document.getElementById("countryCapital").innerHTML = "";
+  document.getElementById("countryLanguages").innerHTML = "";
+  document.getElementById("countryCurrencies").innerHTML = "";
+  document.getElementById("countryBorderCountries").innerHTML = "";
   document.getElementById("errorMsg").innerHTML = "";
 }
