@@ -51,4 +51,6 @@ function changeHello(num) {
         setTimeout(function() {document.getElementById("thankYou").innerHTML = "Ngiyabonga";}, 1500);
         break;
   }
+ 
+  // document.getElementById("hello").innerHTML = "hallo";
 }
