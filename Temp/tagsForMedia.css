@@ -1,0 +1,8 @@
+#btns {
+  text-align: center;
+  width: 350px;
+}
+
+#resetMsg {
+  visibility: hidden;
+}
