@@ -7,7 +7,7 @@ var win = false;
 /*************** Start new game ***************/
 function startGame() {
     myGameArea.start();
-    myGamePiece.create(25, 25, "red", 0, 310);
+    myGamePiece.create(25, 25, "red", 5, 310);
     updateGameArea();
     myMaze = drawMaze();
 }
@@ -57,6 +57,9 @@ var myGamePiece = {
       if(pix[i++] == 0 && pix[i++] == 0 && pix[i++] == 0 && pix[i++] == 255) {
         crash = true;
       }
+    }
+    if(this.x + dx <= 0) {
+      crash = true;
     }
     return crash;
   },
