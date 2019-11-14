@@ -280,7 +280,7 @@ function resetNo() {
 /*************** Show and hid the solution video/audio ***************/
 function showSolution() {
   var vid = document.createElement("VIDEO");
-  vid.setAttribute("src", "mazeVideo.mp4");
+  vid.setAttribute("src", "/Other/mazeVideo.mp4");
   vid.setAttribute("width", "350");
   vid.setAttribute("height", "350");
   vid.setAttribute("loop", "loop");
@@ -290,7 +290,7 @@ function showSolution() {
   vid.play();
 
   var aud = document.createElement("AUDIO");
-  aud.setAttribute("src", "sillyMusic.mp3");
+  aud.setAttribute("src", "/Other/sillyMusic.mp3");
   aud.setAttribute("loop", "loop");
   document.getElementById("myVideo").insertBefore(aud, document.getElementById("myVideo").childNodes[5]);
   document.querySelector("audio").load();
