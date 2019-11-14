@@ -279,18 +279,25 @@ function resetNo() {
 
 /*************** Show and hid the solution video/audio ***************/
 function showSolution() {
-  document.querySelector("video").load();
-  document.querySelector("video").playbackRate = 2.5;
-  document.querySelector("video").play();
-  document.querySelector("video").style.display = "block";
+  var vid = document.createElement("VIDEO");
+  vid.setAttribute("src", "mazeVideo.mp4");
+  vid.setAttribute("width", "350");
+  vid.setAttribute("height", "350");
+  vid.setAttribute("loop", "loop");
+  document.getElementById("myVideo").insertBefore(vid, document.getElementById("myVideo").childNodes[4]);
+  vid.load();
+  vid.playbackRate = 2.5;
+  vid.play();
+
+  var aud = document.createElement("AUDIO");
+  aud.setAttribute("src", "sillyMusic.mp3");
+  aud.setAttribute("loop", "loop");
+  document.getElementById("myVideo").insertBefore(aud, document.getElementById("myVideo").childNodes[5]);
   document.querySelector("audio").load();
   document.querySelector("audio").play();
-  document.querySelector("audio").style.display = "block";
 }
 
 function hideSolution() {
-  document.querySelector("video").pause();
-  document.querySelector("audio").pause();
-  document.querySelector("video").style.display = "none";
-  document.querySelector("audio").style.display = "none";
+  document.querySelector("video").remove();
+  document.querySelector("audio").remove();
 }

@@ -43,18 +43,21 @@
   background-color: #004d25;
   color: white;
   font-size: 20px;
+  min-width: 100px;
 }
 
 .resetBtn {
   background-color: #004d25;
   color: white;
   font-size: 20px;
+  width: 100px;
 }
 
 .answerBtn {
   background-color: #800000;
   color: white;
   font-size: 20px;
+  width: 80px;
 }
 
 #resetArea {
@@ -80,10 +83,3 @@
   font-size: 20px;
 }
 
-video {
-  display: none;
-}
-
-audio {
-  display: none;
-}

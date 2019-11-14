@@ -1,8 +1,10 @@
+/*************** game variables ***************/
 var myGamePiece;
 var myMaze;
 var obstacleArray = [];
 var win = false;
 
+/*************** Start new game ***************/
 function startGame() {
     myGameArea.start();
     myGamePiece.create(25, 25, "red", 0, 310);
@@ -10,6 +12,7 @@ function startGame() {
     myMaze = drawMaze();
 }
 
+/*************** Define the game board ***************/
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
@@ -26,6 +29,7 @@ var myGameArea = {
     }
 }
 
+/*************** Define the game piece ***************/
 var myGamePiece = {
   create : function(width, height, color, x, y) {
     this.width = width;
@@ -65,6 +69,7 @@ var myGamePiece = {
     }
 }
 
+/*************** Define the game walls ***************/
 function obstacle(width, height, color, x, y) {
   this.width = width;
   this.height = height;
@@ -79,6 +84,7 @@ function obstacle(width, height, color, x, y) {
   }
 }
 
+/*************** Game Actions ***************/
 function updateGameArea() {
   if(!win) {
     myGameArea.clearPiece(myGamePiece.x, myGamePiece.y, myGamePiece.width, myGamePiece.height);
@@ -134,6 +140,7 @@ function winMsg() {
   ctx.fillText("You Won!", 65, 180);
 }
 
+/*************** Draw the game board ***************/
 function drawMaze() {
   var obstacleVert1 = new obstacle(10, 300, "black", 0, 0);
   obstacleVert1.update();
@@ -253,6 +260,7 @@ obstacleHorz12.update();
 obstacleArray.push(obstacleHorz12);
 }
 
+/*************** Reset the game board ***************/
 function resetGame() {
   document.getElementById("resetMsg").style.visibility = "visible";
 }
@@ -268,19 +276,28 @@ function resetNo() {
   document.getElementById("resetMsg").style.visibility = "hidden";
 }
 
+
+/*************** Show and hid the solution video/audio ***************/
 function showSolution() {
-  document.querySelector("video").load();
-  document.querySelector("video").playbackRate = 2.5;
-  document.querySelector("video").play();
-  document.querySelector("video").style.display = "block";
+  var vid = document.createElement("VIDEO");
+  vid.setAttribute("src", "mazeVideo.mp4");
+  vid.setAttribute("width", "350");
+  vid.setAttribute("height", "350");
+  vid.setAttribute("loop", "loop");
+  document.getElementById("myVideo").insertBefore(vid, document.getElementById("myVideo").childNodes[4]);
+  vid.load();
+  vid.playbackRate = 2.5;
+  vid.play();
+
+  var aud = document.createElement("AUDIO");
+  aud.setAttribute("src", "sillyMusic.mp3");
+  aud.setAttribute("loop", "loop");
+  document.getElementById("myVideo").insertBefore(aud, document.getElementById("myVideo").childNodes[5]);
   document.querySelector("audio").load();
   document.querySelector("audio").play();
-  document.querySelector("audio").style.display = "block";
 }
 
 function hideSolution() {
-  document.querySelector("video").pause();
-  document.querySelector("audio").pause();
-  document.querySelector("video").style.display = "none";
-  document.querySelector("audio").style.display = "none";
+  document.querySelector("video").remove();
+  document.querySelector("audio").remove();
 }
