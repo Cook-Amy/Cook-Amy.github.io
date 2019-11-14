@@ -7,7 +7,7 @@ var win = false;
 /*************** Start new game ***************/
 function startGame() {
     myGameArea.start();
-    myGamePiece.create(25, 25, "red", 5, 310);
+    myGamePiece.create(25, 25, "red", 10, 310);
     updateGameArea();
     myMaze = drawMaze();
 }
