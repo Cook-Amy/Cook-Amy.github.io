@@ -5,7 +5,7 @@ var win = false;
 
 function startGame() {
     myGameArea.start();
-    myGamePiece = new gamePiece(25, 25, "red", 0, 310);
+    myGamePiece.create(25, 25, "red", 0, 310);
     updateGameArea();
     myMaze = drawMaze();
 }
@@ -16,45 +16,51 @@ var myGameArea = {
         this.canvas.width = 360;
         this.canvas.height = 360;
         this.context = this.canvas.getContext("2d");
-        document.body.insertBefore(this.canvas, document.body.childNodes[2]);
+        document.getElementById("canvasArea").appendChild(this.canvas);
     }, 
-    clear : function(gx, gy, gw, gl) {
-      console.log(gx + " " + gy + " " + gw + " " + gl);
-      this.context.clearRect(gx, gy, gw, gl);
+    clearGame : function() {
+      this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    },
+    clearPiece : function(gx, gy, gw, gh) {
+      this.context.clearRect(gx, gy, gw, gh);
     }
 }
 
-function gamePiece(width, height, color, x, y) {
+var myGamePiece = {
+  create : function(width, height, color, x, y) {
     this.width = width;
     this.height = height;
     this.speedX = 0;
     this.speedY = 0;
     this.x = x;
-    this.y = y;    
-    this.update = function () {
-      ctx = myGameArea.context;
-      ctx.fillStyle = color;
-      ctx.fillRect(this.x, this.y, this.width, this.height);
-    }
-    this.newPos = function() {
-      this.x += this.speedX;
-      this.y += this.speedY;
-    }
-    this.crashWith = function(dx, dy) {
-      var crash = false;      
-      var imgData = ctx.getImageData(this.x + dx, this.y + dy, 25, 25);
-      var pix = imgData.data;
-      for(var i = 0; i < pix.length; ) {
-        if(pix[i++] == 0 && pix[i++] == 0 && pix[i++] == 0 && pix[i++] == 255) {
-          crash = true;
-        }
+    this.y = y;
+    this.color = color;
+  },
+  update : function () {
+    ctx = myGameArea.context;
+    ctx.fillStyle = this.color;
+    ctx.fillRect(this.x, this.y, this.width, this.height);
+  },
+  newPos : function() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+  },
+  crashWith : function(dx, dy) {
+    var crash = false;      
+    var imgData = ctx.getImageData(this.x + dx, this.y + dy, 25, 25);
+    var pix = imgData.data;
+    for(var i = 0; i < pix.length; ) {
+      if(pix[i++] == 0 && pix[i++] == 0 && pix[i++] == 0 && pix[i++] == 255) {
+        crash = true;
       }
-      return crash;
     }
-    this.win = function() {
-      if(this.x + width >= 365) {
-        winMsg();
+    return crash;
+  },
+  win : function() {
+      if(this.x + this.width >= 365) {
         win = true;
+        winMsg();
+        resetGame();
       }
     }
 }
@@ -75,7 +81,7 @@ function obstacle(width, height, color, x, y) {
 
 function updateGameArea() {
   if(!win) {
-    myGameArea.clear(gamePiece.x, gamePiece.y, gamePiece.width, gamePiece.length);
+    myGameArea.clearPiece(myGamePiece.x, myGamePiece.y, myGamePiece.width, myGamePiece.height);
     myGamePiece.newPos();
     myGamePiece.update();
     myGamePiece.win();
@@ -120,7 +126,7 @@ function stopmove() {
 }
 
 function winMsg() {
-  ctx = myGameArea.context;
+  ctx = myGameArea.context; 
   ctx.fillStyle = "yellow";
   ctx.fillRect(50, 100, 250, 120);
   ctx.fillStyle = "blue";
@@ -252,9 +258,29 @@ function resetGame() {
 }
 
 function resetYes() {
-
+  document.getElementById("resetMsg").style.visibility = "hidden";
+  myGameArea.clearGame();
+  win = false;
+  startGame();
 }
 
 function resetNo() {
   document.getElementById("resetMsg").style.visibility = "hidden";
+}
+
+function showSolution() {
+  document.querySelector("video").load();
+  document.querySelector("video").playbackRate = 2.5;
+  document.querySelector("video").play();
+  document.querySelector("video").style.display = "block";
+  document.querySelector("audio").load();
+  document.querySelector("audio").play();
+  document.querySelector("audio").style.display = "block";
+}
+
+function hideSolution() {
+  document.querySelector("video").pause();
+  document.querySelector("audio").pause();
+  document.querySelector("video").style.display = "none";
+  document.querySelector("audio").style.display = "none";
 }

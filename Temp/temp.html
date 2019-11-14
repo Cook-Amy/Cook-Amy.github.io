@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Assignment - Tags for Media</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="tagsForMedia.css" />
+  <script type="text/javascript" src="tagsForMedia.js"></script>
+
+</head>
+
+<body onload="startGame()">
+
+  <div id="header">
+    <h1>Canvas Maze</h1>
+  </div>
+
+      <div id="canvasArea"></div>
+
+      <div id="btns">
+        <button class="moveBtn" onmousedown="moveup()" onmouseup="stopmove()" ontouchstart="moveup()">UP</button><br><br>
+        <button class="moveBtn" onmousedown="moveleft()" onmouseup="stopmove()" ontouchstart="moveleft()">LEFT</button>
+        <button class="moveBtn" onmousedown="moveright()" onmouseup="stopmove()" ontouchstart="moveright()">RIGHT</button><br><br>
+        <button class="moveBtn" onmousedown="movedown()" onmouseup="stopmove()" ontouchstart="movedown()">DOWN</button><br><br>
+      </div>
+
+      <div id="resetArea">
+        <button class="resetBtn" onclick="resetGame()">RESET</button>
+        <span id="resetMsg">Do you want to restart the game?
+          <div id="answerBtnArea">
+            <button class="answerBtn" onclick='resetYes()'>Yes</button>
+            <button class="answerBtn" onclick='resetNo()'>No</button>
+            </div>
+        </span>
+      </div>
+
+</body>
+
+</html>

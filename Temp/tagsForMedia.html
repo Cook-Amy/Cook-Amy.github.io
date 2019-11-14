@@ -11,22 +11,51 @@
 <body onload="startGame()">
 
   <div id="header">
-    <h1>Maze</h1>
+    <h1>
+      <a href="/index.html">
+      <img id="home" src="home.png"></a>
+      Canvas Maze</h1>
   </div>
 
-<div id="btns">
-  <button class="moveBtn" onmousedown="moveup()" onmouseup="stopmove()" ontouchstart="moveup()">UP</button><br><br>
-  <button class="moveBtn" onmousedown="moveleft()" onmouseup="stopmove()" ontouchstart="moveleft()">LEFT</button>
-  <button class="moveBtn" onmousedown="moveright()" onmouseup="stopmove()" ontouchstart="moveright()">RIGHT</button><br><br>
-  <button class="moveBtn" onmousedown="movedown()" onmouseup="stopmove()" ontouchstart="movedown()">DOWN</button><br><br>
-  <button class="reset" onclick="resetGame()">RESET</button>
-  <span id="resetMsg">Are you sure?
-    <button onclick='resetYes()'>Yes</button>
-    <button onclick='resetNo()'>No</button>
-  </span>
-</div>
+  <div class="container">
+    <div class="column" id="col1">
+      <div id="canvasArea"></div>
 
-  <div id="myVideo"></div>
+      <div id="btns">
+        <button class="moveBtn" onmousedown="moveup()" onmouseup="stopmove()" ontouchstart="moveup()">UP</button><br><br>
+        <button class="moveBtn" onmousedown="moveleft()" onmouseup="stopmove()" ontouchstart="moveleft()">LEFT</button>
+        <button class="moveBtn" onmousedown="moveright()" onmouseup="stopmove()" ontouchstart="moveright()">RIGHT</button><br><br>
+        <button class="moveBtn" onmousedown="movedown()" onmouseup="stopmove()" ontouchstart="movedown()">DOWN</button><br><br>
+      </div>
+
+      <div id="resetArea">
+        <button class="resetBtn" onclick="resetGame()">RESET</button>
+        <span id="resetMsg">Do you want to restart the game?
+          <div id="answerBtnArea">
+            <button class="answerBtn" onclick='resetYes()'>Yes</button>
+            <button class="answerBtn" onclick='resetNo()'>No</button>
+          </div>
+        </span>
+      </div>
+    </div>
+
+    <div class="column" id="col2">
+      <div id="myVideo">
+        <button class="solutionBtn" onclick='showSolution()'>View Solution</button>
+        <button class="solutionBtn" onclick="hideSolution()">Hide Solution</button>
+        <video width="350" height="350" muted loop>
+          <source src="mazeVideo.mp4" type="video/mp4">
+            Your browser does not support this video element. 
+        </video>
+        <!-- <iframe src="silence.mp3" allow="autoplay" style="display:none" type="audio/mpeg"></iframe> -->
+        <audio loop>
+          <source src="sillyMusic.mp3" type="audio/mpeg">
+            Your browser does not support this audio element. 
+        </audio>
+      </div>
+    </div>
+
+  </div>
 
 
 </body>

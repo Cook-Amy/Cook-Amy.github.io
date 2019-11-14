@@ -1,0 +1,89 @@
+* {
+  background-color: #ccffe5;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#header {
+  text-align: center;
+}
+
+#home {
+  float: right;
+  height: 50px;
+  width: 50px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+#col1 {
+  width: 40%;
+  margin-left: 50px;
+}
+
+#col2 {
+  width: 60%;
+  text-align: center;
+}
+
+#canvasArea {
+  width: 350px;
+  margin: auto;
+}
+
+#btns {
+  text-align: center;
+  width: 350px;
+  margin: auto;
+}
+
+.moveBtn {
+  background-color: #004d25;
+  color: white;
+  font-size: 20px;
+}
+
+.resetBtn {
+  background-color: #004d25;
+  color: white;
+  font-size: 20px;
+}
+
+.answerBtn {
+  background-color: #800000;
+  color: white;
+  font-size: 20px;
+}
+
+#resetArea {
+  margin: auto;
+  width: 450px;
+  text-align: center;
+}
+
+#resetMsg {
+  visibility: hidden;
+  color: red;
+  font-weight: bold;
+}
+
+#myVideo {
+  text-align: center;
+  width: 100%;
+}
+
+.solutionBtn {
+  background-color: #004d25;
+  color: white;
+  font-size: 20px;
+}
+
+video {
+  display: none;
+}
+
+audio {
+  display: none;
+}
