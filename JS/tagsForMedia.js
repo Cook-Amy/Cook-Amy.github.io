@@ -213,9 +213,9 @@ var obstacleVert17 = new obstacle(10, 100, "black", 350, 250);
 obstacleVert17.update();
 obstacleArray.push(obstacleVert17);
 
-var obstacleVert17 = new obstacle(10, 50, "#ccffe5", 0, 300);
-obstacleVert17.update();
-obstacleArray.push(obstacleVert17);
+var obstacleVert18 = new obstacle(10, 50, "#ccffe5", 0, 300);
+obstacleVert18.update();
+obstacleArray.push(obstacleVert18);
 
 var obstacleHorz1 = new obstacle(350, 10, "black", 0, 0);
 obstacleHorz1.update();
