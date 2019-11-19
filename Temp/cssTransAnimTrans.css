@@ -1,0 +1,314 @@
+/************ Page ************/
+
+* {
+  box-sizing: border-box;
+  background-color: #ffff99;
+}
+
+#header {
+  text-align: center;
+  font-size: 70px;
+}
+#homeButton {
+  text-align: right;
+  margin-right: 50px;
+}
+
+.mainSection:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.column.btns {
+  width: 25%;
+  text-align: center;
+}
+
+.column.selections {
+  width: 33%;
+}
+
+.column.picture {
+  width: 30%;
+  border-width: 10px;
+  min-height: 550px;
+}
+
+/************ Menu ************/
+ul {
+  list-style-type: none;
+}
+
+.menu li {
+  background-color: #800000;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 15px 30px;
+  margin: 3px 50px;
+  font-size: 1.2em;    
+  width: 180px;
+  padding: 10px 30px;
+}   
+
+/************ Figure ************/
+
+#name {
+  font-size: 25px;
+  margin-left: 100px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.figure {
+  width: 300px;
+  height: 300px;
+  display: block;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.head {
+  width: 50px;
+  height: 60px;
+  border: 5px solid;
+  border-radius: 40%;
+  display: block;
+  position: absolute;
+  top: 21px;
+  left: 153px;
+  z-index: 1;
+  transform-origin: center bottom;
+}
+
+.torso {
+  width: 6px;
+  height: 100px;
+  border: 3px solid;
+  display: block;
+  position: absolute;
+  top: 80px;
+  left: 176px;
+}
+
+.leftleg {
+  width: 6px;
+  height: 100px;
+  border: 3px solid;
+  display: block;
+  position: absolute;
+  top: 175px;
+  left: 175px;
+  transform: rotate(12deg);
+  transform-origin: top;
+}
+
+.rightleg {
+  width: 6px;
+  height: 100px;
+  border: 3px solid;
+  display: block;
+  position: absolute;
+  top: 175px;
+  left: 177px;
+  transform: rotate(-12deg);
+  transform-origin: top;
+}
+
+.leftarm {
+  width: 100px;
+  height: 6px;
+  border: 3px solid;
+  display: block;
+  position: absolute;
+  top: 86px;
+  left: 77px;
+  transform-origin: 100%;
+  transform: rotate(-50deg);
+}
+
+.rightarm {
+  width: 100px;
+  height: 6px;
+  border: 3px solid;
+  display: block;
+  position: absolute;
+  top: 86px;
+  left: 181px;
+  transform-origin: 0%;
+  transform: rotate(50deg);
+}
+
+.danceBtn {
+  margin-left: 66%;
+  margin-top: 5px;
+  background-color: #006666;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1.2em;    
+  width: 150px;
+  padding: 5px 5px;
+}
+
+/************ Choices ************/
+
+/* font families */
+@font-face {
+  font-family: "dalekFont";
+  /* src: url("/Other/dalek.ttf"); */
+  src: url("dalek.ttf");
+}
+.font1 { font-family: "dalekFont"; }
+
+@font-face {
+  font-family: "goudyFont";
+  /* src: url("/Other/goudy.TTF"); */
+  src: url("goudy.TTF");
+}
+.font2 { font-family: "goudyFont"; }
+
+@font-face {
+  font-family: "magnetoFont";
+  /* src: url("/Other/magneto.TTF"); */
+  src: url("magneto.TTF");
+}
+.font3 { font-family: "magnetoFont"; }
+
+@font-face {
+  font-family: "segoeFont";
+  /* src: url("/Other/segoe.ttf"); */
+  src: url("segoe.ttf");
+}
+.font4 { font-family: "segoeFont"; }
+
+@font-face {
+  font-family: "snapFont";
+  /* src: url("/Other/snap.TTF"); */
+  src: url("snap.TTF");
+}
+.font5 { font-family: snapFont; }
+
+.fontChoice { 
+  font-size: 25px; 
+  border-radius: 8px;
+  background-color: lightblue;
+  width: 400px;
+  margin: 10px;
+}
+
+/* color choices grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.colorChoice {
+  min-height: 100px;
+  max-width: 120px;
+}
+
+#red { background-color: #ff0000; }
+#blue { background-color: #0033cc; }
+#purple { background-color: #993399; }
+#green { background-color: #009933; }
+#yellow { background-color: #ffff00; }
+#orange { background-color: #ff6600; }
+#pink { background-color: #ff6699; }
+#black { background-color: #000000; }
+#brown { background-color: #804000; }
+
+.borderChoice {
+  min-height: 100px;
+  max-width: 120px;
+  border-width: 7px;
+}
+
+#dotted {border-style: dotted;}
+#dashed {border-style: dashed;}
+#solid {border-style: solid;}
+#double {border-style: double;}
+#groove {border-style: groove;}
+#ridge {border-style: ridge;}
+#inset {border-style: inset;}
+#outset {border-style: outset;}
+#none {border-style: none; text-align: center;}
+
+.headChoice {
+  min-height: 135px;
+  max-width: 100px;
+  border: 5px solid;
+}
+
+#head0 {border-radius: 0%;}
+#head10 {border-radius: 10%;}
+#head20 {border-radius: 20%;}
+#head30 {border-radius: 30%;}
+#head40 {border-radius: 40%;}
+#head50 {border-radius: 50%;}
+
+.heightBtnArea {
+  height: 100px;
+}
+
+.heightChoice { 
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: lightblue;
+  margin: 10px;
+  text-align: center;
+  width: 250px;
+  border-radius: 8px;
+  font-size: 30px;
+}
+
+/************ Dance Party ************/
+@keyframes danceBorder {
+  0% { border-style: dotted;}
+  100% { border-style: dashed; }
+}
+
+@keyframes rockHead {
+  0% {transform: rotate(-20deg);}
+  100% {transform: rotate(20deg);}
+}
+
+@keyframes leftArmWave {
+  0% {transform: rotate(-50deg); color: #000000;}
+  25% { color: #ff0000; }
+  50% { color: #009933; }
+  100% {transform: rotate(50deg); color: #993399;}
+}
+
+@keyframes rightArmWave {
+  0% {transform: rotate(50deg); color: #000000;}
+  25% { color: #ff0000; }
+  50% { color: #009933; }
+  100% {transform: rotate(-50deg); color: #993399;}
+}
+
+@keyframes leftLegKick {
+  0% {transform: rotate(12deg); color: #000000;}
+  25% { color: #ff0000; }
+  50% {transform: rotate(50deg); color: #009933;}
+  100% {transform: rotate(12deg); color: #993399;}
+}
+
+@keyframes rightLegKick {
+  0% {transform: rotate(-12deg); color: #000000;}
+  25% { color: #ff0000; }
+  50% {transform: rotate(-12deg); color: #009933;}
+  100% {transform: rotate(-50deg); color: #993399;}
+}
+
+@keyframes bodyColor {
+  0% { color: #000000; }
+  25% { color: #ff0000; }
+  50% { color: #009933; }
+  100% {color: #993399;}
+}
+

@@ -1,3 +1,0 @@
-https://www.w3schools.com/graphics/game_intro.asp
-https://html5.litten.com/make-a-maze-game-on-an-html5-canvas/
-http://puzzlemaker.discoveryeducation.com/code/BuildMaze.asp
