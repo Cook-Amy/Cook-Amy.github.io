@@ -18,6 +18,38 @@
   left: 100px;
 }
 
+/********** Sidebar Menu *********/
+.sideBarTab {
+  width: 50px;
+  height: 50px;
+  text-align: right;
+  transition: width 3s;
+}
+
+.sideBarTab:hover {
+  width: 150px;
+}
+
+#tab1 {
+  background-color: blue;
+}
+
+#tab2 {
+  background-color: green;
+}
+
+.sideBarTab figure {
+  height: 50px;
+  width: auto;
+  padding: 10px;
+  /* position: absolute; */
+}
+
+.sideBarTab figure img {
+  width: auto;
+  height: 50%;
+}
+
 /********** Animal Pics *********/
 
 .animalImg {

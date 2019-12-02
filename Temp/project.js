@@ -1,3 +1,6 @@
+var animals = [];
+
+// Animals will move onto the screen when page is loaded
 function animalsMove() {
   document.getElementById("spottedOwlImg").style.animation = "loadMove1 4s";
   document.getElementById("graySquirrelImg").style.animation = "loadMove2 3s";
@@ -14,6 +17,7 @@ function animalsMove() {
   setTimeout("animalsInPlace()", 5000);
 }
 
+// Once animals are in place, they move around slightly
 function animalsInPlace() {
   document.getElementById("spottedOwlImg").style.animation = "moveInPlace1 3s infinite linear";
   document.getElementById("graySquirrelImg").style.animation = "moveInPlace6 5s infinite linear";
@@ -27,11 +31,16 @@ function animalsInPlace() {
   document.getElementById("blackBearImg").style.animation = "moveInPlace4 3.5s infinite ease-in-out";
   document.getElementById("snowyOwlImg").style.animation = "moveInPlace7 3s infinite linear";
   document.getElementById("crocodileImg").style.animation = "moveInPlace10 2s infinite linear";
+
+  // Animal images are saved in an array and given an onclick event listener
+  animals = document.querySelectorAll(".animalImg");
+  animals.forEach(animal => animal.addEventListener("click", moveImg));
 }
 
-function moveImg() {
-  document.getElementById("spottedOwlImg").style.left = "100px";
-  document.getElementById("spottedOwlImg").style.top = "50px";
+function moveImg(e) {
+  // document.getElementById(this.id).style.left = "40px";
+  // document.getElementById(this.id).style.top = "50px";
+  // document.getElementById(this.id).style.animation = "";
 }
 
 function getInfo() {
