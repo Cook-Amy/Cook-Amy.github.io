@@ -1,9 +1,73 @@
+/********** Page Styling *********/
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 #header {
   font-size: 40px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-align: center;
 }
 
+/********** Sidebar Menu *********/
+#sidebar {
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  height: 50%;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: width 0.5s;
+  padding-top: 50px;
+}
+
+#sidebar a {
+  padding: 15px 8px 15px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+  overflow-x: hidden;
+  min-width: 200%;
+}
+
+#sidebar a:hover, button:hover {
+  background-color: #818181;
+  color: black;
+}
+
+.opener {
+  z-index: 0;
+  font-size: 50px;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  background-color: white;
+  position: absolute;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.opener:hover {
+  background-color: #444;
+  color: white;
+}
+
+.opener2 {
+  font-size: 50px;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  background-color: inherit;
+  color: #818181;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+/********** Home / Map *********/
 #map {
   display: block;
   position: relative;
@@ -18,65 +82,28 @@
   left: 100px;
 }
 
-/********** Sidebar Menu *********/
-.sideBarTab {
-  width: 50px;
-  height: 50px;
-  text-align: right;
-  transition: width 3s;
-}
-
-.sideBarTab:hover {
-  width: 150px;
-}
-
-#tab1 {
-  background-color: blue;
-}
-
-#tab2 {
-  background-color: green;
-}
-
-.sideBarTab figure {
-  height: 50px;
-  width: auto;
-  padding: 10px;
-  /* position: absolute; */
-}
-
-.sideBarTab figure img {
-  width: auto;
-  height: 50%;
-}
-
-/********** Animal Pics *********/
-
 .animalImg {
   position: absolute;
   display: block;
-
+  cursor: pointer;
 }
 
 #spottedOwlImg {
   width: 150px;
   top: 70px;
   left: 280px;
-  /* animation: moveInPlace1 3s infinite linear; */
 }
 
 #graySquirrelImg {
   width: 75px;
   top: 275px;
   left: 240px;
-  /* animation: moveInPlace6 5s infinite linear; */
 }
 
 #buffaloImg {
   width: 115px;
   top:140px;
   left: 500px;
-  /* animation: moveInPlace8 3.5s infinite ease-out; */
   transform-origin: right;
 }
 
@@ -84,21 +111,18 @@
   width: 110px;
   top: 295px;
   left: 410px;
-  /* animation: moveInPlace5 3s infinite linear; */
 }
 
 #redTailedHawkImg {
   width: 85px;
   top: 300px;
   left: 340px;
-  /* animation: moveInPlace2 4s infinite linear; */
 }
 
 #mooseImg {
   width: 90px;
   top: 510px;
   left: 130px;
-  /* animation: moveInPlace3 3s infinite linear; */
 
 }
 
@@ -106,35 +130,30 @@
   width: 90px;
   top: 625px;
   left: 530px;
-  /* animation: moveInPlace12 5.5s infinite linear; */
 }
 
 #coyoteImg {
   width: 90px;
   top: 490px;
   left: 560px;
-  /* animation: moveInPlace11 3s infinite linear; */
 }
 
 #bighornSheepImg {
   width: 60px;
   top: 140px;
   left: 700px;
-  /* animation: moveInPlace9 2s infinite linear; */
 }
 
 #blackBearImg {
   width: 80px;
   top: 300px;
   left: 1215px;
-  /* animation: moveInPlace4 3.5s infinite ease-in-out; */
 }
 
 #snowyOwlImg {
   width: 60px;
   top: 110px;
   left: 1390px;
-  /* animation: moveInPlace7 3s infinite linear; */
   transform-origin: left;
 }
 
@@ -142,10 +161,9 @@
   width: 100px;
   top: 610px;
   left: 1420px;
-  /* animation: moveInPlace10 2s infinite linear; */
 }
 
-/********** Animation On Load*********/
+      /* Animation On Load */
 @keyframes loadMove1 {
   0% { transform: translate3d(500px, -500px, 0);}
   100% { transform: translate3d(0px, 0, 0);}
@@ -207,7 +225,7 @@
   100% { transform: translate3d(0px, 0, 0);}
 }
 
-/********** Animation Move In Place*********/
+      /* Animation Move In Place */
 @keyframes moveInPlace1 {
   from { transform: rotate(0deg) translate(-10px) rotate(0deg); }
   to { transform: rotate(-360deg) translate(-10px) rotate(360deg); }
@@ -288,4 +306,149 @@
   25% { transform: rotate(360deg) translate(-10px) rotate(-360deg); }
   50% { transform: rotateZ(40deg); }
   100% { transform: rotateZ(0deg); }
+}
+
+/********** Side Panels *********/
+.tabcontent {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  height: 90%;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: width 1s;
+  background-color: #262626;
+  color: silver;
+  padding-top: 50px;
+}
+
+/* #list {
+  background-color: #262626;
+  color: silver
+}
+
+#search {
+  background-color: lightyellow;
+}
+
+#result {
+  background-color: silver;
+} */
+
+.tabcontent a {
+  padding: 15px 8px 15px 8px;
+  text-decoration: none;
+  font-size: 18px;
+  color: silver;
+  /* display: block; */
+  transition: background-color 0.3s, color 0.3s;
+  overflow-x: hidden;
+  width: 30%;
+  text-align: center;
+  margin-left: 30px;
+}
+
+.tabcontent a:hover {
+  background-color: silver;
+  color: black;
+}
+
+.returnBtn {
+  text-align: right;
+}
+
+/********** List View *********/
+table {
+  border-collapse: separate;
+  background: #ecf9f2;
+  border-radius: 5px;
+  margin: 50px auto;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+thead {
+  border-radius: 5px;
+}
+
+thead th {
+  font-size: 25px;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+  text-align: left;
+  padding: 20px;
+  background-color: #339966;
+  border-top: 1px solid #858d99;
+}
+thead th:first-child {
+  border-top-left-radius: 5px;
+}
+thead th:last-child {
+  border-top-right-radius: 5px;
+}
+
+tbody tr td {
+  font-weight: 400;
+  color: #5f6062;
+  font-size: 20px;
+  padding: 20px 20px 20px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+}
+
+tbody tr:nth-child(2n) {
+  background: #d9f2e6;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 5px;
+}
+tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 5px;
+}
+
+tbody:hover > tr td {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+
+tbody:hover > tr:hover td {
+  text-shadow: none;
+  color: #2d2d2d;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+
+/********** Search View *********/
+#searchArea {
+  margin-left: 100px;
+  margin-top: 30px;
+}
+
+#searchHeading {
+  font-size: 30px;
+}
+
+#searchInput {
+  margin: 20px 0px 20px 0px;
+  font-size: 25px;
+  padding: 8px;
+  transition: border 0.3s;
+}
+
+#searchInput:focus {
+  border: 5px solid #339966;
+}
+
+#searchBtn {
+  font-size: 25px;
+  background-color: #339966;
+  border-radius: 8px;
+  border: none;
+  margin-left: 35px;
+  cursor: pointer;
 }

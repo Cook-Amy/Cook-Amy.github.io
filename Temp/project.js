@@ -1,7 +1,10 @@
 var animals = [];
+var listNames = [];
 
-// Animals will move onto the screen when page is loaded
+/***** Animals will move onto the screen when page is loaded *****/
 function animalsMove() {
+  // document.getElementById("home").style.display = "block";
+
   document.getElementById("spottedOwlImg").style.animation = "loadMove1 4s";
   document.getElementById("graySquirrelImg").style.animation = "loadMove2 3s";
   document.getElementById("buffaloImg").style.animation = "loadMove3 5s";
@@ -17,7 +20,8 @@ function animalsMove() {
   setTimeout("animalsInPlace()", 5000);
 }
 
-// Once animals are in place, they move around slightly
+
+/***** Once animals are in place, they move around slightly *****/
 function animalsInPlace() {
   document.getElementById("spottedOwlImg").style.animation = "moveInPlace1 3s infinite linear";
   document.getElementById("graySquirrelImg").style.animation = "moveInPlace6 5s infinite linear";
@@ -34,20 +38,63 @@ function animalsInPlace() {
 
   // Animal images are saved in an array and given an onclick event listener
   animals = document.querySelectorAll(".animalImg");
-  animals.forEach(animal => animal.addEventListener("click", moveImg));
+  animals.forEach(animal => animal.addEventListener("click", getParkFromAnimal));
+
+  // List names are saved in an array and given an onclick event listener
+  listNames = document.querySelectorAll(".parkName");
+  listNames.forEach(listName => listName.addEventListener("click", getParkFromList));
 }
 
-function moveImg(e) {
-  // document.getElementById(this.id).style.left = "40px";
-  // document.getElementById(this.id).style.top = "50px";
-  // document.getElementById(this.id).style.animation = "";
+
+/***** Open and close navigation and sidebars ******/
+function openNav() {
+  document.getElementById("sidebar").style.width = "15%";
+  document.getElementById("list").style.width = "0%";
+  document.getElementById("search").style.width = "0%";
+  document.getElementById("result").style.width = "0%";
 }
 
-function getInfo() {
+function closeNav() {
+  document.getElementById("sidebar").style.width = "0";
+  document.getElementById("list").style.width = "0%";
+  document.getElementById("search").style.width = "0%";
+  document.getElementById("result").style.width = "0%";
+}
+
+function viewList() {
+  closeNav();
+  document.getElementById("list").style.width = "60%";
+}
+
+function searchParks() {
+  closeNav();
+  document.getElementById("search").style.width = "60%";
+}
+
+
+/***** Get results ******/
+function getParkFromAnimal(e) {
+  document.getElementById("result").style.width = "75%";
+  var park = returnParkFromId(this.id);
+  getParkInfo(park);
+}
+
+function getParkFromList(e) {
+  var park = this.innerHTML;
+  getParkInfo(park);
+}
+
+function getParkFromSearch() {
+  var park = document.getElementById("searchInput").value;
+  getParkInfo(park);
+}
+
+function getParkInfo(park) {
   var parkRequest = new XMLHttpRequest();
   parkRequest.onreadystatechange = function() {
     if(this.readyState == 4 && this.status == 200) {
-      document.getElementById("infoDisplay").innerHTML = this.responseText;
+      console.log("info returned for " + park);
+      // document.getElementById("infoDisplay").innerHTML = this.responseText;
       // var jsonResp = JSON.parse(this.responseText);
       // formatPicture(jsonResp);
     }
@@ -58,3 +105,33 @@ function getInfo() {
   parkRequest.send();
 }
 
+
+/***** Get park name from animal picture id *****/
+function returnParkFromId(id) {
+  switch (id) {
+    case "spottedOwlImg":
+      return "Mt. Ranier";
+    case "graySquirrelImg":
+      return "Sequoia";
+    case "buffaloImg":
+      return "Yellowstone";
+    case "westernLizardImg":
+      return "Arches";
+    case "redTailedHawkImg":
+      return "Grand Canyon";
+    case "mooseImg":
+      return "Denali";
+    case "hawksbillTurtleImg":
+      return "Hawaii Volcanoes";
+    case "coyoteImg":
+      return "Big Bend";
+    case "bighornSheepImg":
+      return "Badlands";
+    case "blackBearImg":
+      return "Great Smoky Mountains";
+    case "snowyOwlImg":
+      return "Acadia";
+    case "crocodileImg":
+      return "Everglades";
+  }
+}

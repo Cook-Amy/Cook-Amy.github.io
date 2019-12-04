@@ -8,35 +8,115 @@
 
 <body onload="animalsMove()">
 
-<div id="header">Popular National Parks in the US</div>
-
-<div id="map">
-  <img id="mapImg" src="/Pics/projectPics/map2.png">
-
-  <div class="sideBarTab" id="tab1">
-      <figure><img src="/Pics/projectPics/tree.png"></figure>
+    <div id="header">Popular National Parks in the US</div>
+    
+    <div id="sidebar">
+      <button class="opener2" onclick="closeNav()">☰</button>
+      <a href="#" class="menuBtn" id="closer" onclick="closeNav()">Map View</a>
+      <a href="#" class="menuBtn" id="listLink" onclick="viewList()">List View</a>
+      <a href="#" class="menuBtn" id="searchLink" onclick="searchParks()">Search</a>
     </div>
-    <div class="sideBarTab" id="tab2">
-      <figure><img src="/Pics/projectPics/bald eagle.png"></figure>
+    
+    <!-- Home / Map page -->
+    <div id="home">
+      <button class="opener" onclick="openNav()">☰</button>
+      <div id="map">
+        <img id="spottedOwlImg" class="animalImg" src="/Pics/projectPics/spotted owl.png" onclick="moveImg()">
+        <img id="graySquirrelImg" class="animalImg" src="/Pics/projectPics/gray squirrel.png">
+        <img id="buffaloImg" class="animalImg" src="/Pics/projectPics/buffalo.png">
+        <img id="westernLizardImg" class="animalImg" src="/Pics/projectPics/western collared lizard.png">
+        <img id="redTailedHawkImg" class="animalImg" src="/Pics/projectPics/red tailed hawk.png">
+        <img id="mooseImg" class="animalImg" src="/Pics/projectPics/moose.png">
+        <img id="hawksbillTurtleImg" class="animalImg" src="/Pics/projectPics/hawksbill turtle.png">
+        <img id="coyoteImg" class="animalImg" src="/Pics/projectPics/coyote.png">
+        <img id="bighornSheepImg" class="animalImg" src="/Pics/projectPics/big horn sheep.png">
+        <img id="blackBearImg" class="animalImg" src="/Pics/projectPics/black bear.png">
+        <img id="snowyOwlImg" class="animalImg" src="/Pics/projectPics/snowy owl.png">
+        <img id="crocodileImg" class="animalImg" src="/Pics/projectPics/crocodile.png">
+      </div>
     </div>
-
-  <img id="spottedOwlImg" class="animalImg" src="/Pics/projectPics/spotted owl.png" onclick="moveImg()">
-  <img id="graySquirrelImg" class="animalImg" src="/Pics/projectPics/gray squirrel.png">
-  <img id="buffaloImg" class="animalImg" src="/Pics/projectPics/buffalo.png">
-  <img id="westernLizardImg" class="animalImg" src="/Pics/projectPics/western collared lizard.png">
-  <img id="redTailedHawkImg" class="animalImg" src="/Pics/projectPics/red tailed hawk.png">
-  <img id="mooseImg" class="animalImg" src="/Pics/projectPics/moose.png">
-  <img id="hawksbillTurtleImg" class="animalImg" src="/Pics/projectPics/hawksbill turtle.png">
-  <img id="coyoteImg" class="animalImg" src="/Pics/projectPics/coyote.png">
-  <img id="bighornSheepImg" class="animalImg" src="/Pics/projectPics/big horn sheep.png">
-  <img id="blackBearImg" class="animalImg" src="/Pics/projectPics/black bear.png">
-  <img id="snowyOwlImg" class="animalImg" src="/Pics/projectPics/snowy owl.png">
-  <img id="crocodileImg" class="animalImg" src="/Pics/projectPics/crocodile.png">
-</div>
-<div id="animals">
-  
-</div>
-
-</body>
-
-</html>
+    
+    <!-- View All Page -->
+    <div id="list" class="tabcontent">
+      <button class="opener2" onclick="openNav()">☰</button>
+      <a href="#" class="menuBtn returnBtn" onclick="closeNav()">Return to Map View</a>
+      <table id="listTable">
+        <thead>
+          <tr>
+            <th>Park</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="parkName">Acadia National Park</td>
+            <td>Maine</td>
+          </tr>
+          <tr>
+            <td class="parkName">Arches National Park</td>
+            <td>Utah</td>
+          </tr>
+          <tr>
+            <td class="parkName">Badlands National Park</td>
+            <td>South Dakota</td>
+          </tr>
+          <tr>
+            <td class="parkName">Big Bend National Park</td>
+            <td>Texas</td>
+          </tr>
+          <tr>
+            <td class="parkName">Denali National Park</td>
+            <td>Alaska</td>
+          </tr>
+          <tr>
+            <td class="parkName">Everglades National Park</td>
+            <td>Florida</td>
+          </tr>
+          <tr>
+            <td class="parkName">Grand Canyon National Park</td>
+            <td>Arizona</td>
+          </tr>
+          <tr>
+            <td class="parkName">Greak Smoky Mountains National Park</td>
+            <td>North Carolina</td>
+          </tr>
+          <tr>
+            <td class="parkName">Hawaii Volcanoes National Park</td>
+            <td>Hawaii</td>
+          </tr>
+          <tr>
+            <td class="parkName">Mt. Ranier National Park</td>
+            <td>Washington</td>
+          </tr>
+          <tr>
+            <td class="parkName">Sequoia National Park</td>
+            <td>California</td>
+          </tr>
+          <tr>
+            <td class="parkName">Yellowstone National Park</td>
+            <td>Wyoming</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      
+    <!-- Search Page -->
+    <div id="search" class="tabcontent">
+      <button class="opener2" onclick="openNav()">☰</button>
+      <a href="#" class="menuBtn returnBtn" onclick="closeNav()">Return to Map View</a>
+      <div id="searchArea">
+        <div id="searchHeading">Search for a National Park</div>
+        <input id="searchInput" type="text" size="35" placeholder="Park Name">
+        <div><button id="searchBtn" onclick="getParkFromSearch()">Search</button></div>
+      </div>
+    </div>
+    
+    <!-- Result Page -->
+    <div id="result" class="tabcontent">
+      <button class="opener2" onclick="openNav()">☰</button>
+      <a href="#" class="menuBtn returnBtn" onclick="closeNav()">Return to Map View</a>
+      <p>Result Page</p>
+    </div>
+    </body>
+    
+    </html>
