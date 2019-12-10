@@ -168,7 +168,7 @@ function formatResponse(park, info, alert) {
   var alertInfo = "";
   for (var i = 0; i < alert.data.length; i++) {
     if(i > 0) {
-      alertInfo += "<br>";
+      alertInfo += "<br><br>";
     }
     alertInfo += alert.data[i].description;
   }
