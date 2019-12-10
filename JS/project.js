@@ -230,29 +230,29 @@ function seeResultsFromSearch(park) {
 function returnParkFromId(id) {
   switch (id) {
     case "spottedOwlImg":
-      return "Mount Rainier";
+      return "Mount Rainier National Park";
     case "graySquirrelImg":
-      return "Sequoia";
+      return "Sequoia & Kings National Parks";
     case "buffaloImg":
-      return "Yellowstone";
+      return "Yellowstone National Park";
     case "westernLizardImg":
-      return "Arches";
+      return "Arches National Park";
     case "redTailedHawkImg":
-      return "Grand Canyon";
+      return "Grand Canyon National Park";
     case "mooseImg":
-      return "Denali";
+      return "Denali National Park";
     case "hawksbillTurtleImg":
-      return "Hawai'i Volcanoes";
+      return "Hawai'i Volcanoes National Park";
     case "coyoteImg":
-      return "Big Bend";
+      return "Big Bend National Park";
     case "bighornSheepImg":
-      return "Badlands";
+      return "Badlands National Park";
     case "blackBearImg":
       return "Great Smoky Mountains";
     case "snowyOwlImg":
-      return "Acadia";
+      return "Acadia National Park";
     case "crocodileImg":
-      return "Everglades";
+      return "Everglades National Park";
   }
 }
 
