@@ -97,6 +97,10 @@ function getParkFromAnimal(e) {
 
 function getParkFromList(e) {
   var park = this.innerHTML;
+  if(park.includes("Sequoia"))
+  {
+    park = "Sequoia";
+  }
   getParkInfo(park);
   openResults();
 }
@@ -108,6 +112,7 @@ function getParkInfo(park) {
     if(this.readyState == 4 && this.status == 200) {
       var info = JSON.parse(this.responseText);
       getParkAlerts(park, info);
+      console.log("info: " + this.responseText);
     }
   };
   parkRequest.open("GET", 

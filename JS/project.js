@@ -97,6 +97,10 @@ function getParkFromAnimal(e) {
 
 function getParkFromList(e) {
   var park = this.innerHTML;
+  if(park.includes("Sequoia"))
+  {
+    park = "Sequoia";
+  }
   getParkInfo(park);
   openResults();
 }
