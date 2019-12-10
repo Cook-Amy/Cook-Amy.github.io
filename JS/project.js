@@ -232,7 +232,7 @@ function returnParkFromId(id) {
     case "spottedOwlImg":
       return "Mount Rainier National Park";
     case "graySquirrelImg":
-      return "Sequoia & Kings National Parks";
+      return "Sequoia & Kings Canyon National Parks";
     case "buffaloImg":
       return "Yellowstone National Park";
     case "westernLizardImg":
