@@ -21,6 +21,7 @@
     <div id="home">
       <button class="opener" onclick="openNav()">☰</button>
       <div id="map">
+        <img id="mapImg" src="/Pics/projectPics/map2.png">
         <img id="spottedOwlImg" class="animalImg" src="/Pics/projectPics/spotted owl.png" onclick="moveImg()">
         <img id="graySquirrelImg" class="animalImg" src="/Pics/projectPics/gray squirrel.png">
         <img id="buffaloImg" class="animalImg" src="/Pics/projectPics/buffalo.png">
@@ -38,85 +39,134 @@
     
     <!-- View All Page -->
     <div id="list" class="tabcontent">
-      <button class="opener2" onclick="openNav()">☰</button>
-      <a href="#" class="menuBtn returnBtn" onclick="closeNav()">Return to Map View</a>
-      <table id="listTable">
-        <thead>
-          <tr>
-            <th>Park</th>
-            <th>Location</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="parkName">Acadia National Park</td>
-            <td>Maine</td>
-          </tr>
-          <tr>
-            <td class="parkName">Arches National Park</td>
-            <td>Utah</td>
-          </tr>
-          <tr>
-            <td class="parkName">Badlands National Park</td>
-            <td>South Dakota</td>
-          </tr>
-          <tr>
-            <td class="parkName">Big Bend National Park</td>
-            <td>Texas</td>
-          </tr>
-          <tr>
-            <td class="parkName">Denali National Park</td>
-            <td>Alaska</td>
-          </tr>
-          <tr>
-            <td class="parkName">Everglades National Park</td>
-            <td>Florida</td>
-          </tr>
-          <tr>
-            <td class="parkName">Grand Canyon National Park</td>
-            <td>Arizona</td>
-          </tr>
-          <tr>
-            <td class="parkName">Greak Smoky Mountains National Park</td>
-            <td>North Carolina</td>
-          </tr>
-          <tr>
-            <td class="parkName">Hawaii Volcanoes National Park</td>
-            <td>Hawaii</td>
-          </tr>
-          <tr>
-            <td class="parkName">Mt. Ranier National Park</td>
-            <td>Washington</td>
-          </tr>
-          <tr>
-            <td class="parkName">Sequoia National Park</td>
-            <td>California</td>
-          </tr>
-          <tr>
-            <td class="parkName">Yellowstone National Park</td>
-            <td>Wyoming</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      <button class="opener2 fixedElement" onclick="openNav()">☰</button>
+      <a href="#" class="menuBtn returnBtn fixedElement" 
+              onclick="closeNav()">Return to Map View</a>
+  <table id="listTable">
+    <thead>
+      <tr>
+        <th colspan="2">Park</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><img src="snowy owl.png"></td>
+        <td class="parkName">Acadia</td>
+        <td>Maine</td>
+      </tr>
+      <tr>      
+        <td><img src="western collared lizard.png"></td> 
+        <td class="parkName">Arches</td>
+        <td>Utah</td>
+      </tr>
+      <tr>
+        <td><img src="big horn sheep.png"></td>     
+        <td class="parkName">Badlands</td>
+        <td>South Dakota</td>
+      </tr>
+      <tr>      
+        <td><img src="coyote.png"></td>  
+        <td class="parkName">Big Bend</td>
+        <td>Texas</td>
+      </tr>
+      <tr>    
+        <td><img src="moose.png"></td>    
+        <td class="parkName">Denali</td>
+        <td>Alaska</td>
+      </tr>
+      <tr>        
+        <td><img src="crocodile.png"></td>
+        <td class="parkName">Everglades</td>
+        <td>Florida</td>
+      </tr>
+      <tr>        
+        <td><img src="red tailed hawk.png"></td>
+        <td class="parkName">Grand Canyon</td>
+        <td>Arizona</td>
+      </tr>
+      <tr>        
+        <td><img src="black bear.png"></td>
+        <td class="parkName">Great Smoky Mountains</td>
+        <td>North Carolina, Tennessee</td>
+      </tr>
+      <tr>        
+        <td><img src="hawksbill turtle.png"></td>
+        <td class="parkName">Hawai'i Volcanoes</td>
+        <td>Hawaii</td>
+      </tr>
+      <tr>        
+        <td><img src="snowy owl.png"></td>
+        <td class="parkName">Mount Rainier</td>
+        <td>Washington</td>
+      </tr>
+      <tr>        
+        <td><img src="gray squirrel.png"></td>
+        <td class="parkName">Sequoia</td>
+        <td>California</td>
+      </tr>
+      <tr>        
+        <td><img src="buffalo.png"></td>
+        <td class="parkName">Yellowstone</td>
+        <td>Idaho, Montana, Wyoming</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
       
-    <!-- Search Page -->
-    <div id="search" class="tabcontent">
-      <button class="opener2" onclick="openNav()">☰</button>
-      <a href="#" class="menuBtn returnBtn" onclick="closeNav()">Return to Map View</a>
-      <div id="searchArea">
-        <div id="searchHeading">Search for a National Park</div>
-        <input id="searchInput" type="text" size="35" placeholder="Park Name">
-        <div><button id="searchBtn" onclick="getParkFromSearch()">Search</button></div>
+<!-- Search Page -->
+<div id="search" class="tabcontent">
+    <button class="opener2 fixedElement" onclick="openNav()">☰</button>
+    <a href="#" class="menuBtn returnBtn fixedElement" 
+                onclick="closeNav()">Return to Map View</a>
+    <div id="searchArea">
+      <div id="searchHeading">Search for any National Park</div>
+      <input id="searchInput" type="text" size="35" placeholder="Park Name">
+      <div>
+        <button id="searchBtn" 
+                class="searchButtons" 
+                onclick="getParkFromSearch()">Search</button>
+        <button id="clearSearchBtn" 
+                class="searchButtons" 
+                onclick="clearSearchResults()">Clear</button>
       </div>
     </div>
+    <div id="searchList"></div>
+  </div>
     
     <!-- Result Page -->
-    <div id="result" class="tabcontent">
-      <button class="opener2" onclick="openNav()">☰</button>
-      <a href="#" class="menuBtn returnBtn" onclick="closeNav()">Return to Map View</a>
-      <p>Result Page</p>
-    </div>
-    </body>
+<div id="result" class="tabcontent">
+    <button class="opener2 fixedElement" onclick="openNav()">☰</button>
+    <a href="#" class="menuBtn returnBtn fixedElement" 
+                onclick="closeNav()">Return to Map View</a>
+    <table id="resultTable">
+      <tr>
+        <td class="column1">Name</td>
+        <td class="resultCell" id="nameResult"></td>
+      </tr>
+      <tr>
+        <td class="column1">State</td>
+        <td class="resultCell" id="stateResult"></td>
+      </tr>
+      <tr>
+        <td class="column1">Description</td>
+        <td class="resultCell" id="descriptionResult"></td>
+      </tr>
+      <tr>
+        <td class="column1">Link</td>
+        <td class="resultCell" id="linkResult"></td>
+      </tr>
+      <tr>
+        <td class="column1">Weather</td>
+        <td class="resultCell" id="weatherResult"></td>
+      </tr>
+      <tr>
+        <td class="column1">Current Alerts</td>
+        <td class="resultCell" id="alertInfo"></td>
+      </tr>
+    </table>
+  </div>
+
+  </body>
     
-    </html>
+  </html>

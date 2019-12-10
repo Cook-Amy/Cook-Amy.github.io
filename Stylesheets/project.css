@@ -1,4 +1,8 @@
 /********** Page Styling *********/
+body {
+  background-color: #b3d1ff;
+}
+
 body, html {
   width: 100%;
   height: 100%;
@@ -9,6 +13,8 @@ body, html {
 #header {
   font-size: 40px;
   text-align: center;
+  color: #206040;
+  text-shadow: 1px 1px 2px #e68a00, 0 0 10px #339966, 0 0 25px silver;
 }
 
 /********** Sidebar Menu *********/
@@ -47,7 +53,7 @@ body, html {
   cursor: pointer;
   padding: 10px;
   border: none;
-  background-color: white;
+  background-color: inherit;
   position: absolute;
   transition: background-color 0.5s, color 0.5s;
 }
@@ -65,6 +71,11 @@ body, html {
   background-color: inherit;
   color: #818181;
   transition: background-color 0.5s, color 0.5s;
+}
+
+.fixedElement {
+  position: sticky;
+  top: 0;
 }
 
 /********** Home / Map *********/
@@ -323,25 +334,11 @@ body, html {
   padding-top: 50px;
 }
 
-/* #list {
-  background-color: #262626;
-  color: silver
-}
-
-#search {
-  background-color: lightyellow;
-}
-
-#result {
-  background-color: silver;
-} */
-
 .tabcontent a {
   padding: 15px 8px 15px 8px;
   text-decoration: none;
   font-size: 18px;
   color: silver;
-  /* display: block; */
   transition: background-color 0.3s, color 0.3s;
   overflow-x: hidden;
   width: 30%;
@@ -356,39 +353,53 @@ body, html {
 
 .returnBtn {
   text-align: right;
+  background-color: #262626;
 }
 
 /********** List View *********/
-table {
+#listTable {
   border-collapse: separate;
   background: #ecf9f2;
   border-radius: 5px;
   margin: 50px auto;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  table-layout: fixed;
 }
 
-thead {
+#listTable thead {
   border-radius: 5px;
 }
 
-thead th {
+#listTable thead th {
   font-size: 25px;
   font-weight: 400;
   color: #fff;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
-  text-align: left;
+  text-align: center;
   padding: 20px;
   background-color: #339966;
   border-top: 1px solid #858d99;
 }
-thead th:first-child {
+#listTable thead th:first-child {
   border-top-left-radius: 5px;
 }
-thead th:last-child {
+#listTable thead th:last-child {
   border-top-right-radius: 5px;
 }
 
-tbody tr td {
+#listTable tbody tr {
+  height: 130px;
+}
+
+#listTable tbody td {
+  vertical-align: middle;
+}
+
+#listTable .tableText {
+  vertical-align: middle;
+}
+
+#listTable tbody tr td {
   font-weight: 400;
   color: #5f6062;
   font-size: 20px;
@@ -397,30 +408,36 @@ tbody tr td {
   cursor: pointer;
 }
 
-tbody tr:nth-child(2n) {
+#listTable tbody tr:nth-child(2n) {
   background: #d9f2e6;
 }
 
-tbody tr:last-child td {
+#listTable tbody tr:last-child td {
   border-bottom: none;
 }
-tbody tr:last-child td:first-child {
+#listTable tbody tr:last-child td:first-child {
   border-bottom-left-radius: 5px;
 }
-tbody tr:last-child td:last-child {
+#listTable tbody tr:last-child td:last-child {
   border-bottom-right-radius: 5px;
 }
 
-tbody:hover > tr td {
+#listTable tbody:hover > tr td {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
 }
 
-tbody:hover > tr:hover td {
+#listTable tbody:hover > tr:hover td {
   text-shadow: none;
   color: #2d2d2d;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
+}
+
+#listTable td img {
+  width: 60px;
+  height: auto;
+  margin-right: 10px;
 }
 
 /********** Search View *********/
@@ -431,6 +448,7 @@ tbody:hover > tr:hover td {
 
 #searchHeading {
   font-size: 30px;
+  color: #339966;
 }
 
 #searchInput {
@@ -444,11 +462,82 @@ tbody:hover > tr:hover td {
   border: 5px solid #339966;
 }
 
-#searchBtn {
+.searchButtons {
   font-size: 25px;
   background-color: #339966;
   border-radius: 8px;
   border: none;
   margin-left: 35px;
   cursor: pointer;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #339966;
+  border-bottom: 16px solid #339966;
+  border-left: 16px solid #e68a00;
+  border-right: 16px solid #e68a00;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#searchList {
+  margin-left: 100px;
+  margin-top: 30px;
+  font-size: 25px;
+}
+
+.searchResultItem {
+  cursor: pointer;
+}
+
+.searchResultItem:hover {
+  color: #e68a00;
+}
+
+/********** Results View *********/
+#resultTable {
+  border-collapse: separate;
+  background: #ecf9f2;
+  border-radius: 5px;
+  margin: 20px 50px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  table-layout: fixed;
+}
+
+#resultTable tr td {
+  color: #2d2d2d;
+  font-size: 20px;
+  padding: 20px 20px 20px 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.column1 {
+  font-weight: bolder;
+}
+
+#resultTable tr:nth-child(2n) {
+  background: #d9f2e6;
+}
+
+#resultTable tr:last-child td {
+  border-bottom: none;
+}
+#resultTable tr:last-child td:first-child {
+  border-bottom-left-radius: 5px;
+}
+#resultTable tr:last-child td:last-child {
+  border-bottom-right-radius: 5px;
+}
+
+#resultTable td a {
+  color: #2d2d2d;
+  text-decoration: none;
 }
