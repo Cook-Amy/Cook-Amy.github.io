@@ -112,7 +112,6 @@ function getParkInfo(park) {
     if(this.readyState == 4 && this.status == 200) {
       var info = JSON.parse(this.responseText);
       getParkAlerts(park, info);
-      console.log("info: " + this.responseText);
     }
   };
   parkRequest.open("GET", 
@@ -137,6 +136,7 @@ function getParkAlerts(park, info) {
         if(this.readyState == 4 && this.status == 200) {
           var alert = JSON.parse(this.response);
           formatResponse(park, info, alert);
+          console.log("alert: " + this.responseText);
         }
       };
       parkAlert.open("GET", 
@@ -156,6 +156,7 @@ function formatResponse(park, info, alert) {
     var lower2 = park.toLowerCase();
     if(lower1.includes(lower2)) {
       document.getElementById("nameResult").innerHTML = info.data[j].fullName;
+      // if(info.data[j].description == )
       document.getElementById("descriptionResult").innerHTML = info.data[j].description;
       document.getElementById("weatherResult").innerHTML = info.data[j].weatherInfo;
 
@@ -171,11 +172,15 @@ function formatResponse(park, info, alert) {
   }
 
   var alertInfo = "";
+  var alertCount = 1;
+  if(alert.total == "0") {
+    alertInfo = "No alerts at this time.";
+  }
   for (var i = 0; i < alert.data.length; i++) {
     if(i > 0) {
-      alertInfo += "<br>";
+      alertInfo += "<br><br>";
     }
-    alertInfo += alert.data[i].description;
+    alertInfo += alertCount++ + ". " + alert.data[i].description;
   }
   document.getElementById("alertInfo").innerHTML = alertInfo;
 }
@@ -210,19 +215,23 @@ function getParkInfoForSearch(park) {
 function displayAllResults(park, info) {
   var display = "";
   var count = 1;
-  for(var i = 0; i < info.data.length; i++) {
-    var lower1 = info.data[i].fullName.toLowerCase();
-    var lower2 = park.toLowerCase();
-    if(lower1.includes(lower2)) {
-      display += "<p id='result" 
-            + count++ 
-            + "' class='searchResultItem' onclick=\"seeResultsFromSearch('" 
-            + info.data[i].fullName 
-            + "')\">" + info.data[i].fullName 
-            + "</p>";
+  if(info.data.length == 0) {
+    display = "<p id='noResult'>No results found. Please try again.</p>";
+  }
+  else {
+    for(var i = 0; i < info.data.length; i++) {
+      var lower1 = info.data[i].fullName.toLowerCase();
+      var lower2 = park.toLowerCase();
+      if(lower1.includes(lower2)) {
+        display += "<p id='result" 
+              + count++ 
+              + "' class='searchResultItem' onclick=\"seeResultsFromSearch('" 
+              + info.data[i].fullName 
+              + "')\">" + info.data[i].fullName 
+              + "</p>";
+      }
     }
   }
-  console.log("display: " + display);
   document.getElementById("searchList").innerHTML = display;
 }
 
