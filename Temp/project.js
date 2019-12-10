@@ -3,8 +3,6 @@ var listNames = [];
 
 /***** Animals will move onto the screen when page is loaded *****/
 function animalsMove() {
-  // document.getElementById("home").style.display = "block";
-
   document.getElementById("spottedOwlImg").style.animation = "loadMove1 4s";
   document.getElementById("graySquirrelImg").style.animation = "loadMove2 3s";
   document.getElementById("buffaloImg").style.animation = "loadMove3 5s";
@@ -108,14 +106,14 @@ function getParkInfo(park) {
   var parkRequest = new XMLHttpRequest();
   parkRequest.onreadystatechange = function() {
     if(this.readyState == 4 && this.status == 200) {
-      // console.log("info returned for " + park);
-      // console.log(this.responseText);
       var info = JSON.parse(this.responseText);
       getParkAlerts(park, info);
     }
   };
   parkRequest.open("GET", 
-                  "https://developer.nps.gov/api/v1/parks?q=" + park + "&api_key=JNYAWS2ZETuoa0Qip2UdSflY3evyqacAiEGQKixm", 
+                  "https://developer.nps.gov/api/v1/parks?q=" 
+                  + park 
+                  + "&api_key=JNYAWS2ZETuoa0Qip2UdSflY3evyqacAiEGQKixm", 
                   true);
   parkRequest.send();
 }
@@ -126,21 +124,20 @@ function getParkAlerts(park, info) {
   for(var j = 0; j < info.data.length; j++) {
     var lower1 = info.data[j].fullName.toLowerCase();
     var lower2 = park.toLowerCase();
-    console.log("lower case name: " + lower1);
     if(lower1.includes(lower2)) {
 
       // send AJAX request for alert
       var parkAlert = new XMLHttpRequest();
       parkAlert.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200) {
-          // console.log("alert returned for " + park);
-          // console.log(this.responseText);
           var alert = JSON.parse(this.response);
           formatResponse(park, info, alert);
         }
       };
       parkAlert.open("GET", 
-                      "https://developer.nps.gov/api/v1/alerts?q=" + info.data[j].fullName + "&api_key=JNYAWS2ZETuoa0Qip2UdSflY3evyqacAiEGQKixm", 
+                      "https://developer.nps.gov/api/v1/alerts?q=" 
+                      + info.data[j].fullName 
+                      + "&api_key=JNYAWS2ZETuoa0Qip2UdSflY3evyqacAiEGQKixm", 
                       true);
       parkAlert.send();
     }
@@ -157,7 +154,11 @@ function formatResponse(park, info, alert) {
       document.getElementById("descriptionResult").innerHTML = info.data[j].description;
       document.getElementById("weatherResult").innerHTML = info.data[j].weatherInfo;
 
-      document.getElementById("linkResult").innerHTML = "<a href='" + info.data[j].url + "' target='_blank'>" + info.data[j].url + "</a>";
+      document.getElementById("linkResult").innerHTML = "<a href='" 
+        + info.data[j].url 
+        + "' target='_blank'>" 
+        + info.data[j].url 
+        + "</a>";
 
       var stateNames = getStateNames(info.data[j].states);
       document.getElementById("stateResult").innerHTML = stateNames;
@@ -179,10 +180,8 @@ function getParkFromSearch() {
   var park = document.getElementById("searchInput").value;
   if(park != "") {
     document.getElementById("searchList").innerHTML = "<div class='loader'></div>";
-    console.log("search park: " + park);
     getParkInfoForSearch(park);
   }
-  // openResults();
 }
 
   // get park info for Search Page
@@ -190,14 +189,14 @@ function getParkInfoForSearch(park) {
   var parkRequest = new XMLHttpRequest();
   parkRequest.onreadystatechange = function() {
     if(this.readyState == 4 && this.status == 200) {
-      console.log("info returned for " + park);
-      console.log(this.responseText);
       var info = JSON.parse(this.responseText);
       displayAllResults(park, info);
     }
   };
   parkRequest.open("GET", 
-                  "https://developer.nps.gov/api/v1/parks?q=" + park + "&limit=100&api_key=JNYAWS2ZETuoa0Qip2UdSflY3evyqacAiEGQKixm", 
+                  "https://developer.nps.gov/api/v1/parks?q=" 
+                  + park 
+                  + "&limit=100&api_key=JNYAWS2ZETuoa0Qip2UdSflY3evyqacAiEGQKixm", 
                   true);
   parkRequest.send();
 }
@@ -209,10 +208,13 @@ function displayAllResults(park, info) {
   for(var i = 0; i < info.data.length; i++) {
     var lower1 = info.data[i].fullName.toLowerCase();
     var lower2 = park.toLowerCase();
-    console.log("length: " + info.data.length);
     if(lower1.includes(lower2)) {
-      console.log("count: " + count);
-      display += "<p id='result" + count++ + "' class='searchResultItem' onclick=\"seeResultsFromSearch('" + info.data[i].fullName + "')\">" + info.data[i].fullName + "</p>";
+      display += "<p id='result" 
+            + count++ 
+            + "' class='searchResultItem' onclick=\"seeResultsFromSearch('" 
+            + info.data[i].fullName 
+            + "')\">" + info.data[i].fullName 
+            + "</p>";
     }
   }
   console.log("display: " + display);

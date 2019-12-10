@@ -334,25 +334,11 @@ body, html {
   padding-top: 50px;
 }
 
-/* #list {
-  background-color: #262626;
-  color: silver
-}
-
-#search {
-  background-color: lightyellow;
-}
-
-#result {
-  background-color: silver;
-} */
-
 .tabcontent a {
   padding: 15px 8px 15px 8px;
   text-decoration: none;
   font-size: 18px;
   color: silver;
-  /* display: block; */
   transition: background-color 0.3s, color 0.3s;
   overflow-x: hidden;
   width: 30%;

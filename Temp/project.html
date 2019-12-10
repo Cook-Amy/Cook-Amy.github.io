@@ -40,7 +40,8 @@
 <!-- View All Page -->
 <div id="list" class="tabcontent">
   <button class="opener2 fixedElement" onclick="openNav()">☰</button>
-  <a href="#" class="menuBtn returnBtn fixedElement" onclick="closeNav()">Return to Map View</a>
+  <a href="#" class="menuBtn returnBtn fixedElement" 
+              onclick="closeNav()">Return to Map View</a>
   <table id="listTable">
     <thead>
       <tr>
@@ -116,13 +117,18 @@
 <!-- Search Page -->
 <div id="search" class="tabcontent">
   <button class="opener2 fixedElement" onclick="openNav()">☰</button>
-  <a href="#" class="menuBtn returnBtn fixedElement" onclick="closeNav()">Return to Map View</a>
+  <a href="#" class="menuBtn returnBtn fixedElement" 
+              onclick="closeNav()">Return to Map View</a>
   <div id="searchArea">
-    <div id="searchHeading">Search for a National Park</div>
+    <div id="searchHeading">Search for any National Park</div>
     <input id="searchInput" type="text" size="35" placeholder="Park Name">
     <div>
-      <button id="searchBtn" class="searchButtons" onclick="getParkFromSearch()">Search</button>
-      <button id="clearSearchBtn" class="searchButtons" onclick="clearSearchResults()">Clear</button>
+      <button id="searchBtn" 
+              class="searchButtons" 
+              onclick="getParkFromSearch()">Search</button>
+      <button id="clearSearchBtn" 
+              class="searchButtons" 
+              onclick="clearSearchResults()">Clear</button>
     </div>
   </div>
   <div id="searchList"></div>
@@ -131,7 +137,8 @@
 <!-- Result Page -->
 <div id="result" class="tabcontent">
   <button class="opener2 fixedElement" onclick="openNav()">☰</button>
-  <a href="#" class="menuBtn returnBtn fixedElement" onclick="closeNav()">Return to Map View</a>
+  <a href="#" class="menuBtn returnBtn fixedElement" 
+              onclick="closeNav()">Return to Map View</a>
   <table id="resultTable">
     <tr>
       <td class="column1">Name</td>
@@ -159,6 +166,7 @@
     </tr>
   </table>
 </div>
+
 </body>
 
 </html>
