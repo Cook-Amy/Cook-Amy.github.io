@@ -2,21 +2,52 @@
 <html lang="en">
 <head>
   <title>Assignment - DOM</title>
-
-  <link rel="stylesheet" type="text/css" href="/Stylesheets/dom.css" />
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/Stylesheets/tagsForMedia.css" />
+  <script type="text/javascript" src="/JS/tagsForMedia.js"></script>
 
 </head>
 
-<body>
-    <div id="homeButton">
-        <a href="/index.html">
-          <img id="homeButton" src="/Pics/home.png" width="50px" height="50px" />
-        </a>
-      </div>
-  <h2>Assignment - DOM Document Object Model</h2>
+<body onload="startGame()">
 
-  <div>*****Content pending*****</div>
+  <div id="header">
+    <h1>
+      <a href="/index.html">
+      <img id="home" src="/Pics/home.png"></a>
+      Canvas Maze</h1>
+  </div>
+
+  <div class="container">
+    <div class="column" id="col1">
+      <div id="canvasArea"></div>
+
+      <div id="btns">
+        <button class="moveBtn" onmousedown="moveup()" onmouseup="stopmove()" ontouchstart="moveup()">UP</button><br>
+        <button class="moveBtn" onmousedown="moveleft()" onmouseup="stopmove()" ontouchstart="moveleft()">LEFT</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="moveBtn" onmousedown="moveright()" onmouseup="stopmove()" ontouchstart="moveright()">RIGHT</button><br>
+        <button class="moveBtn" onmousedown="movedown()" onmouseup="stopmove()" ontouchstart="movedown()">DOWN</button><br><br>
+      </div>
+
+      <div id="resetArea">
+        <button class="resetBtn" onclick="resetGame()">RESET</button>
+        <span id="resetMsg">Do you want to restart the game?
+          <div id="answerBtnArea">
+            <button class="answerBtn" onclick='resetYes()'>Yes</button>
+            <button class="answerBtn" onclick='resetNo()'>No</button>
+          </div>
+        </span>
+      </div>
+    </div>
+
+    <div class="column" id="col2">
+      <div id="myVideo">
+        <button class="solutionBtn" onclick='showSolution()'>View Solution</button>
+        <button class="solutionBtn" onclick="hideSolution()">Hide Solution</button>
+      </div>
+    </div>
+  </div>
 
 </body>
 
 </html>
+
