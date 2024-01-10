@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Assignment - JavaScript Events</title>
+  <script type="text/javascript" src="/JS/javascriptEvents.js"></script>
+  <link rel="stylesheet" type="text/css" href="/Stylesheets/javascriptEvents.css" />
+</head>
+
+<body onload="function6()">
+  <div id="header">JavaScript Events
+    <div id="homeButton">
+      <a href="/index.html">
+        <img id="homeButton" src="/Pics/homeWhite.png" width="60px" height="60px" />
+      </a>
+    </div>
+  </div>
+
+  <div class="grid-container">
+
+    <div class="grid-item">
+      <h3>Click the buttons to see a message.</h3>
+      <!-- onclick button -->
+      <div id="btns">
+        <button class="onClickBtn" onclick="function1()">Click Me</button>
+        <button class="onClickBtn" onclick="undoFunction1()">Reset</button>
+      </div>
+      <div id="onclickAction"></div>
+    </div>
+
+
+
+    <div class="grid-item">
+      <h3>Click on the picture to see it change.</h3>
+      <!-- onclick picture -->
+      <img id="changeImage" src="/Pics/javascriptEventsPics/picture1.jpg" onclick="function2()" height="228.15px" width="405px" >
+    </div>
+
+
+
+    <div class="grid-item">
+      <div class="inside-grid-container">
+        <div class="inside=grid-item">
+          <!-- onmouseover -->
+          <div id="mouseOver" onmouseover="function3()">Put the cursor in this box to see a change</div>
+        </div>
+        <div class="inside-grid-item">
+          <!-- onmouseout -->
+          <div id="mouseOut" onmouseout="function4()">Move your cursor out of this box to see a change</div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="grid-item">
+      <h3>Type something in the box.</h3>
+      <!-- keyup -->
+      <div id=keyUpDiv>
+        <input id="keyUp" type="text" onkeyup="function5()"> 
+      </div>
+      <div id="keyUpResult"></div>
+    </div>
+
+
+
+    <div class="grid-item">  
+      <h3>Click the button to reveal a hidden message. </h3>  
+      <!-- onload page -->
+      <div id="onLoadResult">You found me!</div>
+      <button id="onLoadButton" onclick="undoOnLoad()">Click Me</button>
+    </div>
+
+
+
+    <div class="grid-item">
+      <h3>Play and pause the video to see a message.</h3>
+      <!-- onload video -->
+      <video src="/Pics/javascriptEventsPics/movie1.mp4" type="video/mp4" onpause="function7()" onplay="function10()" width="141.75px" height="252px" controls></video>
+      <div id="videoMsg">Message: <span id="videoLoadedMsg"></span></div>
+    </div>
+
+  </div>
+
+    <div id="lastItem">
+      <!-- onfocus and onblur -->
+      <div>
+        <span class="question">What is your favorite number?</span>
+        <input class="focusInput" id="input1" type="text" onfocus="function8(1)" onblur="function9(1)">
+        <span class="focusMsgs" id="focusMsg1"></span>
+      </div>
+      <div>
+        <span class="question">What is your favorite color?</span>
+        <input class="focusInput" id="input2" type="text" onfocus="function8(2)" onblur="function9(2)">
+        <span class="focusMsgs" id="focusMsg2"></span>
+      </div>
+    </div>
+
+    <!-- touch events -->
+    <div class="touch-grid-container">
+      <!-- ontouchstart -->
+      <div class="touch-grid-item">
+        <h2 class="touchHeading">Touch Devices Only</h2>
+        <p ontouchstart="function11()">Touch here.</p>
+        <div id="touchDemo1"></div>
+      </div>
+
+      <!-- ontouchmove -->
+      <div class="touch-grid-item">
+        <h2 class="touchHeading">Touch Devices Only</h2>
+        <p ontouchmove="function12(event)">Touch here . . . and drag your finger across the box.</p>
+        <div id="touchDemo2"></div>
+      </div>
+    </div>
+
+    <div style="visibility: hidden;">
+      <img src="/Pics/javascriptEventsPics/picture2.jpg">
+    </div>
+
+</body>
+</html>

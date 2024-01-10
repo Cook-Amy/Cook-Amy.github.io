@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JavaScript Events Demo</title>
+  <link rel="stylesheet" type="text/css" href="JavaScriptEventDemo.css" />
+</head>
+
+<body onload="function6()">
+  <div id="header">JavaScript Events Demo</div>
+
+  <div class="grid-container">
+
+    <div class="grid-item">
+      <!-- onclick button -->
+      <div id="btns">
+        <button class="onClickBtn" onclick="function1()">Click Me</button>
+        <button class="onClickBtn" onclick="undoFunction1()">Reset</button>
+      </div>
+      <div id="onclickAction"></div>
+    </div>
+
+
+
+    <div class="grid-item">
+      <!-- onclick picture -->
+      <img id="changeImage" src="picture1.jpg" onclick="function2()" height="228.15px" width="405px" >
+    </div>
+
+
+
+    <div class="grid-item">
+      <div class="inside-grid-container">
+        <div class="inside=grid-item">
+          <!-- onmouseover -->
+          <div id="mouseOver" onmouseover="function3()">Put the cursor in this box to see a change</div>
+        </div>
+        <div class="inside-grid-item">
+          <!-- onmouseout -->
+          <div id="mouseOut" onmouseout="function4()">Move your cursor out of this box to see a change</div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="grid-item">
+      <!-- keyup -->
+      <div id=keyUpDiv>
+        <input id="keyUp" type="text" onkeyup="function5()"> 
+      </div>
+      <div id="keyUpResult"></div>
+    </div>
+
+
+
+    <div class="grid-item">    
+      <!-- onload page -->
+      <div id="onLoadResult">This is always hidden when page is loaded!</div>
+      <button id="onLoadButton" onclick="undoOnLoad()">Show Hidden Element</button>
+    </div>
+
+
+
+    <div class="grid-item">
+      <!-- onload video -->
+      <video src="movie1.mp4" type="video/mp4" onpause="function7()" onplay="function10()" width="141.75px" height="252px" controls></video>
+      <div id="videoMsg">Message: <span id="videoLoadedMsg"></span></div>
+    </div>
+
+  </div>
+
+    <div id="lastItem">
+      <!-- onfocus and onblur -->
+      <div>
+        <span class="question">What is your favorite number?</span>
+        <input class="focusInput" id="input1" type="text" onfocus="function8(1)" onblur="function9(1)">
+        <span id="focusMsg1"></span>
+      </div>
+      <div>
+        <span class="question">What is your favorite color?</span>
+        <input class="focusInput" id="input2" type="text" onfocus="function8(2)" onblur="function9(2)">
+        <span id="focusMsg2"></span>
+      </div>
+    </div>
+
+    <!-- touch events -->
+    <div class="touch-grid-container">
+      <!-- ontouchstart -->
+      <div class="touch-grid-item">
+        <h2 class="touchHeading">Touch Devices Only</h2>
+        <p ontouchstart="function11()">Touch this paragraph to trigger a function that will write "Hello World".</p>
+        <div id="touchDemo1"></div>
+      </div>
+
+      <!-- ontouchmove -->
+      <div class="touch-grid-item">
+        <h2 class="touchHeading">Touch Devices Only</h2>
+        <p ontouchmove="function12(event)">Touch this paragraph, and move your finger to trigger a function that will 
+          display the x and y coordinates of the touch, according to the document.</p>
+        <div id="touchDemo2"></div>
+      </div>
+    </div>
+
+
+  <script>
+  /*********** MouseEvents ***********/
+    function function1() {
+      document.getElementById("onclickAction").innerHTML = "Hello World!";
+    }
+    function undoFunction1() {
+      document.getElementById("onclickAction").innerHTML = "";
+    }
+
+    function function2() {
+      var x = document.getElementById("changeImage").src;
+      if(x.includes("picture1")) {
+        document.getElementById("changeImage").src = "picture2.jpg";
+      }
+      else {
+        document.getElementById("changeImage").src = "picture1.jpg";
+      }
+    }
+
+    function function3() {
+      var c1 = document.getElementById("mouseOver").style.backgroundColor;
+      if(c1 == "blue") {
+        document.getElementById("mouseOver").style.backgroundColor = "green";
+      }
+      else {
+        document.getElementById("mouseOver").style.backgroundColor = "blue";
+      }
+    }
+
+    function function4() {
+      var c2 = document.getElementById("mouseOut").style.backgroundColor;
+      if(c2 == "darkgoldenrod") {
+        document.getElementById("mouseOut").style.backgroundColor = "purple";
+      }
+      else {
+        document.getElementById("mouseOut").style.backgroundColor = "darkgoldenrod";
+      }
+    }
+
+  /*********** KeyboardEvents ***********/
+    function function5() {
+      document.getElementById("keyUpResult").innerHTML = document.getElementById("keyUp").value;
+    }
+
+  /*********** UiEvents ***********/
+  function function6() {
+    document.getElementById("onLoadResult").style.visibility = "hidden";
+  }
+  function undoOnLoad() {
+    document.getElementById("onLoadResult").style.visibility = "visible";
+  }
+
+  function function7() {
+    document.getElementById("videoLoadedMsg").innerHTML = "The video is paused.";
+  }
+
+  function function10() {
+    document.getElementById("videoLoadedMsg").innerHTML = "The video is playing.";
+  }
+
+  /*********** FocusEvents ***********/
+  function function8(num) {
+    if(num == 1) {
+      document.getElementById("input1").style.borderColor = "red";
+    }
+    else {
+      document.getElementById("input2").style.borderColor = "red";
+    }
+  
+  }
+  
+  function function9(num) {
+    if(num == 1) {
+      document.getElementById("input1").style.borderColor = "white";
+      document.getElementById("focusMsg1").innerHTML = "Thank you for your response.";
+    }
+    else {
+      document.getElementById("input2").style.borderColor = "white";
+      document.getElementById("focusMsg2").innerHTML = "That's a great choice!"
+    }
+  }
+
+  function function11() {
+    document.getElementById("touchDemo1").innerHTML = "Hello World";
+  }
+
+  function function12(event) {
+    var x = event.touches[0].clientX;
+    var y = event.touches[0].clientY;
+    document.getElementById("touchDemo2").innerHTML = x + ", " + y;
+  }
+  </script>
+</body>
+</html>

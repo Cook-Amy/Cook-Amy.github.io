@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Assignment - AJAX</title>
+
+  <link rel="stylesheet" type="text/css" href="/Stylesheets/cssTransitions.css" />
+  <script type="text/javascript" src="/JS/cssTransitions.js"></script>
+
+</head>
+
+<body>
+  <div id="header">
+    <a href="/index.html">
+      <img id="homeButton" src="/Pics/home.png" width="50px" height="50px" />
+    </a>
+    Learn About the World
+</div>
+
+<div class="navbar">
+  <a href="#" id="loadCountry" onclick="loadCountrySearch()">Country</a>
+  <a href="#" id="loadRegion" onclick="loadRegionSearch()">Region</a>
+  <a href="#" id="loadLanguage" onclick="loadLanguageSearch()">Language</a>
+  <a href="#" id="loadCurrency" onclick="loadCurrencySearch()">Currency</a>
+</div>
+
+  <div id="displayCountry">
+    <div id="instructions">Type the name of a country:</div>
+    <input id="userInput" type="text">
+    <button id="inputBtn" class="btn" onclick="getInfo()">Find Country</button>
+    <button id="clearBtn" class="btn" onclick="clearInfo()">Reset</button>
+    <div id="errorMsg"></div>
+    <div id="response">
+      <dl id="listResponse">
+        <div class="list1">
+          <dt class="listTag">Name:</dt>
+          <dd id="listName"></dd>
+        </div>
+        <div class="list2">
+          <dt class="listTag">Region:</dt>
+          <dd id="listRegion"></dd>
+        </div>
+        <div class="list3">
+          <dt class="listTag">Population:</dt>
+          <dd id="listPopulation"></dd>
+        </div>
+        <div class="list4">
+          <dt class="listTag">Capital:</dt>
+          <dd id="listCapital"></dd>
+        </div>
+        <div class="list5">
+          <dt class="listTag">Languages:</dt>
+          <dd id="listLanguages"></dd>
+        </div>
+        <div class="list6">
+          <dt class="listTag">Currencies</dt>
+          <dd id="listCurrencies"></dd>
+        </div>
+        <div class="list7">
+          <dt class="listTag">Border Countries:</dt>
+          <dd id="listBorders"></dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+  <div id="displayRegion">
+    <p>Currency Search . . . Coming Soon</p>
+  </div>
+
+  <div id="displayLanguage">
+    <p>Language Search . . . Coming Soon</p>
+  </div>
+
+  <div id="displayCurrency">
+    <p>Currency Search . . . Coming Soon</p>
+  </div>
+
+  <div id="temp"></div>
+
+</body>
+
+</html>
+

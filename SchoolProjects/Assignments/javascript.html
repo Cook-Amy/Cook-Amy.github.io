@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Assignment - JavaScript</title>
+
+  <script type="text/javascript" src="/JS/javascript.js"></script>
+  <link rel="stylesheet" type="text/css" href="/Stylesheets/javascript.css" />
+
+</head>
+
+<body>
+  <div class="header">
+    <h1 id="title">Create A Jack-O-Lantern</h1>
+  </div>
+
+  <div class="row main">
+    <div class="column borderLeftSide"></div>
+    <div class="column left">
+      <h2 class="directions">#1. Choose a Part</h2>
+      <div><button id="pumpkin-shape" onclick="pumpkinChoices()">Pumpkin</button></div>
+      <div><button id="eyes" onclick="eyeChoices()">Eyes</button></div>
+      <div><button id="nose" onclick="noseChoices()">Nose</button></div>
+      <div><button id="mouth" onclick="mouthChoices()">Mouth</button></div>
+      <div><button id="random" onclick="randomSelection()">Random Selection</button></div>
+    </div>
+
+    <div class="column second">
+      <h2 class="directions">#2. Pick One</h2>
+        <div class="choice" id="choice1">
+            <img id="picture1" src="/Pics/javascriptPics/square.png" width="190px" height="190px" onclick="addSelection(1)" />
+        </div>
+        <div class="choice" id="choice2">
+          <img id="picture2" src="/Pics/javascriptPics/square.png" width="190px" height="190px" onclick="addSelection(2)" />
+        </div>
+        <div class="choice" id="choice3">
+          <img id="picture3" src="/Pics/javascriptPics/square.png" width="190px" height="190px" onclick="addSelection(3)" />
+        </div>
+    </div>
+
+    <div class="column main">
+      <h2 class="directions">#3. Your Results</h2>
+      <div id="result">
+        <img id="resultPumpkin" src="/Pics/javascriptPics/square.png" width="585px" height="585px" />
+        <img id="resultEyes" src="/Pics/javascriptPics/square.png" width="585px" height="585px" />
+        <img id="resultNose" src="/Pics/javascriptPics/square.png" width="585px" height="585px" />
+        <img id="resultMouth" src="/Pics/javascriptPics/square.png" width="585px" height="585px" />
+      </div>
+    </div>
+
+    <div class="column borderRightSide">
+      <a href="/index.html">
+        <img id="homeButton" src="/Pics/home.png" width="60px" height="60px" />
+      </a>
+    </div>
+
+  <div class="hidden">
+    <img src="/Pics/javascriptPics/pumpkin1.png" />
+    <img src="/Pics/javascriptPics/pumpkin2.png" />
+    <img src="/Pics/javascriptPics/pumpkin3.png" />
+    <img src="/Pics/javascriptPics/eyes4.png" />
+    <img src="/Pics/javascriptPics/eyes5.png" />
+    <img src="/Pics/javascriptPics/eyes6.png" />
+    <img src="/Pics/javascriptPics/nose4.png" />
+    <img src="/Pics/javascriptPics/nose5.png" />
+    <img src="/Pics/javascriptPics/nose6.png" />
+    <img src="/Pics/javascriptPics/mouth4.png" />
+    <img src="/Pics/javascriptPics/mouth5.png" />
+    <img src="/Pics/javascriptPics/mouth6.png" />
+    <img src="/Pics/javascriptPics/square.png" />
+  </div>
+
+
+</body>
+
+</html>

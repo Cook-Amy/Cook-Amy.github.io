@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CSS Transitions Demo</title>
+  <link rel="stylesheet" type="text/css" href="cssTransitionsDemo.css" />
+</head>
+
+<body>
+  <div id="header">Using CSS Transitions without Custom Libraries</div>
+  <hr>
+ 
+  <div>
+    <h2>Syntax</h2>
+    <p>1. element { transition: [property] [duration] [timing-function: optional] [delay: optional] }</p>
+    <p class="example">div { transition: background-color 2s linear 1.5s; }</p>
+    <p>2. element:hover { property: [value] }
+    <p>OR</p>
+    <p>2. element:focus { property: [value] }</p>
+    <p>OR</p>
+    <p>2. element:active { property: [value] }</p>
+    <p class="example">div:hover {background-color: blue;}</p>
+  </div>
+  <hr>
+
+  <div>
+    <h2>Animitable Properties in CSS</h2>
+    <p><a href="https://www.w3schools.com/cssref/css_animatable.asp" target="_blank">https://www.w3schools.com/cssref/css_animatable.asp</a></p>
+  </div>
+  <hr>
+
+  <div>
+    <h2>Fade</h2>
+    <nav class="menu fade">
+      <a href="#" class="with">Home</a>
+      <a href="#" class="with">About</a>
+      <a href="#" class="without">Contact</a>
+      <a href="#" class="without">Links</a>
+    </nav>
+  </div>
+<hr>
+
+  <div>
+    <h2>Background Color & Font Color</h2>
+    <nav class="menu color">
+      <a href="#" class="with">Home</a>
+      <a href="#" class="with">About</a>
+      <a href="#" class="without">Contact</a>
+      <a href="#" class="without">Links</a>
+    </nav>
+  </div>
+  <hr>
+
+  <div>
+    <h2>Border Radius</h2>
+    <nav class="menu border-radius">
+      <a href="#" class="with">Home</a>
+      <a href="#" class="with">About</a>
+      <a href="#" class="without">Contact</a>
+      <a href="#" class="without">Links</a>
+    </nav>
+  </div>
+  <hr>
+
+  <div>
+    <h2>Border Color</h2>
+    <nav class="menu box-shadow">
+      <a href="#" class="with">Home</a>
+      <a href="#" class="with">About</a>
+      <a href="#" class="without">Contact</a>
+      <a href="#" class="without">Links</a>
+    </nav>
+  </div>
+  <hr>
+
+  <div>
+    <h2>Size</h2>
+    <nav class="menu size">
+      <a href="#" class="with">Home</a>
+      <a href="#" class="with">About</a>
+      <a href="#" class="without">Contact</a>
+      <a href="#" class="without">Links</a>
+    </nav>
+  </div>
+  <hr>
+
+  <div>
+    <h2>Combination</h2>
+    <nav class="menu combo">
+      <a href="#" class="with">Home</a>
+      <a href="#" class="with">About</a>
+      <a href="#" class="without">Contact</a>
+      <a href="#" class="without">Links</a>
+    </nav>
+  </div>
+  <hr>
+
+  <div class="container duration">
+    <h2>Duration - Start at the same time, end different times</h2>
+      <div class="circle circle5"><div class="label">1 sec</div></div>
+      <div class="circle circle6"><div class="label">2 sec</div></div>
+      <div class="circle circle7"><div class="label">3 sec</div></div>
+      <div class="circle circle8"><div class="label">4 sec</div></div>
+      <div class="circle circle9"><div class="label">5 sec</div></div>
+  </div>
+  <hr>
+
+  <div class="container timing">
+    <h2>Timing - Function (start & stop) is all the same</h2>
+      <div class="circle circle0"><div class="label">linear</div></div>
+      <div class="circle circle1"><div class="label">ease</div></div>
+      <div class="circle circle2"><div class="label">ease-in</div></div>
+      <div class="circle circle3"><div class="label">ease-out</div></div>
+      <div class="circle circle4"><div class="label">in-out</div></div>
+  </div>
+  <hr>
+
+  <div class="container delay">
+    <h2>Delay - Start different times, timing & duration is all the same</h2>
+      <div class="circle circle10"><div class="label">0 sec</div></div>
+      <div class="circle circle11"><div class="label">0.5 sec</div></div>
+      <div class="circle circle12"><div class="label">1 sec</div></div>
+      <div class="circle circle13"><div class="label">1.5 sec</div></div>
+      <div class="circle circle14"><div class="label">2 sec</div></div>
+  </div>
+  <hr>
+
+  <div class="container links">
+    <h2>Resources</h2>
+    <p>1. 
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions" 
+         target="_blank">
+         https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions
+      </a>
+    </p>
+    <p>2. 
+      <a href="https://codepen.io/anon/pen/WOEpva" 
+         target="_blank">
+         https://codepen.io/anon/pen/WOEpva
+      </a>
+    </p>
+    <p>3.
+       <a href="https://www.webdesignerdepot.com/2014/05/8-simple-css3-transitions-that-will-wow-your-users/" 
+          target="_blank">
+          https://www.webdesignerdepot.com/2014/05/8-simple-css3-transitions-that-will-wow-your-users/
+        </a>
+      </p>
+    <p>4. 
+      <a href="https://thoughtbot.com/blog/transitions-and-transforms" 
+         target="_blank">
+         https://thoughtbot.com/blog/transitions-and-transforms
+      </a> [Examples use SCSS, so you have to change to CSS]
+    </p>
+  </div>
+  <hr>
+
+</body>
+
+</html>

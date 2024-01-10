@@ -1,0 +1,187 @@
+/*************** Page ***************/
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-image: url("/Pics/ajax/worldMap2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.btn {
+  background-color: orange;
+  font-size: 20px;
+  transition: background-color 0.5s, color 0.5s, font-size 0.5s;
+}
+
+.btn:hover {
+  background-color: darkslateblue;
+  color: bisque;
+  font-size: 25px;
+}
+
+/*************** Header ***************/
+#header {
+  text-align: center;
+  font-size: 70px;
+  overflow: auto;
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
+
+#header::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#homeButton{
+  margin-right: 25px;
+  margin-top: 10px;
+  float: right;
+}
+
+/*************** Nav Bar ***************/
+.navbar {
+  width: 90%;
+  background-color: darkslateblue;
+  overflow: auto;
+  margin: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: bisque;
+  text-decoration: none;
+  font-size: 17px;
+  width: 23%;
+  text-align: center;
+  transition: background-color 1s, color 1s, font-size 1s;
+  min-height: 30px;
+}
+
+.navbar .active {
+  background-color: orange;
+  color: black;
+  font-size: 25px;
+}
+
+.navbar a:hover {
+  background-color: bisque;
+  color: darkslateblue;
+  font-size: 25px;
+}
+
+/*************** Display Country Search ***************/
+#displayCountry {
+  display: none;
+  width: 600px;
+  margin: auto;
+  font-size: 30px;
+}
+
+#userInput {
+  font-size: 20px;
+  padding: 7px;
+  margin: 10px;
+  transition: border-color 1s, border-width 1s;
+}
+
+#userInput:focus {
+  border-width: 8px;
+  border-color: red;
+}
+
+.listTag {
+  font-weight: bold;
+}
+
+#errorMsg {
+  font-size: 15px;
+  font-weight: bold;
+  color: red;
+}
+
+dd {
+  white-space: pre;
+  min-height: 35px;
+}
+
+.list1 {transition: font-size 2s, color 2s, transform 2s;}
+.list1:hover {
+  font-size: 40px; 
+  color: red;
+  transform: translateX(50px);
+}
+
+.list2 {transition: font-size 2s, color 2s, transform 2s;}
+.list2:hover {
+  font-size: 40px; 
+  color: red;
+  transform: translateX(50px);
+}
+
+.list3 {transition: font-size 2s, color 2s, transform 2s;}
+.list3:hover {
+  font-size: 40px; 
+  color: red;
+  transform: translateX(50px);
+}
+
+.list4 {transition: font-size 2s, color 2s, transform 2s;}
+.list4:hover {
+  font-size: 40px; 
+  color: red;
+  transform: translateX(50px);
+}
+
+.list5 {transition: font-size 2s, color 2s, transform 2s;}
+.list5:hover {
+  font-size: 40px; 
+  color: red;
+  transform: translateX(50px);
+}
+
+.list6 {transition: font-size 2s, color 2s, transform 2s;}
+.list6:hover {
+  font-size: 40px; 
+  color: red;
+  transform: translateX(50px);
+}
+
+.list7 {transition: font-size 2s, color 2s, transform 2s;}
+.list7:hover {
+  font-size: 40px; 
+  color: red;
+  transform: translateX(50px);
+}
+
+/*************** Display Region Search ***************/
+#displayRegion {
+  display: none;
+  width: 600px;
+  margin: auto;
+  font-size: 30px;
+}
+
+/*************** Display Language Search ***************/
+#displayLanguage {
+  display: none;
+  width: 600px;
+  margin: auto;
+  font-size: 30px;
+}
+
+/*************** Display Currency Search ***************/
+#displayCurrency {
+  display: none;
+  width: 600px;
+  margin: auto;
+  font-size: 30px;
+}
+
+
+

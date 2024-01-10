@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AJAX Demo</title>
+  <link rel="stylesheet" type="text/css" href="ajaxDemo.css" />
+  <link href="maps2/jqvmap.css" media="screen" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="maps2/jquery.vmap.js"></script>
+    <script type="text/javascript" src="maps2/jquery.vmap.world.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <div id="header">AJAX Demo</div>
+  <hr>
+
+  <div id="localSection">
+    <p class="intro">Let's first try a local file.</p>
+    <button class="btn" onclick="getFile()">Get File</button>
+    <div id="fileInfo"></div>
+  </div>
+
+  <hr><hr>
+
+  <div id="nasaSection">
+    <p class="intro">Now let's try something fun.</p> 
+    <p class="intro">Get NASA's picture of the day.</p>
+    <button class="btn" onclick="getNasaPic()">Get Picture</button>
+    <div id="nasaPic"></div>
+  </div>
+
+  <hr><hr>
+
+  <!-- <div id="soundApi">
+    <p class="intro">Let's try some sound</p>
+    <button class="btn" onclick="getSound()">Get Sound</button>
+    <div id="sound"></div>
+  </div>
+
+  <hr><hr> -->
+
+  <!-- <div id="vmap" style="width: 600px; height: 400px;"></div> -->
+
+  <script>
+  function getFile() {
+    /******** local file AJAX request ********/
+    var fileRequest = new XMLHttpRequest();
+    fileRequest.onreadystatechange = function() {
+      if(this.readyState == 1) { console.log("ready state = 1");}
+      if(this.readyState == 2) { console.log("ready state = 1");}
+      if(this.readyState == 3) { console.log("ready state = 1");}
+      if(this.readyState == 4) { console.log("ready state = 1");}
+      if(this.readyState == 4 && this.status == 200) {
+        document.getElementById("fileInfo").innerHTML = this.responseText;
+      }
+    };
+    fileRequest.open("GET", "myText.txt", true);
+    fileRequest.send();
+  }
+
+  /******** NASA API AJAX request ********/
+  function getNasaPic() {
+    var nasaRequest = new XMLHttpRequest();
+    nasaRequest.onreadystatechange = function() {
+      if(this.readyState == 4 && this.status == 200) {
+        //document.getElementById("nasaPic").innerHTML = this.responseText;
+        var jsonResp = JSON.parse(this.responseText);
+        formatPicture(jsonResp);
+      }
+    };
+    nasaRequest.open("GET", 
+                    "https://api.nasa.gov/planetary/apod?api_key=BBrVMqBlbbRlGVKuh2SRO1LWdHe6f7iccCPFTDQD", 
+                    true);
+    nasaRequest.send();
+  }
+
+  function formatPicture(response) {
+    var myString =  "<h1>" + response.title + "</h1>" +
+                    "<img src=\"" + response.url + "\">";
+    document.getElementById("nasaPic").innerHTML = myString;
+  }
+
+  function getSound() {
+      /******** sound AJAX request ********/
+  
+var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+	if (this.readyState === this.DONE) {
+		console.log(this.responseText);
+	}
+});
+
+xhr.open("GET", "https://api.deezer.com/oembed?url=http://www.deezer.com/track/3135556", true);
+//xhr.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
+//xhr.setRequestHeader("x-rapidapi-key", "ee4b7e9cd4msh3784326c778d050p14e05bjsn5708de186e98");
+
+xhr.send(data);
+  }
+  
+
+
+    jQuery(document).ready(function() {
+      jQuery('#vmap').vectorMap({ map: 'world_en' });
+    });
+
+
+  </script>
+</body>
+
+</html>
