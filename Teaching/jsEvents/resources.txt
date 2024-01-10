@@ -1,5 +1,0 @@
-Javascript event reference pages
-
-w3schools.com/jsref/dom_obj_event.asp
-https://www.tutorialspoint.com/javascript/javascript_events.htm
-https://www.geeksforgeeks.org/javascript-events/
