@@ -439,15 +439,16 @@ section {
   border-radius: 0;
 }
 
-.skills .progress .skill {
-  padding: 0;
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
-  display: block;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  color: #050d18;
-}
+    .skills .progress .skill {
+        padding: 10px;
+        margin: 0 0 6px 0;
+        text-transform: uppercase;
+        display: block;
+        font-weight: 600;
+        font-family: "Poppins", sans-serif;
+        color: #050d18;
+        background-color: #149ddd;
+    }
 
 .skills .progress .skill .val {
   float: right;
